@@ -177,12 +177,6 @@ header{
     display: none;
 }
 
-/*Font Dropdown Menu*/
-#font-dropdown-menu{
-    position: relative;
-    left: 190px;
-}
-
 /*Font Button*/
 #font-choice-btn{
    display: flex;
@@ -219,4 +213,86 @@ header{
 /*Hover*/
 #font-dropdown-list p:hover{
     color: var(--purple);
+}
+
+/*Add dividing Line on header*/
+#divide-line{
+    width: 1px;
+    height: 32px;
+    background-color: var(--gray-num-two);
+}
+
+/*Toggle Switch*/
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+/*Hide input box to
+ replace with own style*/
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position:absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--gray-num-one);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+/*Add white circle for toggle*/
+.slider:before{
+    position: absolute;
+    content: '';
+    height:14px;
+    width: 14px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--white);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+/*Add box shadow on toggle input*/
+input:focus + .slider{
+    box-shadow: var(--box-shadow);
+}
+
+/*Toggle Slider*/
+input:checked + .slider:before{
+    --webkit-transform: translateX(16px);
+    -ms-transform: translate(16px);
+    transform: translate(16px);
+}
+
+/*Round the slider background*/
+.slider.round{
+    border-radius: 34px;
+}
+
+/*Round the slider*/
+.slider.round:before{
+    border-radius: 50%;
+}
+
+/*Moon Icon*/
+#moon-icon{
+    width: 19.99px;
+    height: 20px;
+    margin-left: 8px;
+}
+
+/*Toggle and Moon Icon Group*/
+.toggle-switch-and-moon-icon{
+    display: flex; 
 }

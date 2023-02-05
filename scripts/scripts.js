@@ -46,3 +46,4 @@ mono.addEventListener('click', () =>{
     fontPlaceholder.innerHTML = mono.innerHTML;
     fontPlaceholder.setAttribute('id','mono');
 } );
+
