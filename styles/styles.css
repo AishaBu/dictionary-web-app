@@ -12,6 +12,9 @@
     --white:#ffffff;
     --purple:#a445ed;
     --red:#ff5252;
+    
+    /*Shadow*/
+    --box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.23);
 
     /*Fonts*/
     --inconsolata-font: 'Inconsolata';
@@ -135,7 +138,85 @@ body,html{
     box-sizing: border-box;
 }
 
-p{
-    font-family: var(--lora-italic-font);
-    font-size: 40px;
+header{
+    display: flex;
+}
+
+/*Book Logo*/
+#book-logo{
+    width: 28.05px;
+    height: 32px;
+}
+
+/*Fonts*/
+#font-dropdown-list p,
+#font-choice-btn{
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--off-black-one);
+}
+
+/*Font Dropdown List*/
+#font-dropdown-list p{
+    position: relative;
+    top: 25px;
+    left: 30px;
+    width: 90px;
+    height: 24px;
+    cursor: pointer;
+}
+
+#font-dropdown-list{
+    background-color: var(--white);
+    width: 183px;
+    height: 140px;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    right: 90px;
+    display: none;
+}
+
+/*Font Dropdown Menu*/
+#font-dropdown-menu{
+    position: relative;
+    left: 190px;
+}
+
+/*Font Button*/
+#font-choice-btn{
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   appearance: none;
+   border: none;
+   background-color: transparent;
+}
+
+#arrow-svg{
+    display: block;
+    padding-left: 20px;
+    padding-top: 8px;
+}
+
+
+/*Font Types*/
+#sans-serif{
+    font-family: var(--inter-font), var(--static-inter-bold);
+    font-weight: bold;
+}
+
+#serif{
+    font-family: var(--lora-font), var(--lora-static-bold-font);
+    font-weight: bold;
+}
+
+#mono{
+    font-family: var(--inconsolata-font), var(--static-inconsolata-bold-font);
+    font-weight: bold;
+}
+
+/*Hover*/
+#font-dropdown-list p:hover{
+    color: var(--purple);
 }
