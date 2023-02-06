@@ -176,6 +176,11 @@ header{
     display: none;
 }
 
+/*Font Dropdown List Hover*/
+#font-dropdown-list p:hover{
+    color: var(--purple);
+}
+
 /*Font Button*/
 #font-choice-btn{
    display: flex;
@@ -208,10 +213,6 @@ header{
     font-weight: bold;
 }
 
-/*Hover*/
-#font-dropdown-list p:hover{
-    color: var(--purple);
-}
 
 /*Add dividing Line on header*/
 #divide-line{
@@ -294,6 +295,16 @@ input:checked + .slider:before{
 .toggle-switch-and-moon-icon{
     display: flex; 
 }
+
+/*Toggle and Moon Cover Hover*/
+#moon-icon path:hover{
+    stroke: var(--purple);
+}
+
+.slider:hover{
+    background-color: var(--purple);
+}
+
 
 /*Align Header Items*/
 header{
