@@ -101,7 +101,7 @@ function checkFormOnSubmit() {
   });
 }
 
-/*Validate input fields from function*/
+/*Validate input field from function*/
 function validateField() {
   checkIfFieldEmpty();
   checkFormOnSubmit();
