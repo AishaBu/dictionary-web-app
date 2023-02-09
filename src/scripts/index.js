@@ -1,4 +1,5 @@
-import "../styles/styles.css"
+import "../styles/styles.css";
+import "../scripts/dictionary-api";
 
 const arrowSvgBtn = document.getElementById("arrow-svg");
 const fontDropdownList = document.getElementById("font-dropdown-list");

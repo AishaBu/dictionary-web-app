@@ -21,4 +21,4 @@ promise.then((data) => console.log(data[0]));
 //promise.then((data) => console.log(data[0].word));
 //promise.then((data) => console.log(data[0].phonetics[1].text));
 //promise.then((data) => vocabWord.textContent = data[0].word);
-//promise.then((data) => vocabWord.textContent = data[0].word);
+promise.then((data) => vocabWord.textContent = data[0].word);
