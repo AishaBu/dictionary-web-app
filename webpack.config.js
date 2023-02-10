@@ -4,8 +4,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/scripts/index.js"),
-    bundleapi: path.resolve(__dirname, "src/scripts/dictionary-api.js"),
+    bundle: path.resolve(__dirname, "src/scripts/index.js")
   },
   output: {
     path: path.resolve(__dirname, "dist"),

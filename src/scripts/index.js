@@ -1,5 +1,5 @@
 import "../styles/styles.css";
-import "../scripts/dictionary-api";
+
 
 const arrowSvgBtn = document.getElementById("arrow-svg");
 const fontDropdownList = document.getElementById("font-dropdown-list");
@@ -15,6 +15,9 @@ const mono = document.getElementById("mono");
 const form = document.getElementById("form");
 const searchField = document.getElementById("search-field");
 const errorSearchMessage = document.querySelector("#search-field + span#error");
+
+/*API Call*/
+const vocabWord = document.getElementById('vocabulary-word');
 
 /*Show font list on hover-mouseover*/
 function displayFontList() {
@@ -59,7 +62,7 @@ mono.addEventListener("click", () => {
 /*Form Validation*/
 /*Checks input value matches regex pattern*/
 function checkRegexMatch() {
-  const regex = /^[a-zA-Z]+$/g;
+  const regex = /^[a-zA-Z]+/g;
 
   searchField.addEventListener("input", () => {
     searchField.addEventListener("keydown", (e) => {
@@ -111,3 +114,32 @@ function validateField() {
   checkRegexMatch();
 }
 validateField();
+
+
+/*API CALL*/
+async function fetchVocabularyWords(searchFieldValue) {
+  try {
+    const response = await fetch(
+      `https://api.dictionaryapi.dev/api/v2/entries/en/${searchFieldValue}`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Could not get word: ${error}`);
+  }
+}
+
+  //const promise = fetchVocabularyWords();
+  //promise.then((data) => console.log(data[0].phonetics[1].text));
+  //promise.then((data) => console.log(data[0].word));
+  //promise.then((data) => vocabWord.textContent = data[0].word);
+   
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const promise = fetchVocabularyWords(searchField.value);
+  promise.then((data) => vocabWord.textContent = data[0].word);
+})
