@@ -4,7 +4,10 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/scripts/index.js")
+    bundle: path.resolve(__dirname, "src/scripts/index.js"),
+    bundleapi: path.resolve(__dirname, "src/scripts/dictionary-api.js"),
+    bundlefont: path.resolve(__dirname, "src/scripts/switch-font-style.js"),
+    bundlevariables: path.resolve(__dirname, "src/scripts/global-variables.js")
   },
   output: {
     path: path.resolve(__dirname, "dist"),
