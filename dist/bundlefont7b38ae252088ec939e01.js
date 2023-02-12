@@ -20,6 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "sansSerif": () => (/* binding */ sansSerif),
 /* harmony export */   "searchField": () => (/* binding */ searchField),
 /* harmony export */   "serif": () => (/* binding */ serif),
+/* harmony export */   "soundOutPhonetic": () => (/* binding */ soundOutPhonetic),
 /* harmony export */   "vocabWord": () => (/* binding */ vocabWord)
 /* harmony export */ });
 /*Dropdown List*/
@@ -40,6 +41,8 @@ var errorSearchMessage = document.querySelector("#search-field + span#error");
 
 /*API*/
 var vocabWord = document.getElementById('vocabulary-word');
+var soundOutPhonetic = document.getElementById('phonetic');
+
 
 
 
@@ -126,6 +129,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+//import { vocabWord } from "./global-variables";
+//import { soundOutPhonetic } from "./global-variables";
 
 /* FONT DROPDOWN MENU*/
 /*Show font list on hover-mouseover*/
@@ -144,11 +149,29 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.arrowSvgBtn.addEventListener("mou
 /*Hide font list when arrow is clicked*/
 _global_variables__WEBPACK_IMPORTED_MODULE_0__.fontDropdownMenu.addEventListener("mouseleave", hideFontList);
 
-/*Display default font*/
+/*Display default font and input font*/
 function defaultDisplay() {
+  /*Set sansSerif as default input font to show*/
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.fontPlaceholder.innerHTML = _global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif.innerHTML;
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.fontPlaceholder.setAttribute("id", "sans-serif");
+
+  /*Display sansSerif as default input font*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.addEventListener('input', function () {
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontSize = "16px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontWeight = "bold";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
+  });
+
+  /*Set Definitions Default Font Styles*
+    vocabWord.style.fontFamily =  "var(--inter-font),var(--static-inter-bold)";
+    vocabWord.style.fontSize = "32px";
+    soundOutPhonetic.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
+    soundOutPhonetic.style.fontSize = "18px";
+    soundOutPhonetic.style.lineHeight = "24px";
+    soundOutPhonetic.style.color = "var(--purple)";  
+    */
 }
+
 defaultDisplay();
 
 /*CHANGE FONT TYPE ON CLICK*/
@@ -164,6 +187,10 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif.addEventListener("click
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontSize = "16px";
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontWeight = "bold";
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
+
+    /*Vocabulary Definitions To Font*/
+    vocabWord.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
+    vocabWord.style.fontSize = "32px";
   });
 });
 _global_variables__WEBPACK_IMPORTED_MODULE_0__.serif.addEventListener("click", function () {
@@ -178,4 +205,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.mono.addEventListener("click", fu
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlefont6687c1ed528999694baf.js.map
+//# sourceMappingURL=bundlefont7b38ae252088ec939e01.js.map

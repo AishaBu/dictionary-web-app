@@ -17,6 +17,7 @@ const errorSearchMessage = document.querySelector("#search-field + span#error");
 
 /*API*/
 const vocabWord = document.getElementById('vocabulary-word');
+const soundOutPhonetic = document.getElementById('phonetic');
 
 export {arrowSvgBtn};
 export {fontDropdownList};
@@ -29,3 +30,4 @@ export {form};
 export {searchField};
 export {errorSearchMessage};
 export {vocabWord};
+export{soundOutPhonetic};

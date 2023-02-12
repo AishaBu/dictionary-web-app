@@ -49,6 +49,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "sansSerif": () => (/* binding */ sansSerif),
 /* harmony export */   "searchField": () => (/* binding */ searchField),
 /* harmony export */   "serif": () => (/* binding */ serif),
+/* harmony export */   "soundOutPhonetic": () => (/* binding */ soundOutPhonetic),
 /* harmony export */   "vocabWord": () => (/* binding */ vocabWord)
 /* harmony export */ });
 /*Dropdown List*/
@@ -69,6 +70,8 @@ var errorSearchMessage = document.querySelector("#search-field + span#error");
 
 /*API*/
 var vocabWord = document.getElementById('vocabulary-word');
+var soundOutPhonetic = document.getElementById('phonetic');
+
 
 
 
@@ -82,4 +85,4 @@ var vocabWord = document.getElementById('vocabulary-word');
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlevariablesd6f265d0d9f1cf2f19c7.js.map
+//# sourceMappingURL=bundlevariables92502f982b569a0efe2a.js.map
