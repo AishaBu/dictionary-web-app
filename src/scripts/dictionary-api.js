@@ -1,12 +1,12 @@
-import { searchField } from "./global-variables";
+//import { searchField } from "./global-variables";
 import { form } from "./global-variables";
 import { vocabWord } from "./global-variables";
 
 /*API CALL*/
-async function fetchVocabularyWords(searchFieldValue) {
+async function fetchVocabularyWords() {
     try {
       const response = await fetch(
-        `https://api.dictionaryapi.dev/api/v2/entries/en/${searchFieldValue}`
+        `https://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=585651c1-6ea4-4761-b3e7-d7af4eea540e`
       );
       if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
@@ -19,6 +19,7 @@ async function fetchVocabularyWords(searchFieldValue) {
     }
   }
   
+  
     //const promise = fetchVocabularyWords();
     //promise.then((data) => console.log(data[0].phonetics[1].text));
     //promise.then((data) => console.log(data[0].word));
@@ -26,11 +27,7 @@ async function fetchVocabularyWords(searchFieldValue) {
     
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const promise = fetchVocabularyWords(searchField.value);
-      
-        /*Vocabulary Heading*/
-        promise.then((data) => vocabWord.textContent = data[0].word);
+         const promise = fetchVocabularyWords();
+         promise.then((data) => vocabWord.textContent = data[0].meta.id);
       })
-  
-  
-  
+
