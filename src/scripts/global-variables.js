@@ -18,6 +18,9 @@ const errorSearchMessage = document.querySelector("#search-field + span#error");
 /*API*/
 const vocabWord = document.getElementById('vocabulary-word');
 const soundOutPhonetic = document.getElementById('phonetic');
+const noun = document.getElementById('noun');
+const nounLine = document.getElementById('noun-line');
+const playIcon = document.getElementById('play-icon');
 
 export {arrowSvgBtn};
 export {fontDropdownList};
@@ -31,3 +34,7 @@ export {searchField};
 export {errorSearchMessage};
 export {vocabWord};
 export{soundOutPhonetic};
+export {noun};
+export {nounLine};
+export {playIcon};
+

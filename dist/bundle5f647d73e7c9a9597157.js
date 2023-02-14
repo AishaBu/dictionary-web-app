@@ -150,8 +150,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import { vocabWord } from "./global-variables";
-//import { soundOutPhonetic } from "./global-variables";
+
+
 
 /* FONT DROPDOWN MENU*/
 /*Show font list on hover-mouseover*/
@@ -183,16 +183,14 @@ function defaultDisplay() {
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
   });
 
-  /*Set Definitions Default Font Styles*
-    vocabWord.style.fontFamily =  "var(--inter-font),var(--static-inter-bold)";
-    vocabWord.style.fontSize = "32px";
-    soundOutPhonetic.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
-    soundOutPhonetic.style.fontSize = "18px";
-    soundOutPhonetic.style.lineHeight = "24px";
-    soundOutPhonetic.style.color = "var(--purple)";  
-    */
+  /*Set Definitions Default Font Styles*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.fontSize = "32px";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.fontSize = "18px";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.lineHeight = "24px";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.color = "var(--purple)";
 }
-
 defaultDisplay();
 
 /*CHANGE FONT TYPE ON CLICK*/
@@ -210,8 +208,8 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif.addEventListener("click
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
 
     /*Vocabulary Definitions To Font*/
-    vocabWord.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
-    vocabWord.style.fontSize = "32px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.fontSize = "32px";
   });
 });
 _global_variables__WEBPACK_IMPORTED_MODULE_0__.serif.addEventListener("click", function () {
@@ -1385,4 +1383,4 @@ validateField();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle798b05ed6c35cf25eda6.js.map
+//# sourceMappingURL=bundle5f647d73e7c9a9597157.js.map
