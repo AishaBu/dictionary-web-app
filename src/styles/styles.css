@@ -422,7 +422,6 @@ input[type="search"]:focus,
 #play-icon{
   width: 48px;
   height: 48px;
-  display: none;
 }
 
 .word-and-sound{
@@ -430,4 +429,9 @@ input[type="search"]:focus,
   justify-content:space-around;
   align-items: center;
   gap: 150px;
+}
+
+#play-icon,
+#noun-line{
+  display: none;
 }

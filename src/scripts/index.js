@@ -4,59 +4,52 @@ import "./dictionary-api";
 import { searchField } from "./global-variables";
 import { errorSearchMessage } from "./global-variables";
 import { form } from "./global-variables";
+import { createDictionary } from "./dictionary-api";
 
 /*FORM VALIDATION*/
-/*Checks input value matches regex pattern*/
-function checkRegexMatch() {
+/*If searchfield value is not missing, it reverts to valid status*/
+searchField.addEventListener("input", () => {
+  if (!searchField.validity.valueMissing) {
+    errorSearchMessage.textContent = " ";
+    searchField.setAttribute("id", "valid-value");
+  } 
+});
+
+
+/*Check for regex match and prevent submit on input*/
+searchField.addEventListener("input", () => {
   const regex = /^[a-zA-Z]+/g;
-
-  searchField.addEventListener("input", () => {
-    searchField.addEventListener("keydown", (event) => {
-      if (!searchField.value.match(regex) && event.key == "Enter") {
-        event.preventDefault(); //stops default action
-        event.stopPropagation(); //stops further propogation in event/bubbling phases
-        searchField.setAttribute("id", "invalid-search-field");
-        errorSearchMessage.textContent = "Please type only letters!";
-        errorSearchMessage.setAttribute("id", "invalid-error-message");
-      } else {
-        errorSearchMessage.textContent = " ";
-        searchField.setAttribute("id", "valid-value");
-      }
-    });
-  });
-}
-
-function checkIfFieldEmpty() {
-  searchField.addEventListener("input", () => {
-    if (searchField.validity.valueMissing) {
-      searchField.setAttribute("id", "invalid-search-field");
-      errorSearchMessage.textContent = "Whoops, can't be empty!";
-      errorSearchMessage.setAttribute("id", "invalid-error-message");
-    } else {
-      errorSearchMessage.textContent = " ";
-      searchField.setAttribute("id", "valid-value");
-    }
-  });
-}
-
-/*Checks form onsubmit and prevents send if invalid values,and
-displays message to user that input field cannot be empty*/
-function checkFormOnSubmit() {
-  form.addEventListener("submit", (event) => {
-    if (searchField.validity.valueMissing) {
+  const numRegex = /\d/;
+  const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
+  if(!searchField.value.match(regex) || searchField.value.match(numRegex) || searchField.value.match(specChar)){
+    searchField.setAttribute("id", "invalid-search-field");
+    errorSearchMessage.textContent = "Please type only letters!";
+    errorSearchMessage.setAttribute("id", "invalid-error-message");
+    
+    /*If there is an attempt to submit form while invalid, prevent sending*/
+    form.addEventListener('submit', (event) => {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
-      searchField.setAttribute("id", "invalid-search-field");
-      errorSearchMessage.textContent = "Please type a word before sending!";
-      errorSearchMessage.setAttribute("id", "invalid-error-message");
-    }
-  });
-}
+    })
+  }
+  else{
+    /*Display words on formsubmit if field value is valid*/
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); //stops default action
+      event.stopPropagation(); //stops further propogation in event/bubbling phases
+      createDictionary();
+    });
+  }
+  }
+);
 
-/*Validate input field from function*/
-function validateField() {
-  checkIfFieldEmpty();
-  checkFormOnSubmit();
-  checkRegexMatch();
-}
-validateField();
+/*Check if field empty onsubmit*/
+form.addEventListener("submit", (event) => {
+  if(searchField.validity.valueMissing) {
+    event.preventDefault(); //stops default action
+    event.stopPropagation(); //stops further propogation in event/bubbling phases
+    searchField.setAttribute("id", "invalid-search-field");
+    errorSearchMessage.textContent = "Whoops, can't be empty!";
+    errorSearchMessage.setAttribute("id", "invalid-error-message");
+  }
+});

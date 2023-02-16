@@ -1,5 +1,4 @@
 import { searchField } from "./global-variables";
-import { form } from "./global-variables";
 import { vocabWord } from "./global-variables";
 import { soundOutPhonetic } from "./global-variables";
 import { noun } from "./global-variables";
@@ -19,47 +18,42 @@ async function fetchVocabularyWords(searchFieldValue) {
 
     const data = await response.json();
     return data;
-  } catch (error) {
+  } 
+  catch (error) {
     console.error(`Could not get word: ${error}`);
   }
 }
 
-/*Display words searched in the search field*/
-function displayWords() {
+/*Create audio on click of icon*/
+//Moving audio value outside of function creates sound only once.
+const globalAudio = new Audio(); 
+function playAudio() {
   const promise = fetchVocabularyWords(searchField.value);
+  promise.then((data) => {
+    let audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[0].hwi.prs[0].sound.audio[0]}/${data[0].hwi.prs[0].sound.audio}.mp3`
+    globalAudio.src = audioURL;
+    globalAudio.play();
+  });
+}
+
+/*Display words searched in the search field*/
+function createDictionary() {
+ const promise = fetchVocabularyWords(searchField.value);
+  nounLine.style.display = 'block';
+  playIcon.style.display = 'block';
   /*Display Headword*/
   promise.then((data) => (vocabWord.textContent = data[1].hwi.hw));
   /*Display Phonetic Sound*/
-  promise.then(
-    (data) => (soundOutPhonetic.textContent = "/" + data[0].hwi.prs[0].mw + "/")
-  );
+  promise.then((data) => (soundOutPhonetic.textContent = "/" + data[0].hwi.prs[0].mw + "/"));
   /*Display noun and noun-line*/
   promise.then((data) => (noun.textContent = data[0].fl));
   nounLine.style.width = "70%";
   nounLine.style.height = "0.5px";
   nounLine.style.backgroundColor = "var(--gray-num-two)";
-  playIcon.style.display = "block";
-}
-
-/*Create audio on click of icon*/
-function playAudio() {
-  const promise = fetchVocabularyWords(searchField.value);
-  promise.then((data) => {
-    const audio = new Audio(
-      `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[0].hwi.prs[0].sound.audio[0]}/${data[0].hwi.prs[0].sound.audio}.mp3`
-    );
-    audio.load();
-    audio.play();
-  });
-}
-
-/*Display dictionary words and play audio onsubmit*/
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  displayWords();
-
   /*Play audio on icon click*/
-  playIcon.addEventListener("click", () => {
-    setInterval(playAudio(), 500);
-  });
-});
+  playIcon.addEventListener('click', () => {
+    playAudio();
+  }) 
+}
+export {createDictionary};
+
