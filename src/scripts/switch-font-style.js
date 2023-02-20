@@ -7,6 +7,7 @@ import { sansSerif } from "./global-variables";
 import { vocabWord } from "./global-variables";
 import { noun } from "./global-variables";
 import { soundOutPhonetic } from "./global-variables";
+import { meaningText } from "./global-variables";
 
 /* FONT DROPDOWN MENU*/
 /*Show font list on hover-mouseover*/
@@ -42,28 +43,19 @@ function changeFontToSansSerif() {
     /*Vocabulary Definitions To Font*/
     vocabWord.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
     vocabWord.style.fontSize = "32px";
+    /*Phonetic Spelling*/
     soundOutPhonetic.style.fontFamily ="var(--inter-font),var(--static-inter-bold)";
     soundOutPhonetic.style.fontSize = "18px";
     soundOutPhonetic.style.lineHeight = "24px";
     soundOutPhonetic.style.color = "var(--purple)";
+    /*Noun and Noun Line*/
     noun.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
     noun.style.fontStyle = "Italic";
     noun.style.fontSize = "18px";
+    /*Meaning Text and Word Definitions*/
+    meaningText.style.fontFamily= "var(--inter-font), var(--static-inter-regular-font)";
+    meaningText.style.fontSize = "16px";
+    meaningText.style.color = "var(--gray-num-one)";
   });
-}
+}changeFontToSansSerif();
 
-/*Display default font and input font*/
-function defaultDisplay() {
-  /*Set sansSerif as default input font to show*/
-  fontPlaceholder.innerHTML = sansSerif.innerHTML;
-  fontPlaceholder.setAttribute("id", "sans-serif");
-
-  /*Display sansSerif as default input font*/
-  searchField.addEventListener("input", () => {
-    searchField.style.fontSize = "16px";
-    searchField.style.fontWeight = "bold";
-    searchField.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
-  });
-  changeFontToSansSerif();
-}
-defaultDisplay();

@@ -435,3 +435,32 @@ input[type="search"]:focus,
 #noun-line{
   display: none;
 }
+
+#meaning-text{
+  margin-top: -20px;
+  margin-left: 10px;
+}
+
+#def-list{
+  display: none;
+}
+
+ul{
+  list-style: none;
+}
+
+ul li:before{
+  content: "\2022";
+  color: var(--purple);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+#def-one, 
+#def-two,
+#def-three{
+  margin: 20px;
+}
+

@@ -4,6 +4,8 @@ import { soundOutPhonetic } from "./global-variables";
 import { noun } from "./global-variables";
 import { nounLine } from "./global-variables";
 import { playIcon } from "./global-variables";
+import { meaningText } from "./global-variables";
+import { defOne, defTwo, defThree, defList} from "./global-variables";
 
 
 /*API CALL*/
@@ -52,10 +54,27 @@ function createDictionary() {
   nounLine.style.width = "70%";
   nounLine.style.height = "0.5px";
   nounLine.style.backgroundColor = "var(--gray-num-two)";
+  
   /*Play audio on icon click*/
   playIcon.addEventListener('click', () => {
     playAudio();
   }) 
+
+  /* Capitalize First Letter Function*/
+  function capitalize(string){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  /*Meaning Text, Definitions*/
+  meaningText.textContent = 'Meaning';
+  defList.style.display = "block";
+  promise.then((data) => (defOne.textContent = capitalize(data[0].shortdef[0])));
+  promise.then((data) => (defTwo.textContent = capitalize(data[0].shortdef[1])));
+  promise.then((data) => (defThree.textContent = capitalize(data[0].shortdef[2])));
+
 }
 export {createDictionary};
 
+/*Console Logs*
+const promise = fetchVocabularyWords('red');
+promise.then((data) => console.log((data[0])));
+*/

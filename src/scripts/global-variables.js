@@ -21,6 +21,13 @@ const soundOutPhonetic = document.getElementById('phonetic');
 const noun = document.getElementById('noun');
 const nounLine = document.getElementById('noun-line');
 const playIcon = document.getElementById('play-icon');
+const meaningText = document.getElementById('meaning-text');
+const defOne = document.getElementById('def-one');
+const defTwo = document.getElementById('def-two');
+const defThree = document.getElementById('def-three');
+const defList = document.getElementById('def-list');
+
+
 
 export {arrowSvgBtn};
 export {fontDropdownList};
@@ -37,4 +44,9 @@ export{soundOutPhonetic};
 export {noun};
 export {nounLine};
 export {playIcon};
+export {meaningText};
+export {defOne};
+export {defTwo};
+export {defThree};
+export {defList};
 
