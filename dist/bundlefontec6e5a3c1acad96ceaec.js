@@ -136,8 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-//import { serif } from "./global-variables";
-//import { mono } from "./global-variables";
+
 
 
 
@@ -185,18 +184,6 @@ function changeFontToSansSerif() {
   });
 }
 
-/*
-  serif.addEventListener("click", () => {
-    fontPlaceholder.innerHTML = serif.innerHTML;
-    fontPlaceholder.setAttribute("id", "serif");
-  });
-  
-  mono.addEventListener("click", () => {
-    fontPlaceholder.innerHTML = mono.innerHTML;
-    fontPlaceholder.setAttribute("id", "mono");
-  });'
-  */
-
 /*Display default font and input font*/
 function defaultDisplay() {
   /*Set sansSerif as default input font to show*/
@@ -216,4 +203,4 @@ defaultDisplay();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlefont05303ea7f5c659bf1613.js.map
+//# sourceMappingURL=bundlefontec6e5a3c1acad96ceaec.js.map

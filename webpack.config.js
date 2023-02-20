@@ -1,5 +1,6 @@
 const path = require("path");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
@@ -7,7 +8,7 @@ module.exports = {
     bundle: path.resolve(__dirname, "src/scripts/index.js"),
     bundleapi: path.resolve(__dirname, "src/scripts/dictionary-api.js"),
     bundlefont: path.resolve(__dirname, "src/scripts/switch-font-style.js"),
-    bundlevariables: path.resolve(__dirname, "src/scripts/global-variables.js")
+    bundlevariables: path.resolve(__dirname, "src/scripts/global-variables.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -70,6 +71,10 @@ module.exports = {
       chunks: ["bundle"],
       filename: "index.html",
       template: "src/html/index.html",
+    }),
+
+    new Dotenv({
+      systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
     }),
   ],
 };

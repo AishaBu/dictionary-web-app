@@ -5,11 +5,13 @@ import { noun } from "./global-variables";
 import { nounLine } from "./global-variables";
 import { playIcon } from "./global-variables";
 
+
 /*API CALL*/
 async function fetchVocabularyWords(searchFieldValue) {
+  const apiKey = process.env.SECRET_API_KEY;
   try {
     const response = await fetch(
-      `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${searchFieldValue}?key=${SECRET_API_KEY}`
+      `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${searchFieldValue}?key=${apiKey}`
     );
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
@@ -31,6 +33,7 @@ function playAudio() {
   promise.then((data) => {
     let audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[0].hwi.prs[0].sound.audio[0]}/${data[0].hwi.prs[0].sound.audio}.mp3`
     globalAudio.src = audioURL;
+    globalAudio.preload = "none";
     globalAudio.play();
   });
 }

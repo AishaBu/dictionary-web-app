@@ -17,3 +17,6 @@
 
 #README Guide
 /README-guide.md
+
+#ENV File
+.env
