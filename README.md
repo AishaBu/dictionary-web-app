@@ -48,7 +48,8 @@ Users should be able to:
 - Mobile-first workflow<br>
 - JavaScript-ES6<br>
 - [Webpack Bundler](https://webpack.js.org/)<br>
-- [Prettier Code Formatter VS Extension](https://prettier.io/)<br> -[Visual Studio Code IDE](https://code.visualstudio.com/)
+- [Prettier Code Formatter VS Extension](https://prettier.io/)<br>
+- [Visual Studio Code IDE](https://code.visualstudio.com/)<br>
 
 ### What I learned
 
