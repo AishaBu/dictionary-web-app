@@ -55,8 +55,7 @@ Users should be able to:
 
 I learned how to use the font-face CSS property to work with variable and static fonts and how to use woff/woff2 files for fonts, and static font files as fallbacks. I also learned to connect to an API using the Fetch API, an API key and JSON code, and how to display that information using JSON, and the JavaScript DOM API.
 
-<!-->
-
+<!--
 ## Author
 
 - Website - [Add your name here](https://www.your-site.com)
