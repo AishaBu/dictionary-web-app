@@ -7,10 +7,9 @@ import { playIcon } from "./global-variables";
 
 /*API CALL*/
 async function fetchVocabularyWords(searchFieldValue) {
-  const apiKey = "585651c1-6ea4-4761-b3e7-d7af4eea540e";
   try {
     const response = await fetch(
-      `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${searchFieldValue}?key=${apiKey}`
+      `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${searchFieldValue}?key=${SECRET_API_KEY}`
     );
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
