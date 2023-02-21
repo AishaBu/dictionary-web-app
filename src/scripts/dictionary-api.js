@@ -5,8 +5,7 @@ import { noun } from "./global-variables";
 import { nounLine } from "./global-variables";
 import { playIcon } from "./global-variables";
 import { meaningText } from "./global-variables";
-import { defOne, defTwo, defThree, defList} from "./global-variables";
-
+import { defOne, defTwo, defThree, defList } from "./global-variables";
 
 /*API CALL*/
 async function fetchVocabularyWords(searchFieldValue) {
@@ -21,32 +20,80 @@ async function fetchVocabularyWords(searchFieldValue) {
 
     const data = await response.json();
     return data;
-  } 
-  catch (error) {
+  } catch (error) {
     console.error(`Could not get word: ${error}`);
   }
 }
 
 /*Create audio on click of icon*/
 //Moving audio value outside of function creates sound only once.
-const globalAudio = new Audio(); 
+const globalAudio = new Audio();
 function playAudio() {
   const promise = fetchVocabularyWords(searchField.value);
   promise.then((data) => {
-    let audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[0].hwi.prs[0].sound.audio[0]}/${data[0].hwi.prs[0].sound.audio}.mp3`
+    let audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[0].hwi.prs[0].sound.audio[0]}/${data[0].hwi.prs[0].sound.audio}.mp3`;
     globalAudio.src = audioURL;
     globalAudio.preload = "none";
     globalAudio.play();
   });
 }
 
+/*Check if no data is available for list*/
+function checkIfNoDataEmptyList() {
+  const promise = fetchVocabularyWords(searchField.value);
+  /*If data for defone is empty*/
+  promise.then((data) => {
+    if (data[0].shortdef[0] == undefined) {
+      defOne.style.display = "none";
+    } else {
+      defOne.style.display = "block";
+    }
+  });
+
+  /*If data for deftwo is empty*/
+  promise.then((data) => {
+    if (data[0].shortdef[1] == undefined) {
+      defTwo.style.display = "none";
+    } else {
+      defTwo.style.display = "block";
+    }
+  });
+
+  /*If data for defthree is empty*/
+  promise.then((data) => {
+    if (data[0].shortdef[2] == undefined) {
+      defThree.style.display = "none";
+    } else {
+      defThree.style.display = "block";
+    }
+  });
+}
+
+/*Create Definitions List*/
+function createList() {
+  const promise = fetchVocabularyWords(searchField.value);
+  meaningText.textContent = "Meaning";
+  defList.style.display = "block";
+
+  /*Capitalize First Letter of each paragraph*/
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  /*Definitions List*/
+  promise.then((data) => (defOne.textContent = capitalizeFirstLetter(data[0].shortdef[0])));
+  promise.then((data) => (defTwo.textContent = capitalizeFirstLetter(data[0].shortdef[1])));
+  promise.then((data) =>(defThree.textContent = capitalizeFirstLetter(data[0].shortdef[2])));
+  checkIfNoDataEmptyList(); //Checks if data/list is empty
+}
+
 /*Display words searched in the search field*/
 function createDictionary() {
- const promise = fetchVocabularyWords(searchField.value);
-  nounLine.style.display = 'block';
-  playIcon.style.display = 'block';
+  const promise = fetchVocabularyWords(searchField.value);
+  nounLine.style.display = "block";
+  playIcon.style.display = "block";
+
   /*Display Headword*/
-  promise.then((data) => (vocabWord.textContent = data[0].hwi.hw));
+  promise.then((data) => (vocabWord.textContent = data[0].meta.stems[0]));
   /*Display Phonetic Sound*/
   promise.then((data) => (soundOutPhonetic.textContent = "/" + data[0].hwi.prs[0].mw + "/"));
   /*Display noun and noun-line*/
@@ -54,28 +101,17 @@ function createDictionary() {
   nounLine.style.width = "70%";
   nounLine.style.height = "0.5px";
   nounLine.style.backgroundColor = "var(--gray-num-two)";
-  
+
   /*Play audio on icon click*/
-  playIcon.addEventListener('click', () => {
+  playIcon.addEventListener("click", () => {
     playAudio();
-  }) 
-
-  /* Capitalize First Letter Function*/
-  function capitalize(string){
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-  
-  /*Meaning Text, Definitions*/
-  meaningText.textContent = 'Meaning';
-  defList.style.display = "block";
-  promise.then((data) => (defOne.textContent = capitalize(data[0].shortdef[0])));
-  promise.then((data) => (defTwo.textContent = capitalize(data[0].shortdef[1])));
-  promise.then((data) => (defThree.textContent = capitalize(data[0].shortdef[2])));
-
+  });
+  /*Create Definitions List*/
+  createList();
 }
-export {createDictionary};
+export { createDictionary };
 
-/*Console Logs*
-const promise = fetchVocabularyWords('hello');
-promise.then((data) => console.log((data[0])));
-*/
+/*Console Logs*/
+//const promise = fetchVocabularyWords("hello");
+//promise.then((data) => console.log(data[0]));
+//promise.then((data) => (data[0].shortdef[0]))

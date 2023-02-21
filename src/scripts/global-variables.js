@@ -28,7 +28,6 @@ const defThree = document.getElementById('def-three');
 const defList = document.getElementById('def-list');
 
 
-
 export {arrowSvgBtn};
 export {fontDropdownList};
 export {fontDropdownMenu};
@@ -49,4 +48,3 @@ export {defOne};
 export {defTwo};
 export {defThree};
 export {defList};
-
