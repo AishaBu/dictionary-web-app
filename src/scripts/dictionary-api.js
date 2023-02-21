@@ -46,7 +46,7 @@ function createDictionary() {
   nounLine.style.display = 'block';
   playIcon.style.display = 'block';
   /*Display Headword*/
-  promise.then((data) => (vocabWord.textContent = data[1].hwi.hw));
+  promise.then((data) => (vocabWord.textContent = data[0].hwi.hw));
   /*Display Phonetic Sound*/
   promise.then((data) => (soundOutPhonetic.textContent = "/" + data[0].hwi.prs[0].mw + "/"));
   /*Display noun and noun-line*/
@@ -64,6 +64,7 @@ function createDictionary() {
   function capitalize(string){
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
+  
   /*Meaning Text, Definitions*/
   meaningText.textContent = 'Meaning';
   defList.style.display = "block";
@@ -75,6 +76,6 @@ function createDictionary() {
 export {createDictionary};
 
 /*Console Logs*
-const promise = fetchVocabularyWords('red');
+const promise = fetchVocabularyWords('hello');
 promise.then((data) => console.log((data[0])));
 */
