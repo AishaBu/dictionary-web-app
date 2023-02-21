@@ -11,11 +11,16 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "arrowSvgBtn": () => (/* binding */ arrowSvgBtn),
+/* harmony export */   "defList": () => (/* binding */ defList),
+/* harmony export */   "defOne": () => (/* binding */ defOne),
+/* harmony export */   "defThree": () => (/* binding */ defThree),
+/* harmony export */   "defTwo": () => (/* binding */ defTwo),
 /* harmony export */   "errorSearchMessage": () => (/* binding */ errorSearchMessage),
 /* harmony export */   "fontDropdownList": () => (/* binding */ fontDropdownList),
 /* harmony export */   "fontDropdownMenu": () => (/* binding */ fontDropdownMenu),
 /* harmony export */   "fontPlaceholder": () => (/* binding */ fontPlaceholder),
 /* harmony export */   "form": () => (/* binding */ form),
+/* harmony export */   "meaningText": () => (/* binding */ meaningText),
 /* harmony export */   "mono": () => (/* binding */ mono),
 /* harmony export */   "noun": () => (/* binding */ noun),
 /* harmony export */   "nounLine": () => (/* binding */ nounLine),
@@ -48,6 +53,16 @@ var soundOutPhonetic = document.getElementById('phonetic');
 var noun = document.getElementById('noun');
 var nounLine = document.getElementById('noun-line');
 var playIcon = document.getElementById('play-icon');
+var meaningText = document.getElementById('meaning-text');
+var defOne = document.getElementById('def-one');
+var defTwo = document.getElementById('def-two');
+var defThree = document.getElementById('def-three');
+var defList = document.getElementById('def-list');
+
+
+
+
+
 
 
 
@@ -140,6 +155,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 /* FONT DROPDOWN MENU*/
 /*Show font list on hover-mouseover*/
 function displayFontList() {
@@ -174,33 +190,24 @@ function changeFontToSansSerif() {
     /*Vocabulary Definitions To Font*/
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.fontSize = "32px";
+    /*Phonetic Spelling*/
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.fontSize = "18px";
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.lineHeight = "24px";
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.color = "var(--purple)";
+    /*Noun and Noun Line*/
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.noun.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.noun.style.fontStyle = "Italic";
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.noun.style.fontSize = "18px";
+    /*Meaning Text and Word Definitions*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.fontFamily = "var(--inter-font), var(--static-inter-regular-font)";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.fontSize = "16px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.color = "var(--gray-num-one)";
   });
 }
-
-/*Display default font and input font*/
-function defaultDisplay() {
-  /*Set sansSerif as default input font to show*/
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.fontPlaceholder.innerHTML = _global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif.innerHTML;
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.fontPlaceholder.setAttribute("id", "sans-serif");
-
-  /*Display sansSerif as default input font*/
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.addEventListener("input", function () {
-    _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontSize = "16px";
-    _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontWeight = "bold";
-    _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
-  });
-  changeFontToSansSerif();
-}
-defaultDisplay();
+changeFontToSansSerif();
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlefontec6e5a3c1acad96ceaec.js.map
+//# sourceMappingURL=bundlefonte2723f9f9a0ac44b7abf.js.map

@@ -11,11 +11,16 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "arrowSvgBtn": () => (/* binding */ arrowSvgBtn),
+/* harmony export */   "defList": () => (/* binding */ defList),
+/* harmony export */   "defOne": () => (/* binding */ defOne),
+/* harmony export */   "defThree": () => (/* binding */ defThree),
+/* harmony export */   "defTwo": () => (/* binding */ defTwo),
 /* harmony export */   "errorSearchMessage": () => (/* binding */ errorSearchMessage),
 /* harmony export */   "fontDropdownList": () => (/* binding */ fontDropdownList),
 /* harmony export */   "fontDropdownMenu": () => (/* binding */ fontDropdownMenu),
 /* harmony export */   "fontPlaceholder": () => (/* binding */ fontPlaceholder),
 /* harmony export */   "form": () => (/* binding */ form),
+/* harmony export */   "meaningText": () => (/* binding */ meaningText),
 /* harmony export */   "mono": () => (/* binding */ mono),
 /* harmony export */   "noun": () => (/* binding */ noun),
 /* harmony export */   "nounLine": () => (/* binding */ nounLine),
@@ -48,6 +53,16 @@ var soundOutPhonetic = document.getElementById('phonetic');
 var noun = document.getElementById('noun');
 var nounLine = document.getElementById('noun-line');
 var playIcon = document.getElementById('play-icon');
+var meaningText = document.getElementById('meaning-text');
+var defOne = document.getElementById('def-one');
+var defTwo = document.getElementById('def-two');
+var defThree = document.getElementById('def-three');
+var defList = document.getElementById('def-list');
+
+
+
+
+
 
 
 
@@ -143,7 +158,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-console.log("585651c1-6ea4-4761-b3e7-d7af4eea540e");
+
+
+
 /*API CALL*/
 function fetchVocabularyWords(_x) {
   return _fetchVocabularyWords.apply(this, arguments);
@@ -191,18 +208,74 @@ function playAudio() {
   promise.then(function (data) {
     var audioURL = "https://media.merriam-webster.com/audio/prons/en/us/mp3/".concat(data[0].hwi.prs[0].sound.audio[0], "/").concat(data[0].hwi.prs[0].sound.audio, ".mp3");
     globalAudio.src = audioURL;
+    globalAudio.preload = "none";
     globalAudio.play();
   });
+}
+
+/*Check if no data is available for list*/
+function checkIfNoDataEmptyList() {
+  var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+  /*If data for defone is empty*/
+  promise.then(function (data) {
+    if (data[0].shortdef[0] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.style.display = "block";
+    }
+  });
+
+  /*If data for deftwo is empty*/
+  promise.then(function (data) {
+    if (data[0].shortdef[1] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo.style.display = "block";
+    }
+  });
+
+  /*If data for defthree is empty*/
+  promise.then(function (data) {
+    if (data[0].shortdef[2] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.style.display = "block";
+    }
+  });
+}
+
+/*Create Definitions List*/
+function createList() {
+  var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.textContent = "Meaning";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.defList.style.display = "block";
+
+  /*Capitalize First Letter of each paragraph*/
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  /*Definitions List*/
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.textContent = capitalizeFirstLetter(data[0].shortdef[0]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo.textContent = capitalizeFirstLetter(data[0].shortdef[1]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.textContent = capitalizeFirstLetter(data[0].shortdef[2]);
+  });
+  checkIfNoDataEmptyList(); //Checks if data/list is empty
 }
 
 /*Display words searched in the search field*/
 function createDictionary() {
   var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.nounLine.style.display = 'block';
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = 'block';
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.nounLine.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "block";
+
   /*Display Headword*/
   promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.textContent = data[1].hwi.hw;
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.textContent = data[0].meta.stems[0];
   });
   /*Display Phonetic Sound*/
   promise.then(function (data) {
@@ -215,14 +288,22 @@ function createDictionary() {
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.nounLine.style.width = "70%";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.nounLine.style.height = "0.5px";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.nounLine.style.backgroundColor = "var(--gray-num-two)";
+
   /*Play audio on icon click*/
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.addEventListener('click', function () {
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.addEventListener("click", function () {
     playAudio();
   });
+  /*Create Definitions List*/
+  createList();
 }
 
+
+/*Console Logs*/
+//const promise = fetchVocabularyWords("hello");
+//promise.then((data) => console.log(data[0]));
+//promise.then((data) => (data[0].shortdef[0]))
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapiee3969c04f5dc7edffe6.js.map
+//# sourceMappingURL=bundleapi2e1c2e43a4ffff805211.js.map
