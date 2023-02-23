@@ -409,6 +409,7 @@ input[type="search"]:focus,
 }
 
 /*Dictionary Words*/
+/*Phonetics, noun and noun-line*/
 #phonetic{
   margin-top: -20px;
 }
@@ -419,6 +420,7 @@ input[type="search"]:focus,
   align-items: center;
 }
 
+/*Audio*/
 #play-icon{
   width: 48px;
   height: 48px;
@@ -436,14 +438,11 @@ input[type="search"]:focus,
   display: none;
 }
 
-#meaning-text{
-  margin-top: -20px;
-  margin-left: 10px;
+/*Definitions List*/
+.meaning-text{
+  margin-top: -20px 
 }
 
-#def-list{
-  display: none;
-}
 
 ul{
   list-style: none;
@@ -463,3 +462,29 @@ ul li:before{
 #def-three{
   margin: 20px;
 }
+
+#def-list,
+#synonyms-text,
+#synonym-one,
+#synonym-two,
+#synonym-three{
+  display: none;
+}
+
+.meaning-text{
+  margin-left: 10px;
+}
+
+/*Synonyms*/
+#synonyms-text{
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+#synonym-group{
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  gap: 140px;
+}
+

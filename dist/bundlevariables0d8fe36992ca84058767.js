@@ -58,6 +58,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "searchField": () => (/* binding */ searchField),
 /* harmony export */   "serif": () => (/* binding */ serif),
 /* harmony export */   "soundOutPhonetic": () => (/* binding */ soundOutPhonetic),
+/* harmony export */   "synonymOne": () => (/* binding */ synonymOne),
+/* harmony export */   "synonymThree": () => (/* binding */ synonymThree),
+/* harmony export */   "synonymTwo": () => (/* binding */ synonymTwo),
+/* harmony export */   "synonymsText": () => (/* binding */ synonymsText),
 /* harmony export */   "vocabWord": () => (/* binding */ vocabWord)
 /* harmony export */ });
 /*Dropdown List*/
@@ -82,11 +86,19 @@ var soundOutPhonetic = document.getElementById('phonetic');
 var noun = document.getElementById('noun');
 var nounLine = document.getElementById('noun-line');
 var playIcon = document.getElementById('play-icon');
-var meaningText = document.getElementById('meaning-text');
+var meaningText = document.querySelector('.meaning-text');
 var defOne = document.getElementById('def-one');
 var defTwo = document.getElementById('def-two');
 var defThree = document.getElementById('def-three');
 var defList = document.getElementById('def-list');
+var synonymsText = document.getElementById('synonyms-text');
+var synonymOne = document.getElementById('synonym-one');
+var synonymTwo = document.getElementById('synonym-two');
+var synonymThree = document.getElementById('synonym-three');
+
+
+
+
 
 
 
@@ -109,4 +121,4 @@ var defList = document.getElementById('def-list');
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlevariablesf246da138591299bdcb7.js.map
+//# sourceMappingURL=bundlevariables0d8fe36992ca84058767.js.map

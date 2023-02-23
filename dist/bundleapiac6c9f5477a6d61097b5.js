@@ -29,6 +29,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "searchField": () => (/* binding */ searchField),
 /* harmony export */   "serif": () => (/* binding */ serif),
 /* harmony export */   "soundOutPhonetic": () => (/* binding */ soundOutPhonetic),
+/* harmony export */   "synonymOne": () => (/* binding */ synonymOne),
+/* harmony export */   "synonymThree": () => (/* binding */ synonymThree),
+/* harmony export */   "synonymTwo": () => (/* binding */ synonymTwo),
+/* harmony export */   "synonymsText": () => (/* binding */ synonymsText),
 /* harmony export */   "vocabWord": () => (/* binding */ vocabWord)
 /* harmony export */ });
 /*Dropdown List*/
@@ -53,11 +57,19 @@ var soundOutPhonetic = document.getElementById('phonetic');
 var noun = document.getElementById('noun');
 var nounLine = document.getElementById('noun-line');
 var playIcon = document.getElementById('play-icon');
-var meaningText = document.getElementById('meaning-text');
+var meaningText = document.querySelector('.meaning-text');
 var defOne = document.getElementById('def-one');
 var defTwo = document.getElementById('def-two');
 var defThree = document.getElementById('def-three');
 var defList = document.getElementById('def-list');
+var synonymsText = document.getElementById('synonyms-text');
+var synonymOne = document.getElementById('synonym-one');
+var synonymTwo = document.getElementById('synonym-two');
+var synonymThree = document.getElementById('synonym-three');
+
+
+
+
 
 
 
@@ -161,22 +173,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 /*API CALL*/
+/*Dictionary Api Call*/
 function fetchVocabularyWords(_x) {
   return _fetchVocabularyWords.apply(this, arguments);
 }
-/*Create audio on click of icon*/
-//Moving audio value outside of function creates sound only once.
+/*Thesaurus Api Call*/
 function _fetchVocabularyWords() {
   _fetchVocabularyWords = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(searchFieldValue) {
-    var apiKey, response, data;
+    var apiKeyDictionary, response, data;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          apiKey = "585651c1-6ea4-4761-b3e7-d7af4eea540e";
+          apiKeyDictionary = "585651c1-6ea4-4761-b3e7-d7af4eea540e";
           _context.prev = 1;
           _context.next = 4;
-          return fetch("https://www.dictionaryapi.com/api/v3/references/collegiate/json/".concat(searchFieldValue, "?key=").concat(apiKey));
+          return fetch("https://www.dictionaryapi.com/api/v3/references/collegiate/json/".concat(searchFieldValue, "?key=").concat(apiKeyDictionary));
         case 4:
           response = _context.sent;
           if (response.ok) {
@@ -201,6 +214,46 @@ function _fetchVocabularyWords() {
     }, _callee, null, [[1, 13]]);
   }));
   return _fetchVocabularyWords.apply(this, arguments);
+}
+function fetchSynonymsThesaurus(_x2) {
+  return _fetchSynonymsThesaurus.apply(this, arguments);
+}
+/*Create audio on click of icon*/
+//Moving audio value outside of function creates sound only once.
+function _fetchSynonymsThesaurus() {
+  _fetchSynonymsThesaurus = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(searchFieldValue) {
+    var apiKeyThesaurus, response, data;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          apiKeyThesaurus = "8363280d-d79a-44a4-b9a8-7bdc11d4e5b4";
+          _context2.prev = 1;
+          _context2.next = 4;
+          return fetch("https://www.dictionaryapi.com/api/v3/references/thesaurus/json//".concat(searchFieldValue, "?key=").concat(apiKeyThesaurus));
+        case 4:
+          response = _context2.sent;
+          if (response.ok) {
+            _context2.next = 7;
+            break;
+          }
+          throw new Error("HTTP error: ".concat(response.status));
+        case 7:
+          _context2.next = 9;
+          return response.json();
+        case 9:
+          data = _context2.sent;
+          return _context2.abrupt("return", data);
+        case 13:
+          _context2.prev = 13;
+          _context2.t0 = _context2["catch"](1);
+          console.error("Could not get word: ".concat(_context2.t0));
+        case 16:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2, null, [[1, 13]]);
+  }));
+  return _fetchSynonymsThesaurus.apply(this, arguments);
 }
 var globalAudio = new Audio();
 function playAudio() {
@@ -244,16 +297,17 @@ function checkIfNoDataEmptyList() {
   });
 }
 
+/*Capitalize First Letter of each paragraph*/
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 /*Create Definitions List*/
 function createList() {
   var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.textContent = "Meaning";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.defList.style.display = "block";
 
-  /*Capitalize First Letter of each paragraph*/
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
   /*Definitions List*/
   promise.then(function (data) {
     return _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.textContent = capitalizeFirstLetter(data[0].shortdef[0]);
@@ -265,6 +319,25 @@ function createList() {
     return _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.textContent = capitalizeFirstLetter(data[0].shortdef[2]);
   });
   checkIfNoDataEmptyList(); //Checks if data/list is empty
+}
+
+/*Display Synonyms*/
+function displaySynonyms() {
+  var promise = fetchSynonymsThesaurus(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.textContent = "Synonyms";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.style.display = "block";
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.textContent = capitalizeFirstLetter(data[0].meta.syns[0][0]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.textContent = capitalizeFirstLetter(data[0].meta.syns[1][3]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.textContent = capitalizeFirstLetter(data[0].meta.syns[3][6]);
+  });
 }
 
 /*Display words searched in the search field*/
@@ -295,15 +368,23 @@ function createDictionary() {
   });
   /*Create Definitions List*/
   createList();
+
+  /*Display Synonyms Section*/
+  displaySynonyms();
 }
 
 
 /*Console Logs*/
-//const promise = fetchVocabularyWords("hello");
+//const promise = fetchVocabularyWords("voluminous");
 //promise.then((data) => console.log(data[0]));
 //promise.then((data) => (data[0].shortdef[0]))
+var promise = fetchSynonymsThesaurus('tree');
+promise.then(function (data) {
+  return console.log(data[0]);
+});
+//promise.then((data) => console.log(data[0].meta.syns[0]));
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapi2e1c2e43a4ffff805211.js.map
+//# sourceMappingURL=bundleapiac6c9f5477a6d61097b5.js.map

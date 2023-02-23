@@ -21,11 +21,15 @@ const soundOutPhonetic = document.getElementById('phonetic');
 const noun = document.getElementById('noun');
 const nounLine = document.getElementById('noun-line');
 const playIcon = document.getElementById('play-icon');
-const meaningText = document.getElementById('meaning-text');
+const meaningText = document.querySelector('.meaning-text');
 const defOne = document.getElementById('def-one');
 const defTwo = document.getElementById('def-two');
 const defThree = document.getElementById('def-three');
 const defList = document.getElementById('def-list');
+const synonymsText = document.getElementById('synonyms-text');
+const synonymOne = document.getElementById('synonym-one');
+const synonymTwo = document.getElementById('synonym-two');
+const synonymThree = document.getElementById('synonym-three');
 
 
 export {arrowSvgBtn};
@@ -48,3 +52,7 @@ export {defOne};
 export {defTwo};
 export {defThree};
 export {defList};
+export {synonymsText};
+export {synonymOne};
+export {synonymTwo};
+export {synonymThree};

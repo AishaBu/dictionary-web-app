@@ -8,6 +8,8 @@ import { vocabWord } from "./global-variables";
 import { noun } from "./global-variables";
 import { soundOutPhonetic } from "./global-variables";
 import { meaningText } from "./global-variables";
+import { defOne, defTwo, defThree} from "./global-variables";
+import { synonymsText, synonymOne, synonymTwo, synonymThree } from "./global-variables";
 
 /* FONT DROPDOWN MENU*/
 /*Show font list on hover-mouseover*/
@@ -35,7 +37,6 @@ function changeFontToSansSerif() {
   fontPlaceholder.setAttribute("id", "sans-serif");
 
   /*Change input field to font*/
-  searchField.addEventListener("input", () => {
     searchField.style.fontSize = "16px";
     searchField.style.fontWeight = "bold";
     searchField.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
@@ -56,6 +57,33 @@ function changeFontToSansSerif() {
     meaningText.style.fontFamily= "var(--inter-font), var(--static-inter-regular-font)";
     meaningText.style.fontSize = "16px";
     meaningText.style.color = "var(--gray-num-one)";
-  });
-}changeFontToSansSerif();
+    
+    /*Set defintion font styes -defOne, defTwo, defThree fonts*/
+    function setDefinitionFontStyles(definition){
+      definition.style.fontFamily = "var(--inter-font), var(--static-inter-regular-font)";
+      definition.style.fontSize = "15px";
+      definition.style.lineHeight = "24px";
+      definition.style.color = "var( --off-black-one)";
+    }
+    setDefinitionFontStyles(defOne);
+    setDefinitionFontStyles(defTwo);
+    setDefinitionFontStyles(defThree);
+
+    /*Synonyms Text*/
+    synonymsText.style.fontFamily= "var(--inter-font), var(--static-inter-regular-font)";
+    synonymsText.style.fontSize = "16px";
+    synonymsText.style.color = "var(--gray-num-one)";
+
+    /*Synonyms Words*/
+    function setSynonymWordsFontStyles(synonym){
+      synonym.style.fontFamily = "var(--inter-font), var( --static-inter-bold)";
+      synonym.style.fontSize = "16px";
+      synonym.style.fontWeight = "bold";
+      synonym.style.color = "var(--purple)";
+    }
+    setSynonymWordsFontStyles(synonymOne);
+    setSynonymWordsFontStyles(synonymTwo);
+    setSynonymWordsFontStyles(synonymThree);
+}
+changeFontToSansSerif();
 

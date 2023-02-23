@@ -29,6 +29,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "searchField": () => (/* binding */ searchField),
 /* harmony export */   "serif": () => (/* binding */ serif),
 /* harmony export */   "soundOutPhonetic": () => (/* binding */ soundOutPhonetic),
+/* harmony export */   "synonymOne": () => (/* binding */ synonymOne),
+/* harmony export */   "synonymThree": () => (/* binding */ synonymThree),
+/* harmony export */   "synonymTwo": () => (/* binding */ synonymTwo),
+/* harmony export */   "synonymsText": () => (/* binding */ synonymsText),
 /* harmony export */   "vocabWord": () => (/* binding */ vocabWord)
 /* harmony export */ });
 /*Dropdown List*/
@@ -53,11 +57,19 @@ var soundOutPhonetic = document.getElementById('phonetic');
 var noun = document.getElementById('noun');
 var nounLine = document.getElementById('noun-line');
 var playIcon = document.getElementById('play-icon');
-var meaningText = document.getElementById('meaning-text');
+var meaningText = document.querySelector('.meaning-text');
 var defOne = document.getElementById('def-one');
 var defTwo = document.getElementById('def-two');
 var defThree = document.getElementById('def-three');
 var defList = document.getElementById('def-list');
+var synonymsText = document.getElementById('synonyms-text');
+var synonymOne = document.getElementById('synonym-one');
+var synonymTwo = document.getElementById('synonym-two');
+var synonymThree = document.getElementById('synonym-three');
+
+
+
+
 
 
 
@@ -144,7 +156,12 @@ var __webpack_exports__ = {};
   !*** ./src/scripts/switch-font-style.js ***!
   \******************************************/
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
 /* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
+
+
 
 
 
@@ -203,11 +220,38 @@ function changeFontToSansSerif() {
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.fontFamily = "var(--inter-font), var(--static-inter-regular-font)";
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.fontSize = "16px";
     _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.color = "var(--gray-num-one)";
+
+    /*Set defintion font styes -defOne, defTwo, defThree fonts*/
+    function setDefinitionFontStyles(definition) {
+      definition.style.fontFamily = "var(--inter-font), var(--static-inter-regular-font)";
+      definition.style.fontSize = "15px";
+      definition.style.lineHeight = "24px";
+      definition.style.color = "var( --off-black-one)";
+    }
+    setDefinitionFontStyles(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne);
+    setDefinitionFontStyles(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo);
+    setDefinitionFontStyles(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree);
+
+    /*Synonyms Text*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.fontFamily = "var(--inter-font), var(--static-inter-regular-font)";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.fontSize = "16px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.color = "var(--gray-num-one)";
+
+    /*Synonyms Words*/
+    function setSynonymWordsFontStyles(synonym) {
+      synonym.style.fontFamily = "var(--inter-font), var( --static-inter-bold)";
+      synonym.style.fontSize = "16px";
+      synonym.style.fontWeight = "bold";
+      synonym.style.color = "var(--purple)";
+    }
+    setSynonymWordsFontStyles(_global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne);
+    setSynonymWordsFontStyles(_global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo);
+    setSynonymWordsFontStyles(_global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree);
   });
 }
-changeFontToSansSerif();
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (changeFontToSansSerif());
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlefonte2723f9f9a0ac44b7abf.js.map
+//# sourceMappingURL=bundlefont2331d46db001345d5de9.js.map
