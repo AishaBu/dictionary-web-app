@@ -2,7 +2,7 @@ import { searchField} from "./global-variables";
 import { vocabWord, vocabWordTwo} from "./global-variables";
 import { soundOutPhonetic, soundOutPhoneticTwo} from "./global-variables";
 import { partsOfSpeech, partsOfSpeechTwo} from "./global-variables";
-import { styleLine, styleLineTwo, styleLineThree } from "./global-variables";
+import { styleLine, styleLineTwo, styleLineThree} from "./global-variables";
 import { playIcon, playIconTwo} from "./global-variables";
 import { meaningText, meaningTextTwo} from "./global-variables";
 import { defOne, defTwo, defThree, defList } from "./global-variables";
@@ -71,11 +71,71 @@ function playAudioTwo() {
   });
 }
 
-
 /*Capitalize First Letter of each paragraph*/
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+/*Check if no data is available for list*/
+function checkIfNoDataEmptyList() {
+  const promise = fetchVocabularyWords(searchField.value);
+  /*WORD SECTION ONE*/
+  /*If data for defone is empty*/
+  promise.then((data) => {
+    if (data[0].shortdef[0] == undefined) {
+      defOne.style.display = "none";
+    } else {
+      defOne.style.display = "block";
+    }
+  });
+
+  /*If data for deftwo is empty*/
+  promise.then((data) => {
+    if (data[0].shortdef[1] == undefined) {
+      defTwo.style.display = "none";
+    } else {
+      defTwo.style.display = "block";
+    }
+  });
+
+  /*If data for defthree is empty*/
+  promise.then((data) => {
+    if (data[0].shortdef[2] == undefined) {
+      defThree.style.display = "none";
+    } else {
+      defThree.style.display = "block";
+    }
+  });
+
+  /*WORD SECTION TWO*/
+  promise.then((data) => {
+    if (data[1].shortdef[0] == undefined) {
+      defOneOfTwo.style.display = "none";
+    } else {
+      defOneOfTwo.style.display = "block";
+    }
+  });
+
+    /*If data for deftwooftwo is empty*/
+    promise.then((data) => {
+      if (data[1].shortdef[1] == undefined) {
+        defTwoofTwo.style.display = "none";
+      } else {
+        defTwoofTwo.style.display = "block";
+      }
+    });
+  
+    /*If data for defthreeoftwo is empty*/
+    promise.then((data) => {
+      if (data[1].shortdef[2] == undefined) {
+        defThreeofTwo.style.display = "none";
+      } else {
+        defThreeofTwo.style.display = "block";
+      }
+    });
+}
+
+
 
 /*Create Definitions Lists*/
 function createList() {
@@ -108,7 +168,7 @@ function createList() {
     (data) =>
       (defThreeofTwo.textContent = capitalizeFirstLetter(data[1].shortdef[2]))
   );
-  
+  checkIfNoDataEmptyList();
 }
 
 /*Display Synonyms for Words One and Two*/
@@ -144,14 +204,14 @@ function createDictionaryOne() {
   playIcon.style.display = "block";
 
     /*Display Headword One*/
-    promise.then((data) => (vocabWord.textContent = data[1].meta.stems[0]));
+    promise.then((data) => (vocabWord.textContent = capitalizeFirstLetter(data[1].meta.stems[0])));
     /*Display Phonetic Sound*/
     promise.then(
-      (data) => (soundOutPhonetic.textContent = "/" + data[0].hwi.prs[0].mw + "/")
+      (data) => (soundOutPhonetic.textContent = "/" + capitalizeFirstLetter(data[0].hwi.prs[0].mw + "/"))
     );
 
   /*Display noun and noun-line*/
-  promise.then((data) => (partsOfSpeech.textContent = data[0].fl));
+  promise.then((data) => (partsOfSpeech.textContent = capitalizeFirstLetter(data[0].fl)));
   styleLine.style.width = "70%";
   styleLine.style.height = "0.5px";
   styleLine.style.backgroundColor = "var(--gray-num-two)";
@@ -174,20 +234,21 @@ function createDictionaryTwo() {
   styleLineTwo.style.display = "block";
   styleLineThree.style.display = "block";
   playIconTwo.style.display = "block";
+ 
   
   /*Display Headword Two*/
-  promise.then((data) => (vocabWordTwo.textContent = data[1].meta.stems[0]));
+  promise.then((data) => (vocabWordTwo.textContent = capitalizeFirstLetter(data[1].meta.stems[0])));
   /*Display Phonetic Sound Two*/
-  promise.then((data) => (soundOutPhoneticTwo.textContent = "/" + data[1].hwi.prs[0].mw + "/"));
+  promise.then((data) => (soundOutPhoneticTwo.textContent = "/" + capitalizeFirstLetter(data[1].hwi.prs[0].mw + "/")));
 
   /*Display parts of speech and style-lines*/
-  promise.then((data) => (partsOfSpeechTwo.textContent = data[1].fl));
+  promise.then((data) => (partsOfSpeechTwo.textContent = capitalizeFirstLetter(data[1].fl)));
   styleLineThree.style.width = "70%";
   styleLineThree.style.height = "0.5px";
   styleLineThree.style.backgroundColor = "var(--gray-num-two)";
 
   /*Style Line Two*/
-  styleLineTwo.style.width = "70%";
+  styleLineTwo.style.width = "100%";
   styleLineTwo.style.height = "0.30px";
   styleLineTwo.style.backgroundColor = "var(--gray-num-two)";
 
@@ -201,6 +262,8 @@ function createDictionaryTwo() {
   /*Display Synonyms Section*/
   displaySynonyms();
 }
+
+
 
 /*Create Dictionary Function*/
 function createDictionary(){

@@ -440,7 +440,8 @@ input[type="search"]:focus,
 #play-icon-two,
 #style-line,
 #style-line-two
-#style-line-three{
+#style-line-three,
+#style-line-four{
   display: none;
 }
 
@@ -506,12 +507,13 @@ ul li:before{
   margin-top: 30px;
 }
 
-.vocabulary-section-two,
-#style-line-two{
+.vocabulary-section-two{
   margin-top: 30px;
 }
 
 #style-line-two{
-  margin-left: 60px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   box-shadow: var(--box-shadow);
 }
+
