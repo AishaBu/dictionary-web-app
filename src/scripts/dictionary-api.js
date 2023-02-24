@@ -202,14 +202,6 @@ function createDictionaryTwo() {
   displaySynonyms();
 }
 
-
-
-
-
-
-
-
-
 /*Create Dictionary Function*/
 function createDictionary(){
   createDictionaryOne();
@@ -218,7 +210,7 @@ function createDictionary(){
 export default createDictionary;
 
 /*Console Logs*/
-const promise = fetchVocabularyWords("hello");
+//const promise = fetchVocabularyWords("hello");
 //promise.then((data) => console.log(data[0]));
 //promise.then((data) => (data[0].shortdef[0]))
 
