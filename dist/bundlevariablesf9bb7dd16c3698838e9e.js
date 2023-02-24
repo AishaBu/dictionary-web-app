@@ -41,28 +41,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "arrowSvgBtn": () => (/* binding */ arrowSvgBtn),
 /* harmony export */   "defList": () => (/* binding */ defList),
+/* harmony export */   "defListofTwo": () => (/* binding */ defListofTwo),
 /* harmony export */   "defOne": () => (/* binding */ defOne),
+/* harmony export */   "defOneOfTwo": () => (/* binding */ defOneOfTwo),
 /* harmony export */   "defThree": () => (/* binding */ defThree),
+/* harmony export */   "defThreeofTwo": () => (/* binding */ defThreeofTwo),
 /* harmony export */   "defTwo": () => (/* binding */ defTwo),
+/* harmony export */   "defTwoofTwo": () => (/* binding */ defTwoofTwo),
 /* harmony export */   "errorSearchMessage": () => (/* binding */ errorSearchMessage),
 /* harmony export */   "fontDropdownList": () => (/* binding */ fontDropdownList),
 /* harmony export */   "fontDropdownMenu": () => (/* binding */ fontDropdownMenu),
 /* harmony export */   "fontPlaceholder": () => (/* binding */ fontPlaceholder),
 /* harmony export */   "form": () => (/* binding */ form),
 /* harmony export */   "meaningText": () => (/* binding */ meaningText),
+/* harmony export */   "meaningTextTwo": () => (/* binding */ meaningTextTwo),
 /* harmony export */   "mono": () => (/* binding */ mono),
-/* harmony export */   "noun": () => (/* binding */ noun),
-/* harmony export */   "nounLine": () => (/* binding */ nounLine),
+/* harmony export */   "partsOfSpeech": () => (/* binding */ partsOfSpeech),
+/* harmony export */   "partsOfSpeechTwo": () => (/* binding */ partsOfSpeechTwo),
 /* harmony export */   "playIcon": () => (/* binding */ playIcon),
+/* harmony export */   "playIconTwo": () => (/* binding */ playIconTwo),
 /* harmony export */   "sansSerif": () => (/* binding */ sansSerif),
 /* harmony export */   "searchField": () => (/* binding */ searchField),
 /* harmony export */   "serif": () => (/* binding */ serif),
 /* harmony export */   "soundOutPhonetic": () => (/* binding */ soundOutPhonetic),
+/* harmony export */   "soundOutPhoneticTwo": () => (/* binding */ soundOutPhoneticTwo),
+/* harmony export */   "styleLine": () => (/* binding */ styleLine),
+/* harmony export */   "styleLineThree": () => (/* binding */ styleLineThree),
+/* harmony export */   "styleLineTwo": () => (/* binding */ styleLineTwo),
 /* harmony export */   "synonymOne": () => (/* binding */ synonymOne),
+/* harmony export */   "synonymOneofTwo": () => (/* binding */ synonymOneofTwo),
 /* harmony export */   "synonymThree": () => (/* binding */ synonymThree),
+/* harmony export */   "synonymThreeofTwo": () => (/* binding */ synonymThreeofTwo),
 /* harmony export */   "synonymTwo": () => (/* binding */ synonymTwo),
+/* harmony export */   "synonymTwoofTwo": () => (/* binding */ synonymTwoofTwo),
 /* harmony export */   "synonymsText": () => (/* binding */ synonymsText),
-/* harmony export */   "vocabWord": () => (/* binding */ vocabWord)
+/* harmony export */   "synonymsTextofTwo": () => (/* binding */ synonymsTextofTwo),
+/* harmony export */   "vocabWord": () => (/* binding */ vocabWord),
+/* harmony export */   "vocabWordTwo": () => (/* binding */ vocabWordTwo)
 /* harmony export */ });
 /*Dropdown List*/
 var arrowSvgBtn = document.getElementById("arrow-svg");
@@ -81,12 +96,14 @@ var searchField = document.getElementById("search-field");
 var errorSearchMessage = document.querySelector("#search-field + span#error");
 
 /*API*/
+/*Word Version 1*/
 var vocabWord = document.getElementById('vocabulary-word');
 var soundOutPhonetic = document.getElementById('phonetic');
-var noun = document.getElementById('noun');
-var nounLine = document.getElementById('noun-line');
+var partsOfSpeech = document.getElementById('parts-of-speech');
+var styleLine = document.getElementById('style-line');
 var playIcon = document.getElementById('play-icon');
 var meaningText = document.querySelector('.meaning-text');
+var meaningTextTwo = document.querySelector('.meaning-text-two');
 var defOne = document.getElementById('def-one');
 var defTwo = document.getElementById('def-two');
 var defThree = document.getElementById('def-three');
@@ -96,6 +113,21 @@ var synonymOne = document.getElementById('synonym-one');
 var synonymTwo = document.getElementById('synonym-two');
 var synonymThree = document.getElementById('synonym-three');
 
+/*Word Version 2*/
+var styleLineTwo = document.getElementById('style-line-two');
+var vocabWordTwo = document.getElementById('vocabulary-word-two');
+var soundOutPhoneticTwo = document.getElementById('phonetic-two');
+var partsOfSpeechTwo = document.getElementById('parts-of-speech-two');
+var styleLineThree = document.getElementById('style-line-three');
+var playIconTwo = document.getElementById('play-icon-two');
+var defOneOfTwo = document.getElementById('def-one-of-two');
+var defTwoofTwo = document.getElementById('def-two-of-two');
+var defThreeofTwo = document.getElementById('def-three-of-two');
+var defListofTwo = document.getElementById('def-list-two');
+var synonymsTextofTwo = document.getElementById('synonyms-text-two');
+var synonymOneofTwo = document.getElementById('synonym-one-of-two');
+var synonymTwoofTwo = document.getElementById('synonym-two-of-two');
+var synonymThreeofTwo = document.getElementById('synonym-three');
 
 
 
@@ -104,6 +136,24 @@ var synonymThree = document.getElementById('synonym-three');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Word 2*/
 
 
 
@@ -121,4 +171,4 @@ var synonymThree = document.getElementById('synonym-three');
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlevariables0d8fe36992ca84058767.js.map
+//# sourceMappingURL=bundlevariablesf9bb7dd16c3698838e9e.js.map

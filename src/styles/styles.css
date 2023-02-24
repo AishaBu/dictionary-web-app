@@ -498,7 +498,7 @@ ul li:before{
   display: flex;
   justify-content: center;
   align-items: top;
-  gap: 200px;
+  gap: 150px;
 }
 
 /*Words Section 2*/

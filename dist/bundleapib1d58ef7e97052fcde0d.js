@@ -12,28 +12,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "arrowSvgBtn": () => (/* binding */ arrowSvgBtn),
 /* harmony export */   "defList": () => (/* binding */ defList),
+/* harmony export */   "defListofTwo": () => (/* binding */ defListofTwo),
 /* harmony export */   "defOne": () => (/* binding */ defOne),
+/* harmony export */   "defOneOfTwo": () => (/* binding */ defOneOfTwo),
 /* harmony export */   "defThree": () => (/* binding */ defThree),
+/* harmony export */   "defThreeofTwo": () => (/* binding */ defThreeofTwo),
 /* harmony export */   "defTwo": () => (/* binding */ defTwo),
+/* harmony export */   "defTwoofTwo": () => (/* binding */ defTwoofTwo),
 /* harmony export */   "errorSearchMessage": () => (/* binding */ errorSearchMessage),
 /* harmony export */   "fontDropdownList": () => (/* binding */ fontDropdownList),
 /* harmony export */   "fontDropdownMenu": () => (/* binding */ fontDropdownMenu),
 /* harmony export */   "fontPlaceholder": () => (/* binding */ fontPlaceholder),
 /* harmony export */   "form": () => (/* binding */ form),
 /* harmony export */   "meaningText": () => (/* binding */ meaningText),
+/* harmony export */   "meaningTextTwo": () => (/* binding */ meaningTextTwo),
 /* harmony export */   "mono": () => (/* binding */ mono),
-/* harmony export */   "noun": () => (/* binding */ noun),
-/* harmony export */   "nounLine": () => (/* binding */ nounLine),
+/* harmony export */   "partsOfSpeech": () => (/* binding */ partsOfSpeech),
+/* harmony export */   "partsOfSpeechTwo": () => (/* binding */ partsOfSpeechTwo),
 /* harmony export */   "playIcon": () => (/* binding */ playIcon),
+/* harmony export */   "playIconTwo": () => (/* binding */ playIconTwo),
 /* harmony export */   "sansSerif": () => (/* binding */ sansSerif),
 /* harmony export */   "searchField": () => (/* binding */ searchField),
 /* harmony export */   "serif": () => (/* binding */ serif),
 /* harmony export */   "soundOutPhonetic": () => (/* binding */ soundOutPhonetic),
+/* harmony export */   "soundOutPhoneticTwo": () => (/* binding */ soundOutPhoneticTwo),
+/* harmony export */   "styleLine": () => (/* binding */ styleLine),
+/* harmony export */   "styleLineThree": () => (/* binding */ styleLineThree),
+/* harmony export */   "styleLineTwo": () => (/* binding */ styleLineTwo),
 /* harmony export */   "synonymOne": () => (/* binding */ synonymOne),
+/* harmony export */   "synonymOneofTwo": () => (/* binding */ synonymOneofTwo),
 /* harmony export */   "synonymThree": () => (/* binding */ synonymThree),
+/* harmony export */   "synonymThreeofTwo": () => (/* binding */ synonymThreeofTwo),
 /* harmony export */   "synonymTwo": () => (/* binding */ synonymTwo),
+/* harmony export */   "synonymTwoofTwo": () => (/* binding */ synonymTwoofTwo),
 /* harmony export */   "synonymsText": () => (/* binding */ synonymsText),
-/* harmony export */   "vocabWord": () => (/* binding */ vocabWord)
+/* harmony export */   "synonymsTextofTwo": () => (/* binding */ synonymsTextofTwo),
+/* harmony export */   "vocabWord": () => (/* binding */ vocabWord),
+/* harmony export */   "vocabWordTwo": () => (/* binding */ vocabWordTwo)
 /* harmony export */ });
 /*Dropdown List*/
 var arrowSvgBtn = document.getElementById("arrow-svg");
@@ -52,12 +67,14 @@ var searchField = document.getElementById("search-field");
 var errorSearchMessage = document.querySelector("#search-field + span#error");
 
 /*API*/
+/*Word Version 1*/
 var vocabWord = document.getElementById('vocabulary-word');
 var soundOutPhonetic = document.getElementById('phonetic');
-var noun = document.getElementById('noun');
-var nounLine = document.getElementById('noun-line');
+var partsOfSpeech = document.getElementById('parts-of-speech');
+var styleLine = document.getElementById('style-line');
 var playIcon = document.getElementById('play-icon');
 var meaningText = document.querySelector('.meaning-text');
+var meaningTextTwo = document.querySelector('.meaning-text-two');
 var defOne = document.getElementById('def-one');
 var defTwo = document.getElementById('def-two');
 var defThree = document.getElementById('def-three');
@@ -67,6 +84,21 @@ var synonymOne = document.getElementById('synonym-one');
 var synonymTwo = document.getElementById('synonym-two');
 var synonymThree = document.getElementById('synonym-three');
 
+/*Word Version 2*/
+var styleLineTwo = document.getElementById('style-line-two');
+var vocabWordTwo = document.getElementById('vocabulary-word-two');
+var soundOutPhoneticTwo = document.getElementById('phonetic-two');
+var partsOfSpeechTwo = document.getElementById('parts-of-speech-two');
+var styleLineThree = document.getElementById('style-line-three');
+var playIconTwo = document.getElementById('play-icon-two');
+var defOneOfTwo = document.getElementById('def-one-of-two');
+var defTwoofTwo = document.getElementById('def-two-of-two');
+var defThreeofTwo = document.getElementById('def-three-of-two');
+var defListofTwo = document.getElementById('def-list-two');
+var synonymsTextofTwo = document.getElementById('synonyms-text-two');
+var synonymOneofTwo = document.getElementById('synonym-one-of-two');
+var synonymTwoofTwo = document.getElementById('synonym-two-of-two');
+var synonymThreeofTwo = document.getElementById('synonym-three');
 
 
 
@@ -75,6 +107,24 @@ var synonymThree = document.getElementById('synonym-three');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Word 2*/
 
 
 
@@ -157,13 +207,15 @@ var __webpack_exports__ = {};
   \***************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "createDictionary": () => (/* binding */ createDictionary)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, defineProperty = Object.defineProperty || function (obj, key, desc) { obj[key] = desc.value; }, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) }), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; defineProperty(this, "_invoke", { value: function value(method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; } function maybeInvokeDelegate(delegate, context) { var methodName = context.method, method = delegate.iterator[methodName]; if (undefined === method) return context.delegate = null, "throw" === methodName && delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method) || "return" !== methodName && (context.method = "throw", context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method")), ContinueSentinel; var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), defineProperty(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (val) { var object = Object(val), keys = []; for (var key in object) keys.push(key); return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
 
 
 
@@ -256,7 +308,7 @@ function _fetchSynonymsThesaurus() {
   return _fetchSynonymsThesaurus.apply(this, arguments);
 }
 var globalAudio = new Audio();
-function playAudio() {
+function playAudioOne() {
   var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
   promise.then(function (data) {
     var audioURL = "https://media.merriam-webster.com/audio/prons/en/us/mp3/".concat(data[0].hwi.prs[0].sound.audio[0], "/").concat(data[0].hwi.prs[0].sound.audio, ".mp3");
@@ -266,10 +318,21 @@ function playAudio() {
   });
 }
 
+/*Audio Two*/
+function playAudioTwo() {
+  var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+  promise.then(function (data) {
+    var audioURL = "https://media.merriam-webster.com/audio/prons/en/us/mp3/".concat(data[1].hwi.prs[0].sound.audio[0], "/").concat(data[1].hwi.prs[0].sound.audio, ".mp3");
+    globalAudio.src = audioURL;
+    globalAudio.preload = "none";
+    globalAudio.play();
+  });
+}
+
 /*Check if no data is available for list*/
 function checkIfNoDataEmptyList() {
   var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
-  /*If data for defone is empty*/
+  /*List One-If data for defone is empty*/
   promise.then(function (data) {
     if (data[0].shortdef[0] == undefined) {
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.style.display = "none";
@@ -296,19 +359,47 @@ function checkIfNoDataEmptyList() {
     }
   });
 }
+function checkIfNoDataEmptyListTwo() {
+  /*If data for defone is empty*/
+  promise.then(function (data) {
+    if (data[0].shortdef[0] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo.style.display = "block";
+    }
+  });
+
+  /*List Two- If data for deftwo is empty*/
+  promise.then(function (data) {
+    if (data[1].shortdef[1] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo.style.display = "block";
+    }
+  });
+
+  /*If data for defthree is empty*/
+  promise.then(function (data) {
+    if (data[1].shortdef[2] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo.style.display = "block";
+    }
+  });
+}
 
 /*Capitalize First Letter of each paragraph*/
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-/*Create Definitions List*/
+/*Create Definitions Lists*/
 function createList() {
   var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.textContent = "Meaning";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.defList.style.display = "block";
 
-  /*Definitions List*/
+  /*Definitions List One*/
   promise.then(function (data) {
     return _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.textContent = capitalizeFirstLetter(data[0].shortdef[0]);
   });
@@ -321,9 +412,29 @@ function createList() {
   checkIfNoDataEmptyList(); //Checks if data/list is empty
 }
 
-/*Display Synonyms*/
+/*Create Definitions List Two*/
+function createListTwo() {
+  var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningTextTwo.textContent = "Meaning";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.defListofTwo.style.display = "block";
+
+  /*Definitions List Two*/
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo.textContent = capitalizeFirstLetter(data[1].shortdef[0]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo.textContent = capitalizeFirstLetter(data[1].shortdef[1]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo.textContent = capitalizeFirstLetter(data[1].shortdef[2]);
+  });
+  checkIfNoDataEmptyListTwo(); //Checks if data/list is empty
+}
+
+/*Display Synonyms for Words One and Two*/
 function displaySynonyms() {
   var promise = fetchSynonymsThesaurus(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+  /*Synonyms List One*/
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.display = "block";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.textContent = "Synonyms";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.style.display = "block";
@@ -339,32 +450,52 @@ function displaySynonyms() {
     return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.textContent = capitalizeFirstLetter(data[0].meta.syns[3][6]);
   });
 }
+function displaySynonymsTwo() {
+  var promise = fetchSynonymsThesaurus(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+  /*Synonyms List Two*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsTextofTwo.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsTextofTwo.textContent = "Synonyms";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOneofTwo.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.style.display = "block";
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOneofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[0][0]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[1][3]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[3][6]);
+  });
+}
 
+/*Create Definitions One and Two*/
 /*Display words searched in the search field*/
-function createDictionary() {
+function createDictionaryOne() {
   var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.nounLine.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.display = "block";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "block";
 
-  /*Display Headword*/
+  /*Display Headword One*/
   promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.textContent = data[0].meta.stems[0];
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.textContent = data[1].meta.stems[0];
   });
   /*Display Phonetic Sound*/
   promise.then(function (data) {
     return _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.textContent = "/" + data[0].hwi.prs[0].mw + "/";
   });
+
   /*Display noun and noun-line*/
   promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.noun.textContent = data[0].fl;
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeech.textContent = data[0].fl;
   });
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.nounLine.style.width = "70%";
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.nounLine.style.height = "0.5px";
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.nounLine.style.backgroundColor = "var(--gray-num-two)";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.width = "70%";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.height = "0.5px";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.backgroundColor = "var(--gray-num-two)";
 
   /*Play audio on icon click*/
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.addEventListener("click", function () {
-    playAudio();
+    playAudioOne();
   });
   /*Create Definitions List*/
   createList();
@@ -373,18 +504,78 @@ function createDictionary() {
   displaySynonyms();
 }
 
+/*Dictionary Two*/
+function createDictionaryTwo() {
+  /*check if data is available, if not dont display*/
+  //if (data[1].shortdef[0] == undefined || data[1].shortdef[1] == undefined || data[1].shortdef[2] == undefined)
+  promise.then(function (data) {
+    if (data[1].shortdef[0] == undefined) {
+      console.log('Test');
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.style.display = "none";
+    } else {
+      displayDictionaryTwo();
+    }
+  });
+  function displayDictionaryTwo() {
+    var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.display = "block";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.display = "block";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.style.display = "block";
+
+    /*Display Headword Two*/
+    promise.then(function (data) {
+      return _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.textContent = data[1].meta.stems[0];
+    });
+    /*Display Phonetic Sound Two*/
+    promise.then(function (data) {
+      return _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.textContent = "/" + data[1].hwi.prs[0].mw + "/";
+    });
+
+    /*Display parts of speech and style-lines*/
+    promise.then(function (data) {
+      return _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeechTwo.textContent = data[1].fl;
+    });
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.width = "70%";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.height = "0.5px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.backgroundColor = "var(--gray-num-two)";
+
+    /*Style Line Two*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.width = "70%";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.height = "0.30px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.backgroundColor = "var(--gray-num-two)";
+
+    /*Play audio on icon click*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.addEventListener("click", function () {
+      playAudioTwo();
+    });
+    /*Create Definitions List*/
+    createListTwo();
+
+    /*Display Synonyms Section*/
+    displaySynonymsTwo();
+  }
+}
+
+/*Create Dictionary Function*/
+function createDictionary() {
+  createDictionaryOne();
+  createDictionaryTwo();
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createDictionary);
 
 /*Console Logs*/
-//const promise = fetchVocabularyWords("voluminous");
+var promise = fetchVocabularyWords("hello");
 //promise.then((data) => console.log(data[0]));
-//promise.then((data) => (data[0].shortdef[0]))
-var promise = fetchSynonymsThesaurus('tree');
 promise.then(function (data) {
-  return console.log(data[0]);
+  return data[1].shortdef[0];
 });
+//const promise = fetchSynonymsThesaurus('umpire');
+//promise.then((data) => console.log(data[0]));
 //promise.then((data) => console.log(data[0].meta.syns[0]));
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapiac6c9f5477a6d61097b5.js.map
+//# sourceMappingURL=bundleapib1d58ef7e97052fcde0d.js.map

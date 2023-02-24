@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dictionary Web App</title>
-  <script defer src="bundleeab02a7c2f3e4d737da0.js"></script></head>
+  <script defer src="bundledff3bc9e90cedfdc9a20.js"></script></head>
 
   <body>
     <header>
@@ -57,7 +57,7 @@
         <input type="search" id="search-field" name="search" pattern="/^[a-zA-Z]+/g" required />
         <span id="error"></span>
       </form>
-      <div class="vocabulary-section">
+      <div class="vocabulary-section-one">
         <div class="word-and-sound">
           <div id="word-and-phonetic">
             <h1 id="vocabulary-word"></h1>
@@ -71,9 +71,9 @@
           </svg>
         </div>
 
-        <div id="noun-and-line-group">
-          <p id="noun"></p>
-          <div id="noun-line"></div>
+        <div id="parts-of-speech-and-line-group">
+          <p id="parts-of-speech"></p>
+          <div id="style-line"></div>
         </div>
         <div id="word-def-group">
           <br />
@@ -94,7 +94,47 @@
           </div>
         </div>
       </div>
+
+      <!--Vocab Section Two-->
+      <div id="style-line-two"></div>
+      <div class="vocabulary-section-two">
+        <div class="word-and-sound-two">
+          <div id="word-and-phonetic-two">
+            <h1 id="vocabulary-word-two"></h1>
+            <p id="phonetic-two"></p>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75" id="play-icon-two">
+            <g fill="#A445ED" fill-rule="evenodd">
+              <circle cx="37.5" cy="37.5" r="37.5" opacity=".25" />
+              <path d="M29 27v21l21-10.5z" />
+            </g>
+          </svg>
+        </div>
+
+        <div id="parts-of-speech-and-line-group-two">
+          <p id="parts-of-speech-two"></p>
+          <div id="style-line-three"></div>
+        </div>
+        <div id="word-def-group-two">
+          <br />
+          <div class="meaning-text-two"></div>
+          <ul id="def-list-two">
+            <li id="def-one-of-two"></li>
+            <li id="def-two-of-two"></li>
+            <li id="def-three-of-two"></li>
+          </ul>
+
+          <div id="synonym-group-two">
+            <div id="synonyms-text-two"></div>
+            <div class="synonyms-two">
+              <p id="synonym-one-of-two"></p>
+              <p id="synonym-two-of-two"></p>
+              <p id="synonym-three-of-two"></p>
+            </div>
+          </div>
+        </div>
       </div>
+
     </main>
   </body>
 

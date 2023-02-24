@@ -72,75 +72,17 @@ function playAudioTwo() {
 }
 
 
-/*Check if no data is available for list*/
-function checkIfNoDataEmptyList() {
-  const promise = fetchVocabularyWords(searchField.value);
-  /*List One-If data for defone is empty*/
-  promise.then((data) => {
-    if (data[0].shortdef[0] == undefined) {
-      defOne.style.display = "none";
-    } else {
-      defOne.style.display = "block";
-    }
-  });
-
-  /*If data for deftwo is empty*/
-  promise.then((data) => {
-    if (data[0].shortdef[1] == undefined) {
-      defTwo.style.display = "none";
-    } else {
-      defTwo.style.display = "block";
-    }
-  });
-
-  /*If data for defthree is empty*/
-  promise.then((data) => {
-    if (data[0].shortdef[2] == undefined) {
-      defThree.style.display = "none";
-    } else {
-      defThree.style.display = "block";
-    }
-  });
-
-    /*If data for defone is empty*/
-    promise.then((data) => {
-      if (data[0].shortdef[0] == undefined) {
-        defOneOfTwo.style.display = "none";
-      } else {
-        defOneOfTwo.style.display = "block";
-      }
-    });
-  
-    /*List Two- If data for deftwo is empty*/
-    promise.then((data) => {
-      if (data[1].shortdef[1] == undefined) {
-        defTwoofTwo.style.display = "none";
-      } else {
-        defTwoofTwo.style.display = "block";
-      }
-    });
-  
-    /*If data for defthree is empty*/
-    promise.then((data) => {
-      if (data[1].shortdef[2] == undefined) {
-        defThreeofTwo.style.display = "none";
-      } else {
-        defThreeofTwo.style.display = "block";
-      }
-    });
-}
-
 /*Capitalize First Letter of each paragraph*/
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-/*Create Definitions List*/
+/*Create Definitions Lists*/
 function createList() {
   const promise = fetchVocabularyWords(searchField.value);
   meaningText.textContent = "Meaning";
-  meaningTextTwo.textContent = "Meaning";
   defList.style.display = "block";
+  meaningTextTwo.textContent = "Meaning";
   defListofTwo.style.display = "block";
 
   /*Definitions List One*/
@@ -166,10 +108,10 @@ function createList() {
     (data) =>
       (defThreeofTwo.textContent = capitalizeFirstLetter(data[1].shortdef[2]))
   );
-  checkIfNoDataEmptyList(); //Checks if data/list is empty
+  
 }
 
-/*Display Synonyms*/
+/*Display Synonyms for Words One and Two*/
 function displaySynonyms() {
   const promise = fetchSynonymsThesaurus(searchField.value);
   /*Synonyms List One*/
@@ -191,8 +133,10 @@ function displaySynonyms() {
    promise.then((data) => (synonymOneofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[0][0])));
    promise.then((data) => (synonymTwoofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[1][3])));
    promise.then((data) => (synonymThreeofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[3][6])));
+
 }
 
+/*Create Definitions*/
 /*Display words searched in the search field*/
 function createDictionaryOne() {
   const promise = fetchVocabularyWords(searchField.value);
@@ -200,7 +144,7 @@ function createDictionaryOne() {
   playIcon.style.display = "block";
 
     /*Display Headword One*/
-    promise.then((data) => (vocabWord.textContent = data[0].meta.stems[0]));
+    promise.then((data) => (vocabWord.textContent = data[1].meta.stems[0]));
     /*Display Phonetic Sound*/
     promise.then(
       (data) => (soundOutPhonetic.textContent = "/" + data[0].hwi.prs[0].mw + "/")
@@ -222,7 +166,6 @@ function createDictionaryOne() {
   /*Display Synonyms Section*/
   displaySynonyms();
 }
-export { createDictionaryOne };
 
 
 /*Dictionary Two*/
@@ -231,7 +174,7 @@ function createDictionaryTwo() {
   styleLineTwo.style.display = "block";
   styleLineThree.style.display = "block";
   playIconTwo.style.display = "block";
-
+  
   /*Display Headword Two*/
   promise.then((data) => (vocabWordTwo.textContent = data[1].meta.stems[0]));
   /*Display Phonetic Sound Two*/
@@ -258,14 +201,27 @@ function createDictionaryTwo() {
   /*Display Synonyms Section*/
   displaySynonyms();
 }
-export {createDictionaryTwo};
 
 
+
+
+
+
+
+
+
+/*Create Dictionary Function*/
+function createDictionary(){
+  createDictionaryOne();
+  createDictionaryTwo();
+}
+export default createDictionary;
 
 /*Console Logs*/
-const promise = fetchVocabularyWords("green");
-promise.then((data) => console.log(data[1]));
+const promise = fetchVocabularyWords("hello");
+//promise.then((data) => console.log(data[0]));
 //promise.then((data) => (data[0].shortdef[0]))
+
 //const promise = fetchSynonymsThesaurus('umpire');
 //promise.then((data) => console.log(data[0]));
 //promise.then((data) => console.log(data[0].meta.syns[0]));

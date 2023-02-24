@@ -4,7 +4,8 @@ import "./dictionary-api";
 import { searchField } from "./global-variables";
 import { errorSearchMessage } from "./global-variables";
 import { form } from "./global-variables";
-import { createDictionaryOne, createDictionaryTwo } from "./dictionary-api";
+import createDictionary from "./dictionary-api";
+
 
 /*FORM VALIDATION*/
 /*If searchfield value is not missing, it reverts to valid status*/
@@ -37,8 +38,7 @@ searchField.addEventListener("input", () => {
     form.addEventListener('submit', (event) => {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
-      createDictionaryOne();
-      createDictionaryTwo();
+      createDictionary();
     });
   }
   }
