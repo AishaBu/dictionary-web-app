@@ -16,12 +16,14 @@ const searchField = document.getElementById("search-field");
 const errorSearchMessage = document.querySelector("#search-field + span#error");
 
 /*API*/
+/*Word Version 1*/
 const vocabWord = document.getElementById('vocabulary-word');
 const soundOutPhonetic = document.getElementById('phonetic');
-const noun = document.getElementById('noun');
-const nounLine = document.getElementById('noun-line');
+const partsOfSpeech = document.getElementById('parts-of-speech');
+const styleLine = document.getElementById('style-line');
 const playIcon = document.getElementById('play-icon');
 const meaningText = document.querySelector('.meaning-text');
+const meaningTextTwo = document.querySelector('.meaning-text-two');
 const defOne = document.getElementById('def-one');
 const defTwo = document.getElementById('def-two');
 const defThree = document.getElementById('def-three');
@@ -30,6 +32,22 @@ const synonymsText = document.getElementById('synonyms-text');
 const synonymOne = document.getElementById('synonym-one');
 const synonymTwo = document.getElementById('synonym-two');
 const synonymThree = document.getElementById('synonym-three');
+
+/*Word Version 2*/
+const styleLineTwo = document.getElementById('style-line-two');
+const vocabWordTwo = document.getElementById('vocabulary-word-two');
+const soundOutPhoneticTwo = document.getElementById('phonetic-two');
+const partsOfSpeechTwo = document.getElementById('parts-of-speech-two');
+const styleLineThree = document.getElementById('style-line-three');
+const playIconTwo = document.getElementById('play-icon-two');
+const defOneOfTwo = document.getElementById('def-one-of-two');
+const defTwoofTwo = document.getElementById('def-two-of-two');
+const defThreeofTwo = document.getElementById('def-three-of-two');
+const defListofTwo = document.getElementById('def-list-two');
+const synonymsTextofTwo = document.getElementById('synonyms-text-two');
+const synonymOneofTwo = document.getElementById('synonym-one-of-two');
+const synonymTwoofTwo = document.getElementById('synonym-two-of-two');
+const synonymThreeofTwo = document.getElementById('synonym-three');
 
 
 export {arrowSvgBtn};
@@ -44,8 +62,8 @@ export {searchField};
 export {errorSearchMessage};
 export {vocabWord};
 export{soundOutPhonetic};
-export {noun};
-export {nounLine};
+export {partsOfSpeech};
+export {styleLine};
 export {playIcon};
 export {meaningText};
 export {defOne};
@@ -56,3 +74,20 @@ export {synonymsText};
 export {synonymOne};
 export {synonymTwo};
 export {synonymThree};
+
+/*Word 2*/
+export {vocabWordTwo};
+export {soundOutPhoneticTwo};
+export {partsOfSpeechTwo};
+export {styleLineTwo};
+export {styleLineThree};
+export {playIconTwo};
+export {defOneOfTwo};
+export {defTwoofTwo};
+export {defThreeofTwo};
+export {meaningTextTwo};
+export {defListofTwo};
+export {synonymsTextofTwo};
+export {synonymOneofTwo};
+export {synonymTwoofTwo};
+export {synonymThreeofTwo};

@@ -414,19 +414,22 @@ input[type="search"]:focus,
   margin-top: -20px;
 }
 
-#noun-and-line-group{
+#parts-of-speech-and-line-group,
+#parts-of-speech-and-line-group-two{
   display: flex;
   justify-content:space-evenly;
   align-items: center;
 }
 
 /*Audio*/
-#play-icon{
+#play-icon,
+#play-icon-two{
   width: 48px;
   height: 48px;
 }
 
-.word-and-sound{
+.word-and-sound,
+.word-and-sound-two{
   display: flex;
   justify-content:space-around;
   align-items: center;
@@ -434,13 +437,18 @@ input[type="search"]:focus,
 }
 
 #play-icon,
-#noun-line{
+#play-icon-two,
+#style-line,
+#style-line-two
+#style-line-three{
   display: none;
 }
 
 /*Definitions List*/
-.meaning-text{
-  margin-top: -20px 
+.meaning-text,
+.meaning-text-two{
+  margin-top: -20px;
+  margin-left: 10px;
 }
 
 
@@ -459,7 +467,10 @@ ul li:before{
 
 #def-one, 
 #def-two,
-#def-three{
+#def-three,
+#def-one-of-two,
+#def-two-of-two,
+#def-three-of-two{
   margin: 20px;
 }
 
@@ -467,24 +478,40 @@ ul li:before{
 #synonyms-text,
 #synonym-one,
 #synonym-two,
-#synonym-three{
+#synonym-three,
+#def-list-two,
+#synonyms-text-two,
+#synonym-one-of-two,
+#synonym-two-of-two,
+#synonym-three-of-two{
   display: none;
 }
 
-.meaning-text{
-  margin-left: 10px;
-}
-
 /*Synonyms*/
-#synonyms-text{
+#synonyms-text,
+#synonyms-text-two{
   margin-top: 10px;
-  margin-right: 40px;
 }
 
-#synonym-group{
+#synonym-group,
+#synonym-group-two{
   display: flex;
   justify-content: center;
   align-items: top;
-  gap: 140px;
+  gap: 200px;
 }
 
+/*Words Section 2*/
+.vocabulary-section-one{
+  margin-top: 30px;
+}
+
+.vocabulary-section-two,
+#style-line-two{
+  margin-top: 30px;
+}
+
+#style-line-two{
+  margin-left: 60px;
+  box-shadow: var(--box-shadow);
+}

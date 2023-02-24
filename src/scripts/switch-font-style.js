@@ -4,12 +4,13 @@ import { fontDropdownMenu } from "./global-variables";
 import { fontDropdownList } from "./global-variables";
 import { fontPlaceholder } from "./global-variables";
 import { sansSerif } from "./global-variables";
-import { vocabWord } from "./global-variables";
-import { noun } from "./global-variables";
-import { soundOutPhonetic } from "./global-variables";
-import { meaningText } from "./global-variables";
-import { defOne, defTwo, defThree} from "./global-variables";
-import { synonymsText, synonymOne, synonymTwo, synonymThree } from "./global-variables";
+import { vocabWord, vocabWordTwo} from "./global-variables";
+import { partsOfSpeech, partsOfSpeechTwo} from "./global-variables";
+import { soundOutPhonetic, soundOutPhoneticTwo} from "./global-variables";
+import { meaningText, meaningTextTwo} from "./global-variables";
+import { defOne, defTwo, defThree, defOneOfTwo, defTwoofTwo, defThreeofTwo} from "./global-variables";
+import { synonymsText, synonymOne, synonymTwo, synonymThree} from "./global-variables";
+import {synonymsTextofTwo,synonymOneofTwo, synonymTwoofTwo, synonymThreeofTwo} from "./global-variables";
 
 /* FONT DROPDOWN MENU*/
 /*Show font list on hover-mouseover*/
@@ -33,10 +34,10 @@ fontDropdownMenu.addEventListener("mouseleave", hideFontList);
 /*Displays each font on click*/
 function changeFontToSansSerif() {
   /*Change font text displayed*/
-  fontPlaceholder.innerHTML = sansSerif.innerHTML;
-  fontPlaceholder.setAttribute("id", "sans-serif");
+    fontPlaceholder.innerHTML = sansSerif.innerHTML;
+    fontPlaceholder.setAttribute("id", "sans-serif");
 
-  /*Change input field to font*/
+  /*Change searchfield text to font style on input*/
     searchField.style.fontSize = "16px";
     searchField.style.fontWeight = "bold";
     searchField.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
@@ -44,21 +45,36 @@ function changeFontToSansSerif() {
     /*Vocabulary Definitions To Font*/
     vocabWord.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
     vocabWord.style.fontSize = "32px";
+    vocabWordTwo.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
+    vocabWordTwo.style.fontSize = "32px";
+
     /*Phonetic Spelling*/
     soundOutPhonetic.style.fontFamily ="var(--inter-font),var(--static-inter-bold)";
     soundOutPhonetic.style.fontSize = "18px";
     soundOutPhonetic.style.lineHeight = "24px";
     soundOutPhonetic.style.color = "var(--purple)";
-    /*Noun and Noun Line*/
-    noun.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
-    noun.style.fontStyle = "Italic";
-    noun.style.fontSize = "18px";
+    soundOutPhoneticTwo.style.fontFamily ="var(--inter-font),var(--static-inter-bold)";
+    soundOutPhoneticTwo.style.fontSize = "18px";
+    soundOutPhoneticTwo.style.lineHeight = "24px";
+    soundOutPhoneticTwo.style.color = "var(--purple)";
+
+    /*Parts of Speech and Style Lines*/
+    partsOfSpeech.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
+    partsOfSpeech.style.fontStyle = "Italic";
+    partsOfSpeech.style.fontSize = "18px";
+    partsOfSpeechTwo.style.fontFamily = "var(--inter-font),var(--static-inter-bold)";
+    partsOfSpeechTwo.style.fontStyle = "Italic";
+    partsOfSpeechTwo.style.fontSize = "18px";
+
     /*Meaning Text and Word Definitions*/
     meaningText.style.fontFamily= "var(--inter-font), var(--static-inter-regular-font)";
     meaningText.style.fontSize = "16px";
     meaningText.style.color = "var(--gray-num-one)";
+    meaningTextTwo.style.fontFamily= "var(--inter-font), var(--static-inter-regular-font)";
+    meaningTextTwo.style.fontSize = "16px";
+    meaningTextTwo.style.color = "var(--gray-num-one)";
     
-    /*Set defintion font styes -defOne, defTwo, defThree fonts*/
+    /*Set defintion font styes*/
     function setDefinitionFontStyles(definition){
       definition.style.fontFamily = "var(--inter-font), var(--static-inter-regular-font)";
       definition.style.fontSize = "15px";
@@ -68,11 +84,17 @@ function changeFontToSansSerif() {
     setDefinitionFontStyles(defOne);
     setDefinitionFontStyles(defTwo);
     setDefinitionFontStyles(defThree);
+    setDefinitionFontStyles(defOneOfTwo);
+    setDefinitionFontStyles(defTwoofTwo);
+    setDefinitionFontStyles(defThreeofTwo);
 
     /*Synonyms Text*/
     synonymsText.style.fontFamily= "var(--inter-font), var(--static-inter-regular-font)";
     synonymsText.style.fontSize = "16px";
     synonymsText.style.color = "var(--gray-num-one)";
+    synonymsTextofTwo.style.fontFamily= "var(--inter-font), var(--static-inter-regular-font)";
+    synonymsTextofTwo.style.fontSize = "16px";
+    synonymsTextofTwo.style.color = "var(--gray-num-one)";
 
     /*Synonyms Words*/
     function setSynonymWordsFontStyles(synonym){
@@ -84,6 +106,9 @@ function changeFontToSansSerif() {
     setSynonymWordsFontStyles(synonymOne);
     setSynonymWordsFontStyles(synonymTwo);
     setSynonymWordsFontStyles(synonymThree);
+    setSynonymWordsFontStyles(synonymOneofTwo);
+    setSynonymWordsFontStyles(synonymTwoofTwo);
+    setSynonymWordsFontStyles(synonymThreeofTwo);
 }
-changeFontToSansSerif();
+changeFontToSansSerif(); //Default Font Style
 

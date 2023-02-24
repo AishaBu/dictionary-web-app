@@ -1,12 +1,14 @@
 import { searchField} from "./global-variables";
-import { vocabWord } from "./global-variables";
-import { soundOutPhonetic } from "./global-variables";
-import { noun } from "./global-variables";
-import { nounLine } from "./global-variables";
-import { playIcon } from "./global-variables";
-import { meaningText } from "./global-variables";
+import { vocabWord, vocabWordTwo} from "./global-variables";
+import { soundOutPhonetic, soundOutPhoneticTwo} from "./global-variables";
+import { partsOfSpeech, partsOfSpeechTwo} from "./global-variables";
+import { styleLine, styleLineTwo, styleLineThree } from "./global-variables";
+import { playIcon, playIconTwo} from "./global-variables";
+import { meaningText, meaningTextTwo} from "./global-variables";
 import { defOne, defTwo, defThree, defList } from "./global-variables";
 import { synonymsText,synonymOne, synonymTwo, synonymThree} from "./global-variables";
+import { defOneOfTwo, defTwoofTwo, defThreeofTwo, defListofTwo } from "./global-variables";
+import {synonymOneofTwo, synonymsTextofTwo, synonymThreeofTwo, synonymTwoofTwo} from "./global-variables";
 
 /*API CALL*/
 /*Dictionary Api Call*/
@@ -48,7 +50,7 @@ async function fetchSynonymsThesaurus(searchFieldValue) {
 /*Create audio on click of icon*/
 //Moving audio value outside of function creates sound only once.
 const globalAudio = new Audio();
-function playAudio() {
+function playAudioOne() {
   const promise = fetchVocabularyWords(searchField.value);
   promise.then((data) => {
     let audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[0].hwi.prs[0].sound.audio[0]}/${data[0].hwi.prs[0].sound.audio}.mp3`;
@@ -58,10 +60,22 @@ function playAudio() {
   });
 }
 
+/*Audio Two*/
+function playAudioTwo() {
+  const promise = fetchVocabularyWords(searchField.value);
+  promise.then((data) => {
+    let audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[1].hwi.prs[0].sound.audio[0]}/${data[1].hwi.prs[0].sound.audio}.mp3`;
+    globalAudio.src = audioURL;
+    globalAudio.preload = "none";
+    globalAudio.play();
+  });
+}
+
+
 /*Check if no data is available for list*/
 function checkIfNoDataEmptyList() {
   const promise = fetchVocabularyWords(searchField.value);
-  /*If data for defone is empty*/
+  /*List One-If data for defone is empty*/
   promise.then((data) => {
     if (data[0].shortdef[0] == undefined) {
       defOne.style.display = "none";
@@ -87,6 +101,33 @@ function checkIfNoDataEmptyList() {
       defThree.style.display = "block";
     }
   });
+
+    /*If data for defone is empty*/
+    promise.then((data) => {
+      if (data[0].shortdef[0] == undefined) {
+        defOneOfTwo.style.display = "none";
+      } else {
+        defOneOfTwo.style.display = "block";
+      }
+    });
+  
+    /*List Two- If data for deftwo is empty*/
+    promise.then((data) => {
+      if (data[1].shortdef[1] == undefined) {
+        defTwoofTwo.style.display = "none";
+      } else {
+        defTwoofTwo.style.display = "block";
+      }
+    });
+  
+    /*If data for defthree is empty*/
+    promise.then((data) => {
+      if (data[1].shortdef[2] == undefined) {
+        defThreeofTwo.style.display = "none";
+      } else {
+        defThreeofTwo.style.display = "block";
+      }
+    });
 }
 
 /*Capitalize First Letter of each paragraph*/
@@ -98,9 +139,11 @@ function capitalizeFirstLetter(string) {
 function createList() {
   const promise = fetchVocabularyWords(searchField.value);
   meaningText.textContent = "Meaning";
+  meaningTextTwo.textContent = "Meaning";
   defList.style.display = "block";
+  defListofTwo.style.display = "block";
 
-  /*Definitions List*/
+  /*Definitions List One*/
   promise.then(
     (data) => (defOne.textContent = capitalizeFirstLetter(data[0].shortdef[0]))
   );
@@ -111,12 +154,25 @@ function createList() {
     (data) =>
       (defThree.textContent = capitalizeFirstLetter(data[0].shortdef[2]))
   );
+
+  /*Definitions List Two*/
+  promise.then(
+    (data) => (defOneOfTwo.textContent = capitalizeFirstLetter(data[1].shortdef[0]))
+  );
+  promise.then(
+    (data) => (defTwoofTwo.textContent = capitalizeFirstLetter(data[1].shortdef[1]))
+  );
+  promise.then(
+    (data) =>
+      (defThreeofTwo.textContent = capitalizeFirstLetter(data[1].shortdef[2]))
+  );
   checkIfNoDataEmptyList(); //Checks if data/list is empty
 }
 
 /*Display Synonyms*/
 function displaySynonyms() {
   const promise = fetchSynonymsThesaurus(searchField.value);
+  /*Synonyms List One*/
   synonymsText.style.display = "block";
   synonymsText.textContent = "Synonyms";
   synonymOne.style.display = "block";
@@ -125,29 +181,40 @@ function displaySynonyms() {
   promise.then((data) => (synonymOne.textContent = capitalizeFirstLetter(data[0].meta.syns[0][0])));
   promise.then((data) => (synonymTwo.textContent = capitalizeFirstLetter(data[0].meta.syns[1][3])));
   promise.then((data) => (synonymThree.textContent = capitalizeFirstLetter(data[0].meta.syns[3][6])));
+
+   /*Synonyms List Two*/
+   synonymsTextofTwo.style.display = "block";
+   synonymsTextofTwo.textContent = "Synonyms";
+   synonymOneofTwo.style.display = "block";
+   synonymTwoofTwo.style.display = "block";
+   synonymThreeofTwo.style.display = "block";
+   promise.then((data) => (synonymOneofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[0][0])));
+   promise.then((data) => (synonymTwoofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[1][3])));
+   promise.then((data) => (synonymThreeofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[3][6])));
 }
 
 /*Display words searched in the search field*/
-function createDictionary() {
+function createDictionaryOne() {
   const promise = fetchVocabularyWords(searchField.value);
-  nounLine.style.display = "block";
+  styleLine.style.display = "block";
   playIcon.style.display = "block";
 
-  /*Display Headword*/
-  promise.then((data) => (vocabWord.textContent = data[0].meta.stems[0]));
-  /*Display Phonetic Sound*/
-  promise.then(
-    (data) => (soundOutPhonetic.textContent = "/" + data[0].hwi.prs[0].mw + "/")
-  );
+    /*Display Headword One*/
+    promise.then((data) => (vocabWord.textContent = data[0].meta.stems[0]));
+    /*Display Phonetic Sound*/
+    promise.then(
+      (data) => (soundOutPhonetic.textContent = "/" + data[0].hwi.prs[0].mw + "/")
+    );
+
   /*Display noun and noun-line*/
-  promise.then((data) => (noun.textContent = data[0].fl));
-  nounLine.style.width = "70%";
-  nounLine.style.height = "0.5px";
-  nounLine.style.backgroundColor = "var(--gray-num-two)";
+  promise.then((data) => (partsOfSpeech.textContent = data[0].fl));
+  styleLine.style.width = "70%";
+  styleLine.style.height = "0.5px";
+  styleLine.style.backgroundColor = "var(--gray-num-two)";
 
   /*Play audio on icon click*/
   playIcon.addEventListener("click", () => {
-    playAudio();
+    playAudioOne();
   });
   /*Create Definitions List*/
   createList();
@@ -155,12 +222,50 @@ function createDictionary() {
   /*Display Synonyms Section*/
   displaySynonyms();
 }
-export { createDictionary };
+export { createDictionaryOne };
+
+
+/*Dictionary Two*/
+function createDictionaryTwo() {
+  const promise = fetchVocabularyWords(searchField.value);
+  styleLineTwo.style.display = "block";
+  styleLineThree.style.display = "block";
+  playIconTwo.style.display = "block";
+
+  /*Display Headword Two*/
+  promise.then((data) => (vocabWordTwo.textContent = data[1].meta.stems[0]));
+  /*Display Phonetic Sound Two*/
+  promise.then((data) => (soundOutPhoneticTwo.textContent = "/" + data[1].hwi.prs[0].mw + "/"));
+
+  /*Display parts of speech and style-lines*/
+  promise.then((data) => (partsOfSpeechTwo.textContent = data[1].fl));
+  styleLineThree.style.width = "70%";
+  styleLineThree.style.height = "0.5px";
+  styleLineThree.style.backgroundColor = "var(--gray-num-two)";
+
+  /*Style Line Two*/
+  styleLineTwo.style.width = "70%";
+  styleLineTwo.style.height = "0.30px";
+  styleLineTwo.style.backgroundColor = "var(--gray-num-two)";
+
+  /*Play audio on icon click*/
+  playIconTwo.addEventListener("click", () => {
+    playAudioTwo();
+  });
+  /*Create Definitions List*/
+  createList();
+
+  /*Display Synonyms Section*/
+  displaySynonyms();
+}
+export {createDictionaryTwo};
+
+
 
 /*Console Logs*/
-//const promise = fetchVocabularyWords("voluminous");
-//promise.then((data) => console.log(data[0]));
+const promise = fetchVocabularyWords("green");
+promise.then((data) => console.log(data[1]));
 //promise.then((data) => (data[0].shortdef[0]))
-const promise = fetchSynonymsThesaurus('tree');
-promise.then((data) => console.log(data[0]));
+//const promise = fetchSynonymsThesaurus('umpire');
+//promise.then((data) => console.log(data[0]));
 //promise.then((data) => console.log(data[0].meta.syns[0]));
