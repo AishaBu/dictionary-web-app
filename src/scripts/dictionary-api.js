@@ -1,14 +1,29 @@
-import { searchField} from "./global-variables";
-import { vocabWord, vocabWordTwo} from "./global-variables";
-import { soundOutPhonetic, soundOutPhoneticTwo} from "./global-variables";
-import { partsOfSpeech, partsOfSpeechTwo} from "./global-variables";
-import { styleLine, styleLineTwo, styleLineThree} from "./global-variables";
-import { playIcon, playIconTwo} from "./global-variables";
-import { meaningText, meaningTextTwo} from "./global-variables";
+import { searchField } from "./global-variables";
+import { vocabWord, vocabWordTwo } from "./global-variables";
+import { soundOutPhonetic, soundOutPhoneticTwo } from "./global-variables";
+import { partsOfSpeech, partsOfSpeechTwo } from "./global-variables";
+import { styleLine, styleLineTwo, styleLineThree } from "./global-variables";
+import { playIcon, playIconTwo } from "./global-variables";
+import { meaningText, meaningTextTwo } from "./global-variables";
 import { defOne, defTwo, defThree, defList } from "./global-variables";
-import { synonymsText,synonymOne, synonymTwo, synonymThree} from "./global-variables";
-import { defOneOfTwo, defTwoofTwo, defThreeofTwo, defListofTwo } from "./global-variables";
-import {synonymOneofTwo, synonymsTextofTwo, synonymThreeofTwo, synonymTwoofTwo} from "./global-variables";
+import {
+  synonymsText,
+  synonymOne,
+  synonymTwo,
+  synonymThree,
+} from "./global-variables";
+import {
+  defOneOfTwo,
+  defTwoofTwo,
+  defThreeofTwo,
+  defListofTwo,
+} from "./global-variables";
+import {
+  synonymOneofTwo,
+  synonymsTextofTwo,
+  synonymThreeofTwo,
+  synonymTwoofTwo,
+} from "./global-variables";
 
 /*API CALL*/
 /*Dictionary Api Call*/
@@ -116,26 +131,63 @@ function checkIfNoDataEmptyList() {
     }
   });
 
-    /*If data for deftwooftwo is empty*/
-    promise.then((data) => {
-      if (data[1].shortdef[1] == undefined) {
-        defTwoofTwo.style.display = "none";
-      } else {
-        defTwoofTwo.style.display = "block";
-      }
-    });
-  
-    /*If data for defthreeoftwo is empty*/
-    promise.then((data) => {
-      if (data[1].shortdef[2] == undefined) {
-        defThreeofTwo.style.display = "none";
-      } else {
-        defThreeofTwo.style.display = "block";
-      }
-    });
+  /*If data for deftwooftwo is empty*/
+  promise.then((data) => {
+    if (data[1].shortdef[1] == undefined) {
+      defTwoofTwo.style.display = "none";
+    } else {
+      defTwoofTwo.style.display = "block";
+    }
+  });
+
+  /*If data for defthreeoftwo is empty*/
+  promise.then((data) => {
+    if (data[1].shortdef[2] == undefined) {
+      defThreeofTwo.style.display = "none";
+    } else {
+      defThreeofTwo.style.display = "block";
+    }
+  });
+
+  /*If all of data are missing for word section two*/
+  promise.then((data) => {
+    if (
+      data[1].shortdef[0] == undefined &&
+      data[1].shortdef[1] == undefined &&
+      data[1].shortdef[2] == undefined
+    ) {
+      defOneOfTwo.style.display = "none";
+      defTwoofTwo.style.display = "none";
+      defThreeofTwo.style.display = "none";
+      vocabWordTwo.style.display = "none";
+      soundOutPhoneticTwo.style.display = "none";
+      playIconTwo.style.display = "none";
+      styleLineThree.style.display = "none";
+      meaningTextTwo.style.display = "none";
+      partsOfSpeechTwo.style.display = "none";
+      synonymsTextofTwo.style.display = "none";
+      synonymOneofTwo.style.display = "none";
+      synonymTwoofTwo.style.display = "none";
+      synonymThreeofTwo.style.display = "none";
+      styleLineTwo.style.display = "none";
+    } else {
+      defOneOfTwo.style.display = "block";
+      defTwoofTwo.style.display = "block";
+      defThreeofTwo.style.display = "block";
+      vocabWordTwo.style.display = "block";
+      soundOutPhoneticTwo.style.display = "block";
+      playIconTwo.style.display = "block";
+      styleLineThree.style.display = "block";
+      meaningTextTwo.style.display = "block";
+      partsOfSpeechTwo.style.display = "block";
+      synonymsTextofTwo.style.display = "block";
+      synonymOneofTwo.style.display = "block";
+      synonymTwoofTwo.style.display = "block";
+      synonymThreeofTwo.style.display = "block";
+      styleLineTwo.style.display = "block";
+    }
+  });
 }
-
-
 
 /*Create Definitions Lists*/
 function createList() {
@@ -159,10 +211,12 @@ function createList() {
 
   /*Definitions List Two*/
   promise.then(
-    (data) => (defOneOfTwo.textContent = capitalizeFirstLetter(data[1].shortdef[0]))
+    (data) =>
+      (defOneOfTwo.textContent = capitalizeFirstLetter(data[1].shortdef[0]))
   );
   promise.then(
-    (data) => (defTwoofTwo.textContent = capitalizeFirstLetter(data[1].shortdef[1]))
+    (data) =>
+      (defTwoofTwo.textContent = capitalizeFirstLetter(data[1].shortdef[1]))
   );
   promise.then(
     (data) =>
@@ -180,20 +234,45 @@ function displaySynonyms() {
   synonymOne.style.display = "block";
   synonymTwo.style.display = "block";
   synonymThree.style.display = "block";
-  promise.then((data) => (synonymOne.textContent = capitalizeFirstLetter(data[0].meta.syns[0][0])));
-  promise.then((data) => (synonymTwo.textContent = capitalizeFirstLetter(data[0].meta.syns[1][3])));
-  promise.then((data) => (synonymThree.textContent = capitalizeFirstLetter(data[0].meta.syns[3][6])));
+  promise.then(
+    (data) =>
+      (synonymOne.textContent = capitalizeFirstLetter(data[0].meta.syns[0][0]))
+  );
+  promise.then(
+    (data) =>
+      (synonymTwo.textContent = capitalizeFirstLetter(data[0].meta.syns[1][3]))
+  );
+  promise.then(
+    (data) =>
+      (synonymThree.textContent = capitalizeFirstLetter(
+        data[0].meta.syns[3][6]
+      ))
+  );
 
-   /*Synonyms List Two*/
-   synonymsTextofTwo.style.display = "block";
-   synonymsTextofTwo.textContent = "Synonyms";
-   synonymOneofTwo.style.display = "block";
-   synonymTwoofTwo.style.display = "block";
-   synonymThreeofTwo.style.display = "block";
-   promise.then((data) => (synonymOneofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[0][0])));
-   promise.then((data) => (synonymTwoofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[1][3])));
-   promise.then((data) => (synonymThreeofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[3][6])));
-
+  /*Synonyms List Two*/
+  synonymsTextofTwo.style.display = "block";
+  synonymsTextofTwo.textContent = "Synonyms";
+  synonymOneofTwo.style.display = "block";
+  synonymTwoofTwo.style.display = "block";
+  synonymThreeofTwo.style.display = "block";
+  promise.then(
+    (data) =>
+      (synonymOneofTwo.textContent = capitalizeFirstLetter(
+        data[1].meta.syns[0][0]
+      ))
+  );
+  promise.then(
+    (data) =>
+      (synonymTwoofTwo.textContent = capitalizeFirstLetter(
+        data[1].meta.syns[1][3]
+      ))
+  );
+  promise.then(
+    (data) =>
+      (synonymThreeofTwo.textContent = capitalizeFirstLetter(
+        data[1].meta.syns[3][6]
+      ))
+  );
 }
 
 /*Create Definitions*/
@@ -203,15 +282,22 @@ function createDictionaryOne() {
   styleLine.style.display = "block";
   playIcon.style.display = "block";
 
-    /*Display Headword One*/
-    promise.then((data) => (vocabWord.textContent = capitalizeFirstLetter(data[1].meta.stems[0])));
-    /*Display Phonetic Sound*/
-    promise.then(
-      (data) => (soundOutPhonetic.textContent = "/" + capitalizeFirstLetter(data[0].hwi.prs[0].mw + "/"))
-    );
+  /*Display Headword One*/
+  promise.then(
+    (data) =>
+      (vocabWord.textContent = capitalizeFirstLetter(data[1].meta.stems[0]))
+  );
+  /*Display Phonetic Sound*/
+  promise.then(
+    (data) =>
+      (soundOutPhonetic.textContent =
+        "/" + capitalizeFirstLetter(data[0].hwi.prs[0].mw + "/"))
+  );
 
   /*Display noun and noun-line*/
-  promise.then((data) => (partsOfSpeech.textContent = capitalizeFirstLetter(data[0].fl)));
+  promise.then(
+    (data) => (partsOfSpeech.textContent = capitalizeFirstLetter(data[0].fl))
+  );
   styleLine.style.width = "70%";
   styleLine.style.height = "0.5px";
   styleLine.style.backgroundColor = "var(--gray-num-two)";
@@ -227,22 +313,29 @@ function createDictionaryOne() {
   displaySynonyms();
 }
 
-
 /*Dictionary Two*/
 function createDictionaryTwo() {
   const promise = fetchVocabularyWords(searchField.value);
   styleLineTwo.style.display = "block";
   styleLineThree.style.display = "block";
   playIconTwo.style.display = "block";
- 
-  
+
   /*Display Headword Two*/
-  promise.then((data) => (vocabWordTwo.textContent = capitalizeFirstLetter(data[1].meta.stems[0])));
+  promise.then(
+    (data) =>
+      (vocabWordTwo.textContent = capitalizeFirstLetter(data[1].meta.stems[0]))
+  );
   /*Display Phonetic Sound Two*/
-  promise.then((data) => (soundOutPhoneticTwo.textContent = "/" + capitalizeFirstLetter(data[1].hwi.prs[0].mw + "/")));
+  promise.then(
+    (data) =>
+      (soundOutPhoneticTwo.textContent =
+        "/" + capitalizeFirstLetter(data[1].hwi.prs[0].mw + "/"))
+  );
 
   /*Display parts of speech and style-lines*/
-  promise.then((data) => (partsOfSpeechTwo.textContent = capitalizeFirstLetter(data[1].fl)));
+  promise.then(
+    (data) => (partsOfSpeechTwo.textContent = capitalizeFirstLetter(data[1].fl))
+  );
   styleLineThree.style.width = "70%";
   styleLineThree.style.height = "0.5px";
   styleLineThree.style.backgroundColor = "var(--gray-num-two)";
@@ -263,10 +356,8 @@ function createDictionaryTwo() {
   displaySynonyms();
 }
 
-
-
 /*Create Dictionary Function*/
-function createDictionary(){
+function createDictionary() {
   createDictionaryOne();
   createDictionaryTwo();
 }
