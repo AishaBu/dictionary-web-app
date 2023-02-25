@@ -92,9 +92,10 @@ function capitalizeFirstLetter(string) {
 }
 
 /*Check if no data is available for list*/
-function checkIfNoDataEmptyList() {
+function removeBulletListIfNoData() {
   const promise = fetchVocabularyWords(searchField.value);
-  /*WORD SECTION ONE*/
+
+  /*WORD SECTION ONE -check if data list empty*/
   /*If data for defone is empty*/
   promise.then((data) => {
     if (data[0].shortdef[0] == undefined) {
@@ -122,7 +123,7 @@ function checkIfNoDataEmptyList() {
     }
   });
 
-  /*WORD SECTION TWO*/
+  /*WORD SECTION TWO-check if data list empty*/
   promise.then((data) => {
     if (data[1].shortdef[0] == undefined) {
       defOneOfTwo.style.display = "none";
@@ -148,21 +149,49 @@ function checkIfNoDataEmptyList() {
       defThreeofTwo.style.display = "block";
     }
   });
+}
 
-  /*If all of data are missing for word section two*/
+function hideEntireSecondWordSectionIfNoData(){
+  const promise = fetchVocabularyWords(searchField.value);
+  /*If all of data are missing/undefined for word sections*/
   promise.then((data) => {
+    /*WORD SECTION ONE-If all data missing*/
     if (
-      data[1].shortdef[0] == undefined &&
+      data[0].shortdef[0] == undefined &&
+      data[0].shortdef[1] == undefined &&
+      data[0].shortdef[2] == undefined
+    ) {
+      vocabWord.style.display = "none";
+      soundOutPhonetic.style.display = "none";
+      playIcon.style.display = "none";
+      meaningText.style.display = "none";
+      partsOfSpeech.style.display = "none";
+      synonymsText.style.display = "none";
+      synonymOne.style.display = "none";
+      synonymTwo.style.display = "none";
+      synonymThree.style.display = "none";
+      styleLine.style.display = "none";
+    } else {
+      vocabWord.style.display = "block";
+      soundOutPhonetic.style.display = "block";
+      playIcon.style.display = "block";
+      meaningText.style.display = "block";
+      partsOfSpeech.style.display = "block";
+      synonymsText.style.display = "block";
+      synonymOne.style.display = "block";
+      synonymTwo.style.display = "block";
+      synonymThree.style.display = "block";
+      styleLine.style.display = "block";
+    }
+
+  /*WORD SECTION TWO -if all data is empty*/
+    if(data[1].shortdef[0] == undefined &&
       data[1].shortdef[1] == undefined &&
       data[1].shortdef[2] == undefined
     ) {
-      defOneOfTwo.style.display = "none";
-      defTwoofTwo.style.display = "none";
-      defThreeofTwo.style.display = "none";
       vocabWordTwo.style.display = "none";
       soundOutPhoneticTwo.style.display = "none";
       playIconTwo.style.display = "none";
-      styleLineThree.style.display = "none";
       meaningTextTwo.style.display = "none";
       partsOfSpeechTwo.style.display = "none";
       synonymsTextofTwo.style.display = "none";
@@ -170,14 +199,12 @@ function checkIfNoDataEmptyList() {
       synonymTwoofTwo.style.display = "none";
       synonymThreeofTwo.style.display = "none";
       styleLineTwo.style.display = "none";
+      styleLineThree.style.display = "none"; 
+  
     } else {
-      defOneOfTwo.style.display = "block";
-      defTwoofTwo.style.display = "block";
-      defThreeofTwo.style.display = "block";
       vocabWordTwo.style.display = "block";
       soundOutPhoneticTwo.style.display = "block";
       playIconTwo.style.display = "block";
-      styleLineThree.style.display = "block";
       meaningTextTwo.style.display = "block";
       partsOfSpeechTwo.style.display = "block";
       synonymsTextofTwo.style.display = "block";
@@ -185,8 +212,13 @@ function checkIfNoDataEmptyList() {
       synonymTwoofTwo.style.display = "block";
       synonymThreeofTwo.style.display = "block";
       styleLineTwo.style.display = "block";
+      styleLineThree.style.display = "block";
+
+    /*Decrease margin top for definition*/
+    styleLineTwo.style.opacity = "0.3%";
+    vocabWordTwo.style.marginTop ="-120px";
     }
-  });
+  })
 }
 
 /*Create Definitions Lists*/
@@ -222,7 +254,8 @@ function createList() {
     (data) =>
       (defThreeofTwo.textContent = capitalizeFirstLetter(data[1].shortdef[2]))
   );
-  checkIfNoDataEmptyList();
+  removeBulletListIfNoData();/*Fine*/
+  hideEntireSecondWordSectionIfNoData();
 }
 
 /*Display Synonyms for Words One and Two*/
@@ -370,4 +403,4 @@ export default createDictionary;
 
 //const promise = fetchSynonymsThesaurus('umpire');
 //promise.then((data) => console.log(data[0]));
-//promise.then((data) => console.log(data[0].meta.syns[0]));
+//promise.then((data) => console.log(data[0].meta.syns[0]))
