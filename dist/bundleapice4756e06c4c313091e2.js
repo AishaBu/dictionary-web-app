@@ -450,7 +450,7 @@ function hideEntireSecondWordSectionIfNoData() {
 
       /*Decrease margin top for definition*/
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.opacity = "0.3%";
-      _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.marginTop = "-120px";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.marginTop = "-50px";
     }
   });
 }
@@ -618,4 +618,4 @@ function createDictionary() {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapid254099cd6fcfde0c41d.js.map
+//# sourceMappingURL=bundleapice4756e06c4c313091e2.js.map

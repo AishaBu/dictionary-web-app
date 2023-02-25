@@ -6,24 +6,9 @@ import { styleLine, styleLineTwo, styleLineThree } from "./global-variables";
 import { playIcon, playIconTwo } from "./global-variables";
 import { meaningText, meaningTextTwo } from "./global-variables";
 import { defOne, defTwo, defThree, defList } from "./global-variables";
-import {
-  synonymsText,
-  synonymOne,
-  synonymTwo,
-  synonymThree,
-} from "./global-variables";
-import {
-  defOneOfTwo,
-  defTwoofTwo,
-  defThreeofTwo,
-  defListofTwo,
-} from "./global-variables";
-import {
-  synonymOneofTwo,
-  synonymsTextofTwo,
-  synonymThreeofTwo,
-  synonymTwoofTwo,
-} from "./global-variables";
+import {synonymsText,synonymOne,synonymTwo,synonymThree} from "./global-variables";
+import {defOneOfTwo,defTwoofTwo,defThreeofTwo,defListofTwo} from "./global-variables";
+import {synonymOneofTwo,synonymsTextofTwo,synonymThreeofTwo,synonymTwoofTwo} from "./global-variables";
 
 /*API CALL*/
 /*Dictionary Api Call*/
@@ -216,7 +201,7 @@ function hideEntireSecondWordSectionIfNoData(){
 
     /*Decrease margin top for definition*/
     styleLineTwo.style.opacity = "0.3%";
-    vocabWordTwo.style.marginTop ="-120px";
+   vocabWordTwo.style.marginTop ="-50px";
     }
   })
 }
