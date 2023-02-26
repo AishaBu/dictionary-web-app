@@ -19,14 +19,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "defThreeofTwo": () => (/* binding */ defThreeofTwo),
 /* harmony export */   "defTwo": () => (/* binding */ defTwo),
 /* harmony export */   "defTwoofTwo": () => (/* binding */ defTwoofTwo),
+/* harmony export */   "errorMessage": () => (/* binding */ errorMessage),
 /* harmony export */   "errorSearchMessage": () => (/* binding */ errorSearchMessage),
 /* harmony export */   "fontDropdownList": () => (/* binding */ fontDropdownList),
 /* harmony export */   "fontDropdownMenu": () => (/* binding */ fontDropdownMenu),
 /* harmony export */   "fontPlaceholder": () => (/* binding */ fontPlaceholder),
 /* harmony export */   "form": () => (/* binding */ form),
+/* harmony export */   "frownFaceEmoji": () => (/* binding */ frownFaceEmoji),
 /* harmony export */   "meaningText": () => (/* binding */ meaningText),
 /* harmony export */   "meaningTextTwo": () => (/* binding */ meaningTextTwo),
 /* harmony export */   "mono": () => (/* binding */ mono),
+/* harmony export */   "noDefinitionsFoundText": () => (/* binding */ noDefinitionsFoundText),
 /* harmony export */   "partsOfSpeech": () => (/* binding */ partsOfSpeech),
 /* harmony export */   "partsOfSpeechTwo": () => (/* binding */ partsOfSpeechTwo),
 /* harmony export */   "playIcon": () => (/* binding */ playIcon),
@@ -100,6 +103,11 @@ var synonymOneofTwo = document.getElementById('synonym-one-of-two');
 var synonymTwoofTwo = document.getElementById('synonym-two-of-two');
 var synonymThreeofTwo = document.getElementById('synonym-three');
 
+/*Error Message*/
+var frownFaceEmoji = document.getElementById('frown-face-emoji');
+var errorMessage = document.getElementById('error-message');
+var noDefinitionsFoundText = document.getElementById('no-definitions-found-text');
+
 
 
 
@@ -137,6 +145,11 @@ var synonymThreeofTwo = document.getElementById('synonym-three');
 
 
 
+
+
+
+
+/*Error Message*/
 
 
 
@@ -226,6 +239,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+
 /*API CALL*/
 /*Dictionary Api Call*/
 function fetchVocabularyWords(_x) {
@@ -258,7 +272,7 @@ function _fetchVocabularyWords() {
         case 13:
           _context.prev = 13;
           _context.t0 = _context["catch"](1);
-          console.error("Could not get word: ".concat(_context.t0));
+          console.error("Could not get word: ".concat(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value));
         case 16:
         case "end":
           return _context.stop();
@@ -270,8 +284,6 @@ function _fetchVocabularyWords() {
 function fetchSynonymsThesaurus(_x2) {
   return _fetchSynonymsThesaurus.apply(this, arguments);
 }
-/*Create audio on click of icon*/
-//Moving audio value outside of function creates sound only once.
 function _fetchSynonymsThesaurus() {
   _fetchSynonymsThesaurus = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(searchFieldValue) {
     var apiKeyThesaurus, response, data;
@@ -298,7 +310,7 @@ function _fetchSynonymsThesaurus() {
         case 13:
           _context2.prev = 13;
           _context2.t0 = _context2["catch"](1);
-          console.error("Could not get word: ".concat(_context2.t0));
+          console.error("Could not get word: ".concat(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value));
         case 16:
         case "end":
           return _context2.stop();
@@ -307,6 +319,15 @@ function _fetchSynonymsThesaurus() {
   }));
   return _fetchSynonymsThesaurus.apply(this, arguments);
 }
+function displaySearchErrorMessage() {
+  /*If there is an error in search value*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeech.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.opacity = "0.3%", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.defList.style.display = "none", /*Section Two*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningTextTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeechTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsTextofTwo.style.opacity = "0.3%", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOneofTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.defListofTwo.style.display = "none", /*Display Error Message*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.frownFaceEmoji.style.display = "block", _global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText.style.display = "block", _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage.style.display = "block", _global_variables__WEBPACK_IMPORTED_MODULE_0__.frownFaceEmoji.textContent = String.fromCodePoint(128577), _global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText.textContent = "No Definitions Found", _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage.textContent = "Sorry pal, we couldn't find definitions for the word you were looking for." + "You can try the search again at later time or head to the web instead.";
+}
+
+/*Create audio on click of icon*/
+//Moving audio value outside of function creates sound only once.
 var globalAudio = new Audio();
 function playAudioOne() {
   var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
@@ -618,4 +639,4 @@ function createDictionary() {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapice4756e06c4c313091e2.js.map
+//# sourceMappingURL=bundleapi6ac0039ce989a857a06f.js.map

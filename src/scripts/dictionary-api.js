@@ -1,14 +1,15 @@
-import { searchField } from "./global-variables";
+import { form, searchField } from "./global-variables";
 import { vocabWord, vocabWordTwo } from "./global-variables";
 import { soundOutPhonetic, soundOutPhoneticTwo } from "./global-variables";
 import { partsOfSpeech, partsOfSpeechTwo } from "./global-variables";
 import { styleLine, styleLineTwo, styleLineThree } from "./global-variables";
 import { playIcon, playIconTwo } from "./global-variables";
 import { meaningText, meaningTextTwo } from "./global-variables";
-import { defOne, defTwo, defThree, defList } from "./global-variables";
+import { defOne, defTwo, defThree, defList} from "./global-variables";
 import {synonymsText,synonymOne,synonymTwo,synonymThree} from "./global-variables";
-import {defOneOfTwo,defTwoofTwo,defThreeofTwo,defListofTwo} from "./global-variables";
-import {synonymOneofTwo,synonymsTextofTwo,synonymThreeofTwo,synonymTwoofTwo} from "./global-variables";
+import {defOneOfTwo, defTwoofTwo, defThreeofTwo, defListofTwo} from "./global-variables";
+import {synonymOneofTwo, synonymsTextofTwo, synonymThreeofTwo, synonymTwoofTwo} from "./global-variables";
+import { errorMessage, frownFaceEmoji, noDefinitionsFoundText} from "./global-variables";
 
 /*API CALL*/
 /*Dictionary Api Call*/
@@ -21,11 +22,11 @@ async function fetchVocabularyWords(searchFieldValue) {
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
     }
-
     const data = await response.json();
     return data;
-  } catch (error) {
-    console.error(`Could not get word: ${error}`);
+  } 
+  catch (error) {
+    console.error(`Could not get word: ${searchField.value}`);
   }
 }
 
@@ -39,12 +40,50 @@ async function fetchSynonymsThesaurus(searchFieldValue) {
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
     }
-
     const data = await response.json();
     return data;
-  } catch (error) {
-    console.error(`Could not get word: ${error}`);
+  } 
+  catch (error) {
+    console.error(`Could not get word: ${searchField.value}`);
   }
+}
+
+function displaySearchErrorMessage(){
+    /*If there is an error in search value*/
+    (vocabWord.style.display = "none"),
+    (soundOutPhonetic.style.display = "none"),
+    (playIcon.style.display = "none"),
+    (meaningText.style.display = "none"),
+    (partsOfSpeech.style.display = "none"),
+    (synonymsText.style.opacity = "0.3%"),
+    (synonymOne.style.display = "none"),
+    (synonymTwo.style.display = "none"),
+    (synonymThree.style.display = "none"),
+    (styleLine.style.display = "none"),
+    (defList.style.display = "none"),
+
+    /*Section Two*/
+    (vocabWordTwo.style.display = "none"),
+    (soundOutPhoneticTwo.style.display = "none"),
+    (playIconTwo.style.display = "none"),
+    (meaningTextTwo.style.display = "none"),
+    (partsOfSpeechTwo.style.display = "none"),
+    (synonymsTextofTwo.style.opacity = "0.3%"),
+    (synonymOneofTwo.style.display = "none"),
+    (synonymTwoofTwo.style.display = "none"),
+    (synonymThreeofTwo.style.display = "none"),
+    (styleLineTwo.style.display = "none"),
+    (styleLineThree.style.display = "none"),
+    (defListofTwo.style.display = "none"),
+
+    /*Display Error Message*/
+    frownFaceEmoji.style.display = "block",
+    noDefinitionsFoundText.style.display = "block",
+    errorMessage.style.display = "block",
+    frownFaceEmoji.textContent = String.fromCodePoint(128577),
+    noDefinitionsFoundText.textContent = "No Definitions Found",
+    errorMessage.textContent = "Sorry pal, we couldn't find definitions for the word you were looking for." +
+    "You can try the search again at later time or head to the web instead."
 }
 
 /*Create audio on click of icon*/
@@ -80,7 +119,7 @@ function capitalizeFirstLetter(string) {
 function removeBulletListIfNoData() {
   const promise = fetchVocabularyWords(searchField.value);
 
-  /*WORD SECTION ONE -check if data list empty*/
+ /*WORD SECTION ONE -check if data list empty*/
   /*If data for defone is empty*/
   promise.then((data) => {
     if (data[0].shortdef[0] == undefined) {
@@ -136,7 +175,7 @@ function removeBulletListIfNoData() {
   });
 }
 
-function hideEntireSecondWordSectionIfNoData(){
+function hideEntireSecondWordSectionIfNoData() {
   const promise = fetchVocabularyWords(searchField.value);
   /*If all of data are missing/undefined for word sections*/
   promise.then((data) => {
@@ -169,8 +208,9 @@ function hideEntireSecondWordSectionIfNoData(){
       styleLine.style.display = "block";
     }
 
-  /*WORD SECTION TWO -if all data is empty*/
-    if(data[1].shortdef[0] == undefined &&
+    /*WORD SECTION TWO -if all data is empty*/
+    if (
+      data[1].shortdef[0] == undefined &&
       data[1].shortdef[1] == undefined &&
       data[1].shortdef[2] == undefined
     ) {
@@ -184,8 +224,7 @@ function hideEntireSecondWordSectionIfNoData(){
       synonymTwoofTwo.style.display = "none";
       synonymThreeofTwo.style.display = "none";
       styleLineTwo.style.display = "none";
-      styleLineThree.style.display = "none"; 
-  
+      styleLineThree.style.display = "none";
     } else {
       vocabWordTwo.style.display = "block";
       soundOutPhoneticTwo.style.display = "block";
@@ -199,11 +238,11 @@ function hideEntireSecondWordSectionIfNoData(){
       styleLineTwo.style.display = "block";
       styleLineThree.style.display = "block";
 
-    /*Decrease margin top for definition*/
-    styleLineTwo.style.opacity = "0.3%";
-   vocabWordTwo.style.marginTop ="-50px";
+      /*Decrease margin top for definition*/
+      styleLineTwo.style.opacity = "0.3%";
+      vocabWordTwo.style.marginTop = "-50px";
     }
-  })
+  });
 }
 
 /*Create Definitions Lists*/
@@ -239,7 +278,7 @@ function createList() {
     (data) =>
       (defThreeofTwo.textContent = capitalizeFirstLetter(data[1].shortdef[2]))
   );
-  removeBulletListIfNoData();/*Fine*/
+  removeBulletListIfNoData(); /*Fine*/
   hideEntireSecondWordSectionIfNoData();
 }
 
@@ -329,7 +368,9 @@ function createDictionaryOne() {
 
   /*Display Synonyms Section*/
   displaySynonyms();
+  
 }
+
 
 /*Dictionary Two*/
 function createDictionaryTwo() {

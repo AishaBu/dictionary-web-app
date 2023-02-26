@@ -49,6 +49,10 @@ const synonymOneofTwo = document.getElementById('synonym-one-of-two');
 const synonymTwoofTwo = document.getElementById('synonym-two-of-two');
 const synonymThreeofTwo = document.getElementById('synonym-three');
 
+/*Error Message*/
+const frownFaceEmoji = document.getElementById('frown-face-emoji');
+const errorMessage = document.getElementById('error-message');
+const noDefinitionsFoundText = document.getElementById('no-definitions-found-text');
 
 export {arrowSvgBtn};
 export {fontDropdownList};
@@ -91,3 +95,8 @@ export {synonymsTextofTwo};
 export {synonymOneofTwo};
 export {synonymTwoofTwo};
 export {synonymThreeofTwo};
+
+/*Error Message*/
+export {errorMessage};
+export {frownFaceEmoji};
+export {noDefinitionsFoundText};

@@ -48,14 +48,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "defThreeofTwo": () => (/* binding */ defThreeofTwo),
 /* harmony export */   "defTwo": () => (/* binding */ defTwo),
 /* harmony export */   "defTwoofTwo": () => (/* binding */ defTwoofTwo),
+/* harmony export */   "errorMessage": () => (/* binding */ errorMessage),
 /* harmony export */   "errorSearchMessage": () => (/* binding */ errorSearchMessage),
 /* harmony export */   "fontDropdownList": () => (/* binding */ fontDropdownList),
 /* harmony export */   "fontDropdownMenu": () => (/* binding */ fontDropdownMenu),
 /* harmony export */   "fontPlaceholder": () => (/* binding */ fontPlaceholder),
 /* harmony export */   "form": () => (/* binding */ form),
+/* harmony export */   "frownFaceEmoji": () => (/* binding */ frownFaceEmoji),
 /* harmony export */   "meaningText": () => (/* binding */ meaningText),
 /* harmony export */   "meaningTextTwo": () => (/* binding */ meaningTextTwo),
 /* harmony export */   "mono": () => (/* binding */ mono),
+/* harmony export */   "noDefinitionsFoundText": () => (/* binding */ noDefinitionsFoundText),
 /* harmony export */   "partsOfSpeech": () => (/* binding */ partsOfSpeech),
 /* harmony export */   "partsOfSpeechTwo": () => (/* binding */ partsOfSpeechTwo),
 /* harmony export */   "playIcon": () => (/* binding */ playIcon),
@@ -129,6 +132,11 @@ var synonymOneofTwo = document.getElementById('synonym-one-of-two');
 var synonymTwoofTwo = document.getElementById('synonym-two-of-two');
 var synonymThreeofTwo = document.getElementById('synonym-three');
 
+/*Error Message*/
+var frownFaceEmoji = document.getElementById('frown-face-emoji');
+var errorMessage = document.getElementById('error-message');
+var noDefinitionsFoundText = document.getElementById('no-definitions-found-text');
+
 
 
 
@@ -169,6 +177,11 @@ var synonymThreeofTwo = document.getElementById('synonym-three');
 
 
 
+
+/*Error Message*/
+
+
+
 /******/ })()
 ;
-//# sourceMappingURL=bundlevariablesf9bb7dd16c3698838e9e.js.map
+//# sourceMappingURL=bundlevariables43d79c5075a641855f77.js.map

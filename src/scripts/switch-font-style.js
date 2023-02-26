@@ -11,6 +11,7 @@ import { meaningText, meaningTextTwo} from "./global-variables";
 import { defOne, defTwo, defThree, defOneOfTwo, defTwoofTwo, defThreeofTwo} from "./global-variables";
 import { synonymsText, synonymOne, synonymTwo, synonymThree} from "./global-variables";
 import {synonymsTextofTwo,synonymOneofTwo, synonymTwoofTwo, synonymThreeofTwo} from "./global-variables";
+import { noDefinitionsFoundText, errorMessage} from "./global-variables";
 
 /* FONT DROPDOWN MENU*/
 /*Show font list on hover-mouseover*/
@@ -112,6 +113,18 @@ function changeFontToSansSerif() {
     setSynonymWordsFontStyles(synonymOneofTwo);
     setSynonymWordsFontStyles(synonymTwoofTwo);
     setSynonymWordsFontStyles(synonymThreeofTwo);
+
+    /*Error Message Font for Sans Serif*/
+    /*No Definitions Found Text*/
+    noDefinitionsFoundText.style.fontFamily = "var(--inter-font), var( --static-inter-bold)";
+    noDefinitionsFoundText.style.fontSize = "16px";
+    noDefinitionsFoundText.style.fontWeight = "bold";
+    noDefinitionsFoundText.style.color = "var( --off-black-one)";
+    /*Error Message*/
+    errorMessage.style.fontFamily= "var(--inter-font), var(--static-inter-regular-font)";
+    errorMessage.style.fontSize = "13px";
+    errorMessage.style.color = "var(--gray-num-one)";
+
 }changeFontToSansSerif(); //Set As Default Font Style
 
 /*Change Font To Serif*/
@@ -194,6 +207,17 @@ function changeFontToSerif() {
     setSynonymWordsFontStyles(synonymOneofTwo);
     setSynonymWordsFontStyles(synonymTwoofTwo);
     setSynonymWordsFontStyles(synonymThreeofTwo);
+
+    /*Error Message Font for Serif*/
+    /*No Definitions Found Text*/
+    noDefinitionsFoundText.style.fontFamily = "var(--lora-font), var(--lora-static-bold-font)";
+    noDefinitionsFoundText.style.fontSize = "16px";
+    noDefinitionsFoundText.style.fontWeight = "bold";
+    noDefinitionsFoundText.style.color = "var( --off-black-one)";
+    /*Error Message*/
+    errorMessage.style.fontFamily= "var(--lora-font), var(--lora-static-bold-font)";
+    errorMessage.style.fontSize = "13px";
+    errorMessage.style.color = "var(--gray-num-one)";
 }
 
 /*Change Font To Mono*/
@@ -276,6 +300,18 @@ function changeFontToMono() {
     setSynonymWordsFontStyles(synonymOneofTwo);
     setSynonymWordsFontStyles(synonymTwoofTwo);
     setSynonymWordsFontStyles(synonymThreeofTwo);
+
+    /*Error Message Font for Mono*/
+    /*No Definitions Found Text*/
+    noDefinitionsFoundText.style.fontFamily = "var(--inconsolata-font), var(--static-inconsolata-bold-font)";
+    noDefinitionsFoundText.style.fontSize = "16px";
+    noDefinitionsFoundText.style.fontWeight = "bold";
+    noDefinitionsFoundText.style.color = "var( --off-black-one)";
+    /*Error Message*/
+    errorMessage.style.fontFamily= "var(--inconsolata-font), var(--static-inconsolata-bold-font)";
+    errorMessage.style.fontSize = "13px";
+    errorMessage.style.color = "var(--gray-num-one)";
+
 }
 
 

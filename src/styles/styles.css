@@ -517,3 +517,25 @@ ul li:before{
   box-shadow: var(--box-shadow);
 }
 
+/*Error Message Group*/
+.error-message-group{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#error-message,
+#frown-face-emoji,
+#no-definitions-found-text{
+  display: none;
+}
+
+#error-message{
+  text-align: left;
+  width: 300px;
+}
+
+#frown-face-emoji{
+  font-size: 50px; /*Increases emoji width*/
+}
