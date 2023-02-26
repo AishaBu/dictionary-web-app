@@ -109,6 +109,21 @@ function changeFontToSansSerif() {
     setSynonymWordsFontStyles(synonymOneofTwo);
     setSynonymWordsFontStyles(synonymTwoofTwo);
     setSynonymWordsFontStyles(synonymThreeofTwo);
-}
-changeFontToSansSerif(); //Default Font Style
+}changeFontToSansSerif(); //Set As Default Font Style
 
+
+
+function changeFontDisplayedAndStyleOnClick(){
+/*Sans Serif*/
+  sansSerif.addEventListener('click', ()=>{
+    fontPlaceholder.innerHTML = sansSerif.innerHTML;
+    fontPlaceholder.setAttribute("id", "sans-serif");
+    changeFontToSansSerif();
+  })
+
+  /*Serif*/
+  serif.addEventListener('click', ()=>{
+    fontPlaceholder.innerHTML = serif.innerHTML;
+    fontPlaceholder.setAttribute("id", "sans-serif");
+  })
+}changeFontDisplayedAndStyleOnClick();
