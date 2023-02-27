@@ -287,6 +287,12 @@ input:checked + .slider:before {
   transform: translate(16px);
 }
 
+/*Change background color on toggle when checked*/
+input:checked + .slider.round{
+  background-color: var(--purple);
+}
+
+
 /*Round the slider background*/
 .slider.round {
   border-radius: 34px;
@@ -297,6 +303,12 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
+/*Dark Mode Theme Toggle*/
+.dark-mode{
+  background-color: var(--black-num-one);
+  color: white;
+}
+
 /*Moon Icon*/
 #moon-icon {
   width: 19.99px;
@@ -304,19 +316,16 @@ input:checked + .slider:before {
   margin-left: 8px;
 }
 
-/*Toggle and Moon Icon Group*/
+/*Moon Icon Group*/
 .toggle-switch-and-moon-icon {
   display: flex;
 }
 
-/*Toggle and Moon Cover Hover*/
+/*Moon Cover Hover*/
 #moon-icon path:hover {
   stroke: var(--purple);
 }
 
-.slider:hover {
-  background-color: var(--purple);
-}
 
 /*Align Header Items*/
 header {
