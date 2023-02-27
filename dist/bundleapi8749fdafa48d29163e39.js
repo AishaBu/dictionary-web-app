@@ -331,8 +331,6 @@ function hideE() {
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.frownFaceEmoji.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.frownFaceEmoji.textContent = String.fromCodePoint(128577), _global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText.textContent = "No Definitions Found", _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage.textContent = "Sorry pal, we couldn't find definitions for the word you were looking for." + "You can try the search again at later time or head to the web instead.";
 }
 
-
-
 /*Create audio on click of icon*/
 //Moving audio value outside of function creates sound only once.
 var globalAudio = new Audio();
@@ -635,12 +633,54 @@ function createDictionary() {
   createDictionaryOne();
   createDictionaryTwo();
 }
+
+/*Hide Display of elements if data is undefined*/
+_global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', function (event) {
+  event.preventDefault(); //stops default action
+  event.stopPropagation(); //stops further propogation in event/bubbling phases
+  var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+  promise.then(function (data) {
+    if (data[0] == undefined) {
+      console.log('UNDEFINED');
+      event.preventDefault(); //stops default action
+      event.stopPropagation(); //stops further propogation in event/bubbling phases
+      /*Section One*/
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeech.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.style.display = "none";
+
+      /*Section Two*/
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningTextTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeechTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsTextofTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOneofTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo.style.display = "none";
+      displayE();
+    }
+  });
+});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createDictionary);
 
-/*Console Logs*/
-//const promise = fetchVocabularyWords("hello");
-//promise.then((data) => console.log(data[0]));
-//promise.then((data) => (data[0].shortdef[0]))
+
 
 //const promise = fetchSynonymsThesaurus('umpire');
 //promise.then((data) => console.log(data[0]));
@@ -649,4 +689,4 @@ function createDictionary() {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapi0687b1e5b758390477ad.js.map
+//# sourceMappingURL=bundleapi8749fdafa48d29163e39.js.map

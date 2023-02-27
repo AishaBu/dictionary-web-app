@@ -1,4 +1,4 @@
-import { searchField } from "./global-variables";
+import { form, searchField } from "./global-variables";
 import { vocabWord, vocabWordTwo } from "./global-variables";
 import { soundOutPhonetic, soundOutPhoneticTwo } from "./global-variables";
 import { partsOfSpeech, partsOfSpeechTwo } from "./global-variables";
@@ -71,8 +71,6 @@ function hideE() {
       "You can try the search again at later time or head to the web instead.");
 }
 
-export { displayE };
-export { hideE };
 
 /*Create audio on click of icon*/
 //Moving audio value outside of function creates sound only once.
@@ -419,12 +417,58 @@ function createDictionary() {
   createDictionaryOne();
   createDictionaryTwo();
 }
-export default createDictionary;
 
-/*Console Logs*/
-//const promise = fetchVocabularyWords("hello");
-//promise.then((data) => console.log(data[0]));
-//promise.then((data) => (data[0].shortdef[0]))
+/*Hide Display of elements if data is undefined*/
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); //stops default action
+  event.stopPropagation(); //stops further propogation in event/bubbling phases
+  const promise = fetchVocabularyWords(searchField.value);
+
+  promise.then((data) => {
+    if(data[0] == undefined){
+      console.log('UNDEFINED');
+      event.preventDefault(); //stops default action
+      event.stopPropagation(); //stops further propogation in event/bubbling phases
+      /*Section One*/
+      vocabWord.style.display = "none";
+      soundOutPhonetic.style.display = "none";
+      playIcon.style.display = "none";
+      meaningText.style.display = "none";
+      partsOfSpeech.style.display = "none";
+      synonymsText.style.display = "none";
+      synonymOne.style.display = "none";
+      synonymTwo.style.display = "none";
+      synonymThree.style.display = "none";
+      styleLine.style.display = "none";
+      defOne.style.display ="none";
+      defTwo.style.display = "none";
+      defThree.style.display = "none";
+
+      /*Section Two*/
+      vocabWordTwo.style.display = "none";
+      soundOutPhoneticTwo.style.display = "none";
+      playIconTwo.style.display = "none";
+      meaningTextTwo.style.display = "none";
+      partsOfSpeechTwo.style.display = "none";
+      synonymsTextofTwo.style.display = "none";
+      synonymOneofTwo.style.display = "none";
+      synonymTwoofTwo.style.display = "none";
+      synonymThreeofTwo.style.display = "none";
+      styleLineTwo.style.display = "none";
+      styleLineThree.style.display = "none";
+      defOneOfTwo.style.display = "none";
+      defTwoofTwo.style.display = "none";
+      defThreeofTwo.style.display = "none";
+      
+      displayE();
+    }
+  })
+})
+
+export default createDictionary;
+export { displayE };
+export { hideE };
+
 
 //const promise = fetchSynonymsThesaurus('umpire');
 //promise.then((data) => console.log(data[0]));
