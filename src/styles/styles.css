@@ -428,6 +428,25 @@ input[type="search"]:focus,
   height: 48px;
 }
 
+/*Play Icons Cursor*/
+ #play-icon,
+#play-icon-two{ 
+  cursor: pointer;
+}
+
+/*Play Icons with arrows on hover*/
+#play-icon g:hover,
+#play-icon-two g:hover{
+fill: var(--white);
+}
+
+#play-icon circle:hover,
+#play-icon-two circle:hover{
+  fill: var(--purple);
+  opacity: 100;
+}
+  
+/*Word and Phonetics*/
 .word-and-sound,
 .word-and-sound-two{
   display: flex;

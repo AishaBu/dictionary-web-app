@@ -414,7 +414,6 @@ function createDictionaryTwo() {
     displaySynonyms();
   } 
 
-
 /*Create Dictionary Function*/
 function createDictionary() {
   createDictionaryOne();
@@ -430,3 +429,4 @@ export default createDictionary;
 //const promise = fetchSynonymsThesaurus('umpire');
 //promise.then((data) => console.log(data[0]));
 //promise.then((data) => console.log(data[0].meta.syns[0]))
+
