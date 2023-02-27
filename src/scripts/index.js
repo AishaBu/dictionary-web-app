@@ -60,10 +60,8 @@ form.addEventListener("submit", (event) => {
 
 /*TOGGLE COLOR THEME CHANGE*/
 const checkBoxInput = document.getElementById("checkbox-input");
+const body = document.querySelector("body");
 function toggleTheme() {
-  const body = document.querySelector("body");
   body.classList.toggle("dark-mode");
 }
-toggleTheme();
-
 checkBoxInput.addEventListener("click", toggleTheme);

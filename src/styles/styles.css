@@ -303,7 +303,7 @@ input:checked + .slider.round{
   border-radius: 50%;
 }
 
-/*Dark Mode Theme Toggle*/
+/*Dark and Light Mode Theme Toggle*/
 .dark-mode{
   background-color: var(--black-num-one);
   color: white;
