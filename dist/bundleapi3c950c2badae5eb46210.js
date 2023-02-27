@@ -220,7 +220,9 @@ var __webpack_exports__ = {};
   \***************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "displayE": () => (/* binding */ displayE),
+/* harmony export */   "hideE": () => (/* binding */ hideE)
 /* harmony export */ });
 /* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -284,6 +286,7 @@ function _fetchVocabularyWords() {
 function fetchSynonymsThesaurus(_x2) {
   return _fetchSynonymsThesaurus.apply(this, arguments);
 }
+/*HERE*/
 function _fetchSynonymsThesaurus() {
   _fetchSynonymsThesaurus = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(searchFieldValue) {
     var apiKeyThesaurus, response, data;
@@ -319,12 +322,16 @@ function _fetchSynonymsThesaurus() {
   }));
   return _fetchSynonymsThesaurus.apply(this, arguments);
 }
-function displaySearchErrorMessage() {
-  /*If there is an error in search value*/
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeech.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.opacity = "0.3%", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.defList.style.display = "none", /*Section Two*/
-  _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningTextTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeechTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsTextofTwo.style.opacity = "0.3%", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOneofTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.defListofTwo.style.display = "none", /*Display Error Message*/
+function displayE() {
+  /*Display Error Message*/
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.frownFaceEmoji.style.display = "block", _global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText.style.display = "block", _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage.style.display = "block", _global_variables__WEBPACK_IMPORTED_MODULE_0__.frownFaceEmoji.textContent = String.fromCodePoint(128577), _global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText.textContent = "No Definitions Found", _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage.textContent = "Sorry pal, we couldn't find definitions for the word you were looking for." + "You can try the search again at later time or head to the web instead.";
 }
+function hideE() {
+  /*Display Error Message*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.frownFaceEmoji.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage.style.display = "none", _global_variables__WEBPACK_IMPORTED_MODULE_0__.frownFaceEmoji.textContent = String.fromCodePoint(128577), _global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText.textContent = "No Definitions Found", _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage.textContent = "Sorry pal, we couldn't find definitions for the word you were looking for." + "You can try the search again at later time or head to the web instead.";
+}
+
+
 
 /*Create audio on click of icon*/
 //Moving audio value outside of function creates sound only once.
@@ -352,7 +359,7 @@ function playAudioTwo() {
 
 /*Capitalize First Letter of each paragraph*/
 function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  return string && string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 /*Check if no data is available for list*/
@@ -512,6 +519,7 @@ function createList() {
 /*Display Synonyms for Words One and Two*/
 function displaySynonyms() {
   var promise = fetchSynonymsThesaurus(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+
   /*Synonyms List One*/
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.display = "block";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.textContent = "Synonyms";
@@ -548,6 +556,7 @@ function displaySynonyms() {
 /*Create Definitions*/
 /*Display words searched in the search field*/
 function createDictionaryOne() {
+  hideE();
   var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.display = "block";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "block";
@@ -582,6 +591,7 @@ function createDictionaryOne() {
 
 /*Dictionary Two*/
 function createDictionaryTwo() {
+  hideE();
   var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.display = "block";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.display = "block";
@@ -639,4 +649,4 @@ function createDictionary() {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapi6ac0039ce989a857a06f.js.map
+//# sourceMappingURL=bundleapi3c950c2badae5eb46210.js.map

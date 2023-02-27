@@ -5,6 +5,7 @@ import { searchField } from "./global-variables";
 import { errorSearchMessage } from "./global-variables";
 import { form } from "./global-variables";
 import createDictionary from "./dictionary-api";
+import {displayE} from "./dictionary-api";
 
 
 /*FORM VALIDATION*/
@@ -52,5 +53,6 @@ form.addEventListener("submit", (event) => {
     searchField.setAttribute("id", "invalid-search-field");
     errorSearchMessage.textContent = "Whoops, can't be empty!";
     errorSearchMessage.setAttribute("id", "invalid-error-message");
+    displayE();
   }
 });
