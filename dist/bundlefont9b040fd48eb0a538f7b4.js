@@ -29,6 +29,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "meaningText": () => (/* binding */ meaningText),
 /* harmony export */   "meaningTextTwo": () => (/* binding */ meaningTextTwo),
 /* harmony export */   "mono": () => (/* binding */ mono),
+/* harmony export */   "moonIcon": () => (/* binding */ moonIcon),
 /* harmony export */   "noDefinitionsFoundText": () => (/* binding */ noDefinitionsFoundText),
 /* harmony export */   "partsOfSpeech": () => (/* binding */ partsOfSpeech),
 /* harmony export */   "partsOfSpeechTwo": () => (/* binding */ partsOfSpeechTwo),
@@ -68,6 +69,9 @@ var mono = document.getElementById("mono");
 var form = document.getElementById("form");
 var searchField = document.getElementById("search-field");
 var errorSearchMessage = document.querySelector("#search-field + span#error");
+
+/*Moon Icon*/
+var moonIcon = document.getElementById('moon-icon');
 
 /*API*/
 /*Word Version 1*/
@@ -154,6 +158,9 @@ var noDefinitionsFoundText = document.getElementById('no-definitions-found-text'
 
 
 
+/*Moon Icon*/
+
+
 /***/ })
 
 /******/ 	});
@@ -219,6 +226,11 @@ var __webpack_exports__ = {};
   !*** ./src/scripts/switch-font-style.js ***!
   \******************************************/
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "changeFontToMono": () => (/* binding */ changeFontToMono),
+/* harmony export */   "changeFontToSansSerif": () => (/* binding */ changeFontToSansSerif),
+/* harmony export */   "changeFontToSerif": () => (/* binding */ changeFontToSerif)
+/* harmony export */ });
 /* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
 
 
@@ -559,8 +571,11 @@ function changeFontDisplayedAndStyleOnClick() {
   });
 }
 changeFontDisplayedAndStyleOnClick();
+
+
+
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlefont486a79fe89c98c99cbed.js.map
+//# sourceMappingURL=bundlefont9b040fd48eb0a538f7b4.js.map

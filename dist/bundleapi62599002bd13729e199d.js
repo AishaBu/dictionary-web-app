@@ -29,6 +29,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "meaningText": () => (/* binding */ meaningText),
 /* harmony export */   "meaningTextTwo": () => (/* binding */ meaningTextTwo),
 /* harmony export */   "mono": () => (/* binding */ mono),
+/* harmony export */   "moonIcon": () => (/* binding */ moonIcon),
 /* harmony export */   "noDefinitionsFoundText": () => (/* binding */ noDefinitionsFoundText),
 /* harmony export */   "partsOfSpeech": () => (/* binding */ partsOfSpeech),
 /* harmony export */   "partsOfSpeechTwo": () => (/* binding */ partsOfSpeechTwo),
@@ -68,6 +69,9 @@ var mono = document.getElementById("mono");
 var form = document.getElementById("form");
 var searchField = document.getElementById("search-field");
 var errorSearchMessage = document.querySelector("#search-field + span#error");
+
+/*Moon Icon*/
+var moonIcon = document.getElementById('moon-icon');
 
 /*API*/
 /*Word Version 1*/
@@ -152,6 +156,9 @@ var noDefinitionsFoundText = document.getElementById('no-definitions-found-text'
 /*Error Message*/
 
 
+
+
+/*Moon Icon*/
 
 
 /***/ })
@@ -689,4 +696,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapi8749fdafa48d29163e39.js.map
+//# sourceMappingURL=bundleapi62599002bd13729e199d.js.map

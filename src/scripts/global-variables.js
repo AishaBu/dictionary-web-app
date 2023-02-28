@@ -15,6 +15,9 @@ const form = document.getElementById("form");
 const searchField = document.getElementById("search-field");
 const errorSearchMessage = document.querySelector("#search-field + span#error");
 
+/*Moon Icon*/
+const moonIcon = document.getElementById('moon-icon');
+
 /*API*/
 /*Word Version 1*/
 const vocabWord = document.getElementById('vocabulary-word');
@@ -100,3 +103,6 @@ export {synonymThreeofTwo};
 export {errorMessage};
 export {frownFaceEmoji};
 export {noDefinitionsFoundText};
+
+/*Moon Icon*/
+export {moonIcon};

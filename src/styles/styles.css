@@ -13,6 +13,7 @@
 
   /*Shadow*/
   --box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.23);
+  --dark-theme-box-shadow: 0px 0px 5px 5px rgba(164, 69, 237, 1);
 
   /*Fonts*/
   --inconsolata-font: "Inconsolata";
@@ -232,6 +233,7 @@ header {
   width: 1px;
   height: 32px;
   background-color: var(--gray-num-two);
+  z-index: -1; /*places behind list*/
 }
 
 /*Toggle Switch*/
@@ -292,6 +294,11 @@ input:checked + .slider.round{
   background-color: var(--purple);
 }
 
+/*Slider Hover Box Shadow*/
+.slider.round:hover{
+  box-shadow: var(--box-shadow);
+}
+
 
 /*Round the slider background*/
 .slider.round {
@@ -306,7 +313,18 @@ input:checked + .slider.round{
 /*Dark and Light Mode Theme Toggle*/
 .dark-mode{
   background-color: var(--black-num-one);
-  color: white;
+  color:var(--white);
+}
+
+.light-mode{
+  background-color: var(--white);
+  color:var(--black-num-one);
+}
+
+
+/*Moon Icon Dark Theme*/
+.moon-dark-theme path{
+  stroke: var(--purple);
 }
 
 /*Moon Icon*/
@@ -316,10 +334,12 @@ input:checked + .slider.round{
   margin-left: 8px;
 }
 
+
 /*Moon Icon Group*/
 .toggle-switch-and-moon-icon {
   display: flex;
 }
+
 
 /*Moon Cover Hover*/
 #moon-icon path:hover {
@@ -479,7 +499,6 @@ fill: var(--white);
   margin-top: -20px;
   margin-left: 10px;
 }
-
 
 ul{
   list-style: none;

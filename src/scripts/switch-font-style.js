@@ -339,3 +339,7 @@ function changeFontDisplayedAndStyleOnClick(){
   })
 
 }changeFontDisplayedAndStyleOnClick();
+
+export {changeFontToSansSerif};
+export {changeFontToSerif};
+export {changeFontToMono};
