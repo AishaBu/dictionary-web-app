@@ -9,8 +9,6 @@ import { displayE } from "./dictionary-api";
 import {defOne, defOneOfTwo, defThree, defThreeofTwo, defTwo, defTwoofTwo} from "./global-variables";
 import {fontPlaceholder, fontDropdownList , sansSerif, serif, mono} from "./global-variables";
 import { moonIcon } from "./global-variables";
-import { changeFontToSansSerif } from "./switch-font-style";
-
 
 
 /*FORM VALIDATION*/

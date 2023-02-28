@@ -71,7 +71,6 @@ function hideE() {
       "You can try the search again at later time or head to the web instead.");
 }
 
-
 /*Create audio on click of icon*/
 //Moving audio value outside of function creates sound only once.
 const globalAudio = new Audio();
@@ -468,9 +467,3 @@ form.addEventListener('submit', (event) => {
 export default createDictionary;
 export { displayE };
 export { hideE };
-
-
-//const promise = fetchSynonymsThesaurus('umpire');
-//promise.then((data) => console.log(data[0]));
-//promise.then((data) => console.log(data[0].meta.syns[0]))
-
