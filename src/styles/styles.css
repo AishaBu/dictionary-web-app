@@ -334,7 +334,6 @@ input:checked + .slider.round{
   margin-left: 8px;
 }
 
-
 /*Moon Icon Group*/
 .toggle-switch-and-moon-icon {
   display: flex;
@@ -494,11 +493,37 @@ fill: var(--white);
 }
 
 /*Definitions List*/
+/*Meanings-Text*/
 .meaning-text,
 .meaning-text-two{
   margin-top: -20px;
-  margin-left: 10px;
 }
+
+/*Synonyms Text*/
+#synonyms-text,
+#synonyms-text-two{
+  margin-top: 10px;
+}
+
+/*Both Meaning and 
+Synonyms Text*/
+.meaning-text,
+.meaning-text-two,
+#synonyms-text,
+#synonyms-text-two{
+  margin-left: 20px;
+}
+
+/*Synonyms Lists*/
+#synonym-one,
+#synonym-two,
+#synonym-three,
+#synonym-one-of-two,
+#synonym-two-of-two,
+#synonym-three-of-two{
+  margin-left: 250px;
+}
+
 
 ul{
   list-style: none;
@@ -533,20 +558,6 @@ ul li:before{
 #synonym-two-of-two,
 #synonym-three-of-two{
   display: none;
-}
-
-/*Synonyms*/
-#synonyms-text,
-#synonyms-text-two{
-  margin-top: 10px;
-}
-
-#synonym-group,
-#synonym-group-two{
-  display: flex;
-  justify-content: center;
-  align-items: top;
-  gap: 150px;
 }
 
 /*Words Section 2*/

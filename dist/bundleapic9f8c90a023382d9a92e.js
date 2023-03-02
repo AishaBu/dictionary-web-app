@@ -688,12 +688,8 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createDictionary);
 
 
-
-//const promise = fetchSynonymsThesaurus('umpire');
-//promise.then((data) => console.log(data[0]));
-//promise.then((data) => console.log(data[0].meta.syns[0]))
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapi62599002bd13729e199d.js.map
+//# sourceMappingURL=bundleapic9f8c90a023382d9a92e.js.map
