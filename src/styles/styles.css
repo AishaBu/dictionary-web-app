@@ -609,76 +609,6 @@ ul li:before {
 
 
 /*MEDIA QUERIES*/
-/*At 390px*/
-@media (width: 390px){
-
-  #synonym-one,
-  #synonym-two,
-  #synonym-three,
-  #synonym-one-of-two,
-  #synonym-two-of-two,
-  #synonym-three-of-two {
-    margin-left: 290px;
-  }
-}
-
-/*At 412px*/
-@media(width: 412px) {
-
-  #synonym-one,
-  #synonym-two,
-  #synonym-three,
-  #synonym-one-of-two,
-  #synonym-two-of-two,
-  #synonym-three-of-two {
-    margin-left: 270px;
-  }
-
-}
-
-
-/*At 414px*/
-@media(width: 414px) {
-
-  #synonym-one,
-  #synonym-two,
-  #synonym-three,
-  #synonym-one-of-two,
-  #synonym-two-of-two,
-  #synonym-three-of-two {
-    margin-left: 280px;
-  }
-
-}
-
-
-/*At 320px*/
-@media (width: 320px) {
-
-  header{
-    margin-left: 40px;
-  }
-
-  input[type="search"] {
-    width: 300px;
-  }
-
-  #main-header-content {
-    position: relative;
-    right: 70px;
-  }
-
-  #synonym-one,
-  #synonym-two,
-  #synonym-three,
-  #synonym-one-of-two,
-  #synonym-two-of-two,
-  #synonym-three-of-two {
-    margin-left: 180px;
-  }
-
-}
-
 /*300 and below*/
 @media (max-width: 300px) {
   header {
@@ -762,4 +692,72 @@ ul li:before {
   left: 5px;
 }
 
+}
+
+/*At 320px*/
+@media (width: 320px) {
+
+  header{
+    margin-left: 40px;
+  }
+
+  input[type="search"] {
+    width: 300px;
+  }
+
+  #main-header-content {
+    position: relative;
+    right: 70px;
+  }
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 180px;
+  }
+}
+
+
+/*At 390px*/
+@media (width: 390px){
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 260px;
+  }
+
+}
+
+/*At 412px*/
+@media(width: 412px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 270px;
+  }
+
+}
+
+/*At 414px*/
+@media(width: 414px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 280px;
+  }
 }
