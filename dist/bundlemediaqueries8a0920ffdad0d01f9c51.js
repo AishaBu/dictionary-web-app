@@ -1,3 +1,8 @@
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!**************************************!*\
+  !*** ./src/scripts/media-queries.js ***!
+  \**************************************/
 /*
 import { vocabWord, vocabWordTwo, soundOutPhonetic, soundOutPhoneticTwo } from "./global-variables";
 import {defOne, defTwo, defThree, defOneOfTwo, defTwoofTwo, defThreeofTwo} from "./global-variables";
@@ -74,3 +79,6 @@ function setMediaQuery600AndAbove() {
 }
 setMediaQuery600AndAbove();
 */
+/******/ })()
+;
+//# sourceMappingURL=bundlemediaqueries8a0920ffdad0d01f9c51.js.map

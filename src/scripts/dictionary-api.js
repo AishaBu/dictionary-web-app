@@ -324,6 +324,41 @@ function displaySynonyms() {
     );
   } 
 
+  /*Check Headword for Extra Strings*/
+  function checkHeadwordForExtraStringsBeforeDisplaying(){
+      const promise = fetchVocabularyWords(searchField.value);
+      /*Remove Extra Words After Headword*/
+      let targetString = searchField.value;
+      let extraString = searchField.value;
+      let index = extraString.indexOf(targetString);
+    
+      if(index !== -1){
+        let result = extraString.substring(0, index + targetString.length)
+        vocabWord.textContent = " ";
+        vocabWordTwo.textContent = " ";
+        vocabWord.textContent= capitalizeFirstLetter(result);
+        vocabWordTwo.textContent= capitalizeFirstLetter(result);
+      } 
+      else{
+          /*Display Headword One and Two*/
+        /*Vocab Word One*/
+          promise.then(
+            (data) =>
+              (vocabWord.textContent = capitalizeFirstLetter(
+                data[1].meta.stems[0]
+              )) 
+          );
+    
+          /*Vocab Word Two*/ 
+          promise.then(
+            (data) =>
+              (vocabWordTwo.textContent = capitalizeFirstLetter(
+                data[1].meta.stems[0]
+              )) 
+        );
+  }};
+    
+
 /*Create Definitions*/
 /*Display words searched in the search field*/
 function createDictionaryOne() {
@@ -332,11 +367,10 @@ function createDictionaryOne() {
   styleLine.style.display = "block";
   playIcon.style.display = "block";
  
-    /*Display Headword One*/
-    promise.then(
-      (data) =>
-        (vocabWord.textContent = capitalizeFirstLetter(data[1].meta.stems[0]))
-    );
+    /*Check Strings And Remove Extra Strings
+     If Available Before Displaying - Headword One*/
+    checkHeadwordForExtraStringsBeforeDisplaying();
+
     /*Display Phonetic Sound*/
     promise.then(
       (data) =>
@@ -371,20 +405,14 @@ function createDictionaryTwo() {
   styleLineTwo.style.display = "block";
   styleLineThree.style.display = "block";
   playIconTwo.style.display = "block";
-  
-    /*Display Headword Two*/
-    promise.then(
-      (data) =>
-        (vocabWordTwo.textContent = capitalizeFirstLetter(
-          data[1].meta.stems[0]
-        ))
-    );
+
+   /*Check Strings And Remove Extra Strings
+    If Available Before Displaying - Headword Two*/
+    checkHeadwordForExtraStringsBeforeDisplaying();
+
     /*Display Phonetic Sound Two*/
-    promise.then(
-      (data) =>
-        (soundOutPhoneticTwo.textContent =
-          "/" + capitalizeFirstLetter(data[1].hwi.prs[0].mw + "/"))
-    );
+    /*Phonetics Two Checked Inside of
+    form submit at bottom*/
 
     /*Display parts of speech and style-lines*/
     promise.then(
@@ -461,9 +489,20 @@ form.addEventListener('submit', (event) => {
       
       displayE();
     }
+    /*If phonetics Are Not Equal*/
+    if(data[1].hwi.prs[0].mw !== data[0].hwi.prs[0].mw){
+        /*Display Phonetic Sound Two*/
+        promise.then(
+          (data) =>
+            (soundOutPhoneticTwo.textContent =
+              "/" + capitalizeFirstLetter(data[0].hwi.prs[0].mw + "/"))
+        );
+    }
   })
 })
 
 export default createDictionary;
 export { displayE };
 export { hideE };
+
+

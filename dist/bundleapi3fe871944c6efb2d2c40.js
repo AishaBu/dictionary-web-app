@@ -558,6 +558,34 @@ function displaySynonyms() {
   });
 }
 
+/*Check Headword for Extra Strings*/
+function checkHeadwordForExtraStringsBeforeDisplaying() {
+  var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+  /*Remove Extra Words After Headword*/
+  var targetString = _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value;
+  var extraString = _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value;
+  var index = extraString.indexOf(targetString);
+  if (index !== -1) {
+    var result = extraString.substring(0, index + targetString.length);
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.textContent = capitalizeFirstLetter(result);
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.textContent = capitalizeFirstLetter(result);
+  } else {
+    /*Display Headword One and Two*/
+    /*Vocab Word One*/
+    promise.then(function (data) {
+      return _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.textContent = capitalizeFirstLetter(data[1].meta.stems[0]);
+    });
+
+    /*Vocab Word Two*/
+    promise.then(function (data) {
+      return _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.textContent = capitalizeFirstLetter(data[1].meta.stems[0]);
+    });
+  }
+}
+;
+
 /*Create Definitions*/
 /*Display words searched in the search field*/
 function createDictionaryOne() {
@@ -566,10 +594,10 @@ function createDictionaryOne() {
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.display = "block";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "block";
 
-  /*Display Headword One*/
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.textContent = capitalizeFirstLetter(data[1].meta.stems[0]);
-  });
+  /*Check Strings And Remove Extra Strings
+   If Available Before Displaying - Headword One*/
+  checkHeadwordForExtraStringsBeforeDisplaying();
+
   /*Display Phonetic Sound*/
   promise.then(function (data) {
     return _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.textContent = "/" + capitalizeFirstLetter(data[0].hwi.prs[0].mw + "/");
@@ -602,14 +630,13 @@ function createDictionaryTwo() {
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.display = "block";
   _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.style.display = "block";
 
-  /*Display Headword Two*/
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.textContent = capitalizeFirstLetter(data[1].meta.stems[0]);
-  });
+  /*Check Strings And Remove Extra Strings
+   If Available Before Displaying - Headword Two*/
+  checkHeadwordForExtraStringsBeforeDisplaying();
+
   /*Display Phonetic Sound Two*/
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.textContent = "/" + capitalizeFirstLetter(data[1].hwi.prs[0].mw + "/");
-  });
+  /*Phonetics Two Checked Inside of
+  form submit at bottom*/
 
   /*Display parts of speech and style-lines*/
   promise.then(function (data) {
@@ -683,6 +710,13 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo.style.display = "none";
       displayE();
     }
+    /*If phonetics Are Not Equal*/
+    if (data[1].hwi.prs[0].mw !== data[0].hwi.prs[0].mw) {
+      /*Display Phonetic Sound Two*/
+      promise.then(function (data) {
+        return _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.textContent = "/" + capitalizeFirstLetter(data[0].hwi.prs[0].mw + "/");
+      });
+    }
   });
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createDictionary);
@@ -692,4 +726,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapic9f8c90a023382d9a92e.js.map
+//# sourceMappingURL=bundleapi3fe871944c6efb2d2c40.js.map

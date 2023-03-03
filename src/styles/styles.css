@@ -153,17 +153,6 @@ html {
   box-sizing: border-box;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-}
-
-/*Book Logo*/
-#book-logo {
-  width: 28.05px;
-  height: 32px;
-}
-
 /*Fonts*/
 #font-dropdown-list p,
 #font-choice-btn {
@@ -228,6 +217,118 @@ header {
   font-weight: bold;
 }
 
+/*Align Header Items*/
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/*Book Logo*/
+#book-logo {
+  width: 28.05px;
+  height: 32px;
+  position: relative;
+  right: 30px;
+}
+
+.toggle-switch-and-moon-icon,
+#font-dropdown-menu {
+  position: relative;
+  left: 60px;
+  margin-left: 25px;
+}
+
+#font-dropdown-list {
+  position: absolute;
+}
+
+#divide-line {
+  position: relative;
+  left: 60px;
+  margin-right: -15px;
+}
+
+#main-header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 20px;
+}
+
+/*Moon Icon*/
+#moon-icon {
+  width: 19.99px;
+  height: 20px;
+  margin-left: 8px;
+}
+
+/*Moon Icon Group*/
+.toggle-switch-and-moon-icon {
+  display: flex;
+}
+
+/*Moon Cover Hover*/
+#moon-icon path:hover {
+  stroke: var(--purple);
+}
+
+/* Search Bar Input Field*/
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/*Add custom icon search bar*/
+input[type="search"] {
+  appearance: none;
+  width: 327px;
+  height: 48px;
+  border-radius: 16px;
+  background-color: var(--off-white-one);
+  border: 0.5px solid var(--off-white-one);
+  background-image: url("../assets/images/icon-search.svg");
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  cursor: pointer;
+}
+
+/*Remove default x symbol*/
+input[type="search"]::-webkit-search-cancel-button {
+  --webkit-appearance: none;
+  appearance: none;
+  opacity: 0;
+}
+
+/*Add border color on active for input field*/
+input[type="search"]:focus,
+#valid-value {
+  border: 1px solid var(--purple);
+  outline: none;
+}
+
+/*Set Invalid Border Color from JavaScript*/
+#invalid-search-field {
+  border: 1px solid var(--red);
+  outline: none;
+}
+
+#invalid-error-message {
+  color: var(--red);
+  position: relative;
+  top: 5px;
+  right: 40px;
+  width: 244px;
+  height: 24px;
+  font-family: var(--inter-font), var(--static-inter-regular-font);
+  font-size: 14px;
+  line-height: 17px;
+}
+
 /*Add dividing Line on header*/
 #divide-line {
   width: 1px;
@@ -290,15 +391,14 @@ input:checked + .slider:before {
 }
 
 /*Change background color on toggle when checked*/
-input:checked + .slider.round{
+input:checked + .slider.round {
   background-color: var(--purple);
 }
 
 /*Slider Hover Box Shadow*/
-.slider.round:hover{
+.slider.round:hover {
   box-shadow: var(--box-shadow);
 }
-
 
 /*Round the slider background*/
 .slider.round {
@@ -311,174 +411,70 @@ input:checked + .slider.round{
 }
 
 /*Dark and Light Mode Theme Toggle*/
-.dark-mode{
+.dark-mode {
   background-color: var(--black-num-one);
-  color:var(--white);
+  color: var(--white);
 }
 
-.light-mode{
+.light-mode {
   background-color: var(--white);
-  color:var(--black-num-one);
+  color: var(--black-num-one);
 }
-
 
 /*Moon Icon Dark Theme*/
-.moon-dark-theme path{
+.moon-dark-theme path {
   stroke: var(--purple);
-}
-
-/*Moon Icon*/
-#moon-icon {
-  width: 19.99px;
-  height: 20px;
-  margin-left: 8px;
-}
-
-/*Moon Icon Group*/
-.toggle-switch-and-moon-icon {
-  display: flex;
-}
-
-
-/*Moon Cover Hover*/
-#moon-icon path:hover {
-  stroke: var(--purple);
-}
-
-
-/*Align Header Items*/
-header {
-  margin-top: 20px;
-}
-
-#book-logo {
-  position: relative;
-  right: 30px;
-}
-
-.toggle-switch-and-moon-icon,
-#font-dropdown-menu {
-  position: relative;
-  left: 60px;
-  margin-left: 25px;
-}
-
-#font-dropdown-list {
-  position: absolute;
-}
-
-#divide-line {
-  position: relative;
-  left: 60px;
-  margin-right: -15px;
-}
-
-#main-header-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  right: 20px;
-}
-
-/* Search Bar Input Field*/
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-/*Add custom icon search bar*/
-input[type="search"] {
-  appearance: none;
-  width: 327px;
-  height: 48px;
-  border-radius: 16px;
-  background-color: var(--off-white-one);
-  border: 0.5px solid var(--off-white-one);
-  background-image: url("../assets/images/icon-search.svg");
-  background-repeat: no-repeat;
-  background-position: 95% center;
-  cursor: pointer;
-}
-
-/*Remove default x symbol*/
-input[type="search"]::-webkit-search-cancel-button {
-  --webkit-appearance: none;
-  appearance: none;
-  opacity: 0;
-}
-
-/*Add border color on active for input field*/
-input[type="search"]:focus,
-#valid-value{
-  border: 1px solid var(--purple);
-  outline: none;
-}
-
-/*Set Invalid Border Color from JavaScript*/
-#invalid-search-field {
-  border: 1px solid var(--red);
-  outline: none;
-}
-
-#invalid-error-message {
-  color: var(--red);
-  position: relative;
-  top: 5px;
-  right: 40px;
-  width: 244px;
-  height: 24px;
-  font-family: var(--inter-font), var(--static-inter-regular-font);
-  font-size: 14px;
-  line-height: 17px;
 }
 
 /*Dictionary Words*/
 /*Phonetics, noun and noun-line*/
-#phonetic{
+#phonetic {
   margin-top: -20px;
 }
 
 #parts-of-speech-and-line-group,
-#parts-of-speech-and-line-group-two{
+#parts-of-speech-and-line-group-two {
   display: flex;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 /*Audio*/
 #play-icon,
-#play-icon-two{
+#play-icon-two {
   width: 48px;
   height: 48px;
 }
 
 /*Play Icons Cursor*/
- #play-icon,
-#play-icon-two{ 
+#play-icon,
+#play-icon-two {
   cursor: pointer;
 }
 
 /*Play Icons with arrows on hover*/
 #play-icon g:hover,
-#play-icon-two g:hover{
-fill: var(--white);
+#play-icon-two g:hover {
+  fill: var(--white);
 }
 
 #play-icon circle:hover,
-#play-icon-two circle:hover{
+#play-icon-two circle:hover {
   fill: var(--purple);
   opacity: 100;
 }
-  
+
+/*Align play icon
+ with vocab word*/
+#play-icon-two{
+  margin-top: -100px;
+}
+
 /*Word and Phonetics*/
 .word-and-sound,
-.word-and-sound-two{
+.word-and-sound-two {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   gap: 150px;
 }
@@ -486,22 +482,21 @@ fill: var(--white);
 #play-icon,
 #play-icon-two,
 #style-line,
-#style-line-two
-#style-line-three,
-#style-line-four{
+#style-line-two #style-line-three,
+#style-line-four {
   display: none;
 }
 
 /*Definitions List*/
 /*Meanings-Text*/
 .meaning-text,
-.meaning-text-two{
+.meaning-text-two {
   margin-top: -20px;
 }
 
 /*Synonyms Text*/
 #synonyms-text,
-#synonyms-text-two{
+#synonyms-text-two {
   margin-top: 10px;
 }
 
@@ -510,7 +505,7 @@ Synonyms Text*/
 .meaning-text,
 .meaning-text-two,
 #synonyms-text,
-#synonyms-text-two{
+#synonyms-text-two {
   margin-left: 20px;
 }
 
@@ -520,16 +515,15 @@ Synonyms Text*/
 #synonym-three,
 #synonym-one-of-two,
 #synonym-two-of-two,
-#synonym-three-of-two{
-  margin-left: 250px;
+#synonym-three-of-two {
+  margin-left: 230px;
 }
 
-
-ul{
+ul {
   list-style: none;
 }
 
-ul li:before{
+ul li:before {
   content: "\2022";
   color: var(--purple);
   font-weight: bold;
@@ -538,13 +532,18 @@ ul li:before{
   margin-left: -1em;
 }
 
-#def-one, 
+#def-one,
 #def-two,
 #def-three,
 #def-one-of-two,
 #def-two-of-two,
-#def-three-of-two{
+#def-three-of-two {
   margin: 20px;
+}
+
+#word-def-group,
+#word-def-group-two {
+  margin-left: 10px;
 }
 
 #def-list,
@@ -556,27 +555,37 @@ ul li:before{
 #synonyms-text-two,
 #synonym-one-of-two,
 #synonym-two-of-two,
-#synonym-three-of-two{
+#synonym-three-of-two {
   display: none;
 }
 
+/*Add Period After Paragraphs*/
+#def-one::after,
+#def-two::after,
+#def-three::after,
+#def-one-of-two::after,
+#def-two-of-two::after,
+#def-three-of-two::after{
+  content: ".";
+}
+
 /*Words Section 2*/
-.vocabulary-section-one{
+.vocabulary-section-one {
   margin-top: 30px;
 }
 
-.vocabulary-section-two{
-  margin-top: -50px;
+.vocabulary-section-two {
+  margin-top: 60px;
 }
 
-#style-line-two{
+#style-line-two {
   margin-top: 40px;
   margin-bottom: 40px;
   box-shadow: var(--box-shadow);
 }
 
 /*Error Message Group*/
-.error-message-group{
+.error-message-group {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -585,15 +594,172 @@ ul li:before{
 
 #error-message,
 #frown-face-emoji,
-#no-definitions-found-text{
+#no-definitions-found-text {
   display: none;
 }
 
-#error-message{
+#error-message {
   text-align: left;
   width: 300px;
 }
 
-#frown-face-emoji{
+#frown-face-emoji {
   font-size: 50px; /*Increases emoji width*/
+}
+
+
+/*MEDIA QUERIES*/
+/*At 390px*/
+@media (width: 390px){
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 290px;
+  }
+}
+
+/*At 412px*/
+@media(width: 412px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 270px;
+  }
+
+}
+
+
+/*At 414px*/
+@media(width: 414px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 280px;
+  }
+
+}
+
+
+/*At 320px*/
+@media (width: 320px) {
+
+  header{
+    margin-left: 40px;
+  }
+
+  input[type="search"] {
+    width: 300px;
+  }
+
+  #main-header-content {
+    position: relative;
+    right: 70px;
+  }
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 180px;
+  }
+
+}
+
+/*300 and below*/
+@media (max-width: 300px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input[type="search"] {
+    width: 240px;
+  }
+
+  #main-header-content {
+    display: flex;
+    position: relative;
+    right: 80px;
+  }
+
+  #book-logo {
+    margin-left: 30px;
+    margin-bottom: 10px;
+  }
+
+  .word-and-sound,
+  .word-and-sound-two {
+    gap: 0px;
+  }
+
+  #parts-of-speech-and-line-group,
+  #parts-of-speech-and-line-group-two {
+    flex-direction: column;
+  }
+
+  #word-def-group,
+  #word-def-group-two {
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+
+  #phonetic,
+  #phonetic-two {
+    margin-top: -20px;
+  }
+
+  .meaning-text,
+  .meaning-text-two,
+  #synonyms-text,
+  #synonyms-text-two,
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    text-align: center;
+    margin-left: 0px;
+  }
+
+  .vocabulary-section-two {
+    margin-top: 30px;
+  }
+
+  #play-icon-two{
+    margin-top: -80px;
+  }
+
+  /*Center paragraphs*/
+  #def-one,
+  #def-two,
+  #def-three,
+  #def-one-of-two,
+  #def-two-of-two,
+  #def-three-of-two {
+    margin-left: 20px;
+  }
+
+
+/*Shift Input Error Message*/
+#invalid-error-message{
+  position: relative;
+  left: 5px;
+}
+
 }

@@ -9,6 +9,7 @@ module.exports = {
     bundleapi: path.resolve(__dirname, "src/scripts/dictionary-api.js"),
     bundlefont: path.resolve(__dirname, "src/scripts/switch-font-style.js"),
     bundlevariables: path.resolve(__dirname, "src/scripts/global-variables.js"),
+    bundlemediaqueries: path.resolve(__dirname, "src/scripts/media-queries.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
