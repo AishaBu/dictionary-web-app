@@ -26,7 +26,6 @@ Users should be able to:
 - Switch between light and dark themes
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
-- Have the correct color scheme chosen for them based on their computer preferences.
 
 <!--### Screenshot
 
