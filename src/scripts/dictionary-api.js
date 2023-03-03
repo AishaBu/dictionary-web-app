@@ -288,13 +288,13 @@ function displaySynonyms() {
     promise.then(
       (data) =>
         (synonymTwo.textContent = capitalizeFirstLetter(
-          data[0].meta.syns[1][3]
+          data[0].meta.syns[0][1]
         ))
     );
     promise.then(
       (data) =>
         (synonymThree.textContent = capitalizeFirstLetter(
-          data[0].meta.syns[3][6]
+          data[0].meta.syns[0][2]
         ))
     );
 
@@ -313,13 +313,13 @@ function displaySynonyms() {
     promise.then(
       (data) =>
         (synonymTwoofTwo.textContent = capitalizeFirstLetter(
-          data[1].meta.syns[1][3]
+          data[1].meta.syns[0][1]
         ))
     );
     promise.then(
       (data) =>
         (synonymThreeofTwo.textContent = capitalizeFirstLetter(
-          data[1].meta.syns[3][6]
+          data[1].meta.syns[0][2]
         ))
     );
   } 
@@ -454,8 +454,6 @@ form.addEventListener('submit', (event) => {
   promise.then((data) => {
     if(data[0] == undefined){
       console.log('UNDEFINED');
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
       /*Section One*/
       vocabWord.style.display = "none";
       soundOutPhonetic.style.display = "none";
@@ -504,5 +502,3 @@ form.addEventListener('submit', (event) => {
 export default createDictionary;
 export { displayE };
 export { hideE };
-
-
