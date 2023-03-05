@@ -608,17 +608,113 @@ ul li:before {
 }
 
 
+
+
+
 /*MEDIA QUERIES*/
+
+/*Set different searchfield width lengths*/
+
+/*300 and below*/
+@media (max-width: 300px) {
+
+  input[type="search"] {
+    width: 240px;
+  }
+}
+
+/*At 320px*/
+@media (width: 320px) {
+
+  input[type="search"] {
+    width: 300px;
+  }
+}
+
+/*Between 400px and 438px*/
+@media(min-width: 400px) and (max-width: 438px) {
+
+  input[type="search"] {
+    width: 380px;
+  }
+}
+
+/*Between 439px and 499px*/
+@media(min-width: 439px) and (max-width: 499px) {
+
+  input[type="search"] {
+    width: 400px;
+  }
+}
+
+/*Tablet Searchfield Widths/
+
+/*Between 500px and 530*/
+@media(min-width: 500px) and (max-width: 530px) {
+
+  input[type="search"] {
+    width: 480px;
+  }
+}
+
+/*Between 531px and 545*/
+@media(min-width: 531px) and (max-width: 600px) {
+
+  input[type="search"] {
+    width: 500px;
+  }
+}
+
+/*Between 601 and 635*/
+@media(min-width: 601px) and (max-width: 635px) {
+
+  input[type="search"] {
+    width: 550px;
+  }
+}
+
+/*Between 635 and 700 Searchfield*/
+@media(min-width: 635px) and (max-width: 700px) {
+
+  input[type="search"] {
+    width: 600px;
+  }
+}
+/*700px and above Searchfield*/
+@media (min-width: 700px){
+
+  input[type="search"] {
+    width: 650px;
+  }
+}
+
+/*800px and above Searchfield*/
+@media (min-width: 800px){
+
+  input[type="search"] {
+    width: 760px;
+  }
+}
+
+/*1100px and above Searchfield*/
+@media (min-width: 1100px){
+
+  input[type="search"] {
+    width: 900px;
+  }
+}
+
+/*Set Searchfield Width End*/
+
+
+/*Set Header Media Queries*/
+
 /*300 and below*/
 @media (max-width: 300px) {
   header {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  input[type="search"] {
-    width: 240px;
   }
 
   #main-header-content {
@@ -631,7 +727,69 @@ ul li:before {
     margin-left: 30px;
     margin-bottom: 10px;
   }
+}
 
+/*At 320px*/
+@media (width: 320px) {
+
+  header{
+    margin-left: 40px;
+  }
+
+  #main-header-content {
+    position: relative;
+    right: 70px;
+  }
+}
+/*Between 470px and 599px*/
+@media (min-width: 470px) and (max-width:599px){
+
+  #main-header-content {
+    margin-left: 110px;
+  }
+}
+
+/*600px and above*/
+@media (min-width: 600px){
+
+  #main-header-content {
+    margin-left: 240px;
+  }
+}
+
+/*800px and above Header*/
+@media (min-width: 800px){
+
+  #main-header-content {
+    margin-left: 400px;
+  }
+}
+
+/*1000px and above Header MQ*/
+@media (min-width: 1000px){
+
+  #main-header-content {
+    margin-left: 450px;
+  }
+}  
+
+/*1100px and above Header MQ*/
+@media (min-width: 1100px){
+
+  #main-header-content {
+    margin-left: 550px;
+  }
+
+}
+
+/*End Header Media Queries*/
+
+
+/*Set Phonetics, and Play Icon Media Queries*/
+
+/*300 and below*/
+@media (max-width: 300px) {
+  
   .word-and-sound,
   .word-and-sound-two {
     gap: 0px;
@@ -653,6 +811,229 @@ ul li:before {
     margin-top: -20px;
   }
 
+  #play-icon-two{
+    margin-top: -80px;
+  } 
+}
+
+/*Tablet Devices*/
+/*Between 500px and 600px*/
+@media(min-width: 500px){
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 280px;
+  }
+
+  #play-icon, 
+  #play-icon-two{
+    width: 75px;
+    height: 75px;
+  }
+
+  #phonetic,
+  #phonetic-two{
+    margin-top: -40px;
+  }
+}
+
+/*Between 668px*/
+@media(min-width: 668px){
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 500px;
+  }
+
+  .word-and-sound, .word-and-sound-two {
+    gap: 250px;
+}
+
+}
+
+/*Between 668 and 700px*/
+@media(min-width: 766px){
+
+  .word-and-sound, .word-and-sound-two {
+    gap: 300px;
+}
+}
+/*Between 993px*/
+@media(min-width: 993px){
+
+  .word-and-sound, .word-and-sound-two {
+    gap: 400px;
+}
+}
+/*Between 1000px*/
+@media(min-width: 1000px){
+
+  .word-and-sound, .word-and-sound-two {
+    gap: 500px; 
+}
+}
+
+/*1200px and above*/
+@media (min-width: 1200px) {
+
+  #style-line,
+  #style-line-three{
+    width: 300px;
+    position: relative;
+    left: -100px;
+  }
+
+  .word-and-sound, .word-and-sound-two {
+    gap: 400px; 
+}
+  
+  #parts-of-speech-and-line-group,
+  #parts-of-speech-and-line-group-two {
+    margin-left: 140px;
+
+  }
+}
+
+/*End Phonetics, and Play Icon Media Queries*/
+
+
+/*Set Definitions List Media Queries*/
+
+/*Set Word Definitions Group*//*Between 641 and 700px*/
+
+/*Mobile*/
+/*300 and below*/
+@media (max-width: 300px) {
+  
+  /*Center paragraphs*/
+  #def-one,
+  #def-two,
+  #def-three,
+  #def-one-of-two,
+  #def-two-of-two,
+  #def-three-of-two {
+    margin-left: 20px;
+  }
+}
+
+/*Tablet*/
+@media(min-width: 641px) and (max-width: 782px){
+
+  #word-def-group, #word-def-group-two {
+    margin-left: 30px;
+  }
+}
+
+@media(min-width: 783px){
+
+  #word-def-group, #word-def-group-two {
+    margin-left: 50px;
+  }
+}
+
+@media(min-width: 1000px){
+
+  #word-def-group, #word-def-group-two {
+    margin-left: 80px;
+  }
+}
+@media(min-width: 1200px){
+
+  #word-def-group, #word-def-group-two {
+    margin-left: 280px;
+  }
+}
+
+
+/*End Set Definitions List Media Queries*/
+
+/*Set Vocabulary Section and Error Message Media Quries*/
+
+/*300 and below*/
+@media (max-width: 300px) {
+  
+  .vocabulary-section-two {
+    margin-top: 30px;
+  }
+
+/*Shift Input Error Message*/
+#invalid-error-message{
+  position: relative;
+  left: 5px;
+  }
+}
+
+/*Between 412px and 414px*/
+@media (min-width: 412px) and (max-width: 414px){
+  
+  /*Shift Input Error Message*/
+#invalid-error-message{
+  position: relative;
+  left: -50px;
+  }
+}
+
+/*501 and above*/
+@media (min-width: 501px) {
+  
+  /*Shift Input Error Message*/
+  #invalid-error-message{
+    margin-left: -180px;
+    }
+  }
+
+/*639 and above*/
+@media (min-width: 639px){
+  
+  /*Shift Input Error Message*/
+  #invalid-error-message{
+    margin-left: -330px;
+    }
+  }
+
+/*715 and above*/
+@media (min-width: 715px){
+  
+  /*Shift Input Error Message*/
+  #invalid-error-message{
+    margin-left: -340px;
+    }
+  }
+  
+/*715 and above*/
+@media (min-width: 806px){
+  
+  /*Shift Input Error Message*/
+  #invalid-error-message{
+    margin-left: -400px;
+    }
+  }
+ 
+  /*1100 and above*/
+  @media (min-width: 1100px){
+  
+    /*Shift Input Error Message*/
+    #invalid-error-message{
+      margin-left: -560px;
+      }
+    }
+   
+
+/*End Vocabulary Section and Error Message Media Queries*/
+
+/*Set Synonyms and Meaning Sections Media Queries*/
+
+/*300 and below*/
+@media (max-width: 300px) {
+  
   .meaning-text,
   .meaning-text-two,
   #synonyms-text,
@@ -667,48 +1048,10 @@ ul li:before {
     margin-left: 0px;
   }
 
-  .vocabulary-section-two {
-    margin-top: 30px;
-  }
-
-  #play-icon-two{
-    margin-top: -80px;
-  }
-
-  /*Center paragraphs*/
-  #def-one,
-  #def-two,
-  #def-three,
-  #def-one-of-two,
-  #def-two-of-two,
-  #def-three-of-two {
-    margin-left: 20px;
-  }
-
-
-/*Shift Input Error Message*/
-#invalid-error-message{
-  position: relative;
-  left: 5px;
-}
-
 }
 
 /*At 320px*/
 @media (width: 320px) {
-
-  header{
-    margin-left: 40px;
-  }
-
-  input[type="search"] {
-    width: 300px;
-  }
-
-  #main-header-content {
-    position: relative;
-    right: 70px;
-  }
 
   #synonym-one,
   #synonym-two,
@@ -719,7 +1062,6 @@ ul li:before {
     margin-left: 180px;
   }
 }
-
 
 /*At 390px*/
 @media (width: 390px){
@@ -761,3 +1103,112 @@ ul li:before {
     margin-left: 280px;
   }
 }
+
+/*Between 490px and 499px*/
+@media(min-width: 450px) and (max-width: 499px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 300px;
+  }
+}
+
+/*Tablet Devices*/
+/*Between 500px and 600px*/
+@media(min-width: 500px){
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 280px;
+  }
+}
+
+/*586px to 600*/
+@media(min-width: 586px) and (max-width: 640px){
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 380px;
+  }
+}
+
+/*Between 641 and 668px*/
+@media(min-width: 640px) and (max-width: 668px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {
+    margin-left: 380px;
+  }
+}
+
+/*668px and above*/
+@media(min-width: 668px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {  
+      margin-left: 500px;
+  }
+}
+
+/*890px and above*/
+@media(min-width: 890px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {  
+      margin-left: 600px;
+  }
+}
+
+/*1000px and above*/
+@media(min-width: 1000px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {  
+      margin-left: 800px;
+  }
+}
+/*1200px and above*/
+@media(min-width: 1200px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {  
+      margin-left: 1200px;
+  }
+}
+
+
+
+/*End Synonyms and Meaning Sections Media Queries*/
+

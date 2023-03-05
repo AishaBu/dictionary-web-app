@@ -1,9 +1,11 @@
 
-import { soundOutPhonetic, soundOutPhoneticTwo } from "./global-variables";
+import { vocabWord, vocabWordTwo } from "./global-variables";
+import {soundOutPhonetic, soundOutPhoneticTwo } from "./global-variables";
 import {defOne, defTwo, defThree, defOneOfTwo, defTwoofTwo, defThreeofTwo} from "./global-variables";
 import { partsOfSpeech, partsOfSpeechTwo, meaningText, meaningTextTwo} from "./global-variables";
 import { synonymsText, synonymsTextofTwo} from "./global-variables";
 import { synonymOne, synonymTwo, synonymThree, synonymOneofTwo, synonymTwoofTwo, synonymThreeofTwo} from "./global-variables";
+import { errorMessage } from "./global-variables";
 
 /*Function*/
 function setMobileMediaQuery(queryWidthMobile){
@@ -71,24 +73,33 @@ function setMobileMediaQuery(queryWidthMobile){
    setMobileMediaQuery(('(width:390px)'));
   
 
-/*600 And Above*
-function setMediaQuery600AndAbove() {
-  const mediaQuery = window.matchMedia("(min-width:600px)");
+/*Mobile Error Message Width 280 and below*/
+function setMediaQueryErrorMessage() {
+  const mediaQuery = window.matchMedia("(max-width:280px)");
+  if(mediaQuery.matches){
+    errorMessage.style.width = "200px";
+  }
+
+}setMediaQueryErrorMessage();
+
+/*Tablet 500 And Above*/
+function setMediaQueryTablet() {
+  const mediaQuery = window.matchMedia("(min-width:500px)");
 
   if (mediaQuery.matches) {
-    /*Vocab Word*
+    /*Vocab Word*/
     vocabWord.style.fontSize = "64px";
     vocabWordTwo.style.fontSize = "64px";
     vocabWord.style.lineHeight = "77px";
     vocabWordTwo.style.lineHeight = "77px";
 
-    /*Sound Phonetic*
-    soundOutPhonetic.style.fontSize = "20px";
-    soundOutPhoneticTwo.style.fontSize = "20px";
-    soundOutPhonetic.style.lineHeight = "24px";
-    soundOutPhoneticTwo.style.lineHeight = "24px";
+    /*Sound Phonetic*/
+    soundOutPhonetic.style.fontSize = "24px";
+    soundOutPhoneticTwo.style.fontSize = "24px";
+    soundOutPhonetic.style.lineHeight = "29px";
+    soundOutPhoneticTwo.style.lineHeight = "29px";
 
-    /*List Paragraphs*
+    /*List Paragraphs*/
     defOne.style.fontSize = "18px";
     defTwo.style.fontSize = "18px";
     defThree.style.fontSize = "18px";
@@ -102,25 +113,25 @@ function setMediaQuery600AndAbove() {
     defTwoofTwo.style.lineHeight = "24px";
     defThreeofTwo.style.lineHeight = "24px";
 
-    /*Parts of Speech*
+    /*Parts of Speech*/
     partsOfSpeech.style.fontSize = "24px";
     partsOfSpeech.style.lineHeight = "29px";
     partsOfSpeechTwo.style.fontSize = "24px";
     partsOfSpeechTwo.style.lineHeight = "29px";
     
-    /*Meaning Text*
+    /*Meaning Text*/
     meaningText.style.fontSize = "20px";
     meaningTextTwo.style.fontSize = "20px";
     meaningText.style.lineHeight = "24px";
     meaningTextTwo.style.lineHeight = "24px";
 
-    /*Synonyms Text*
+    /*Synonyms Text*/
     synonymsText.style.fontSize = "20px";
     synonymsTextofTwo.style.fontSize = "20px";
     synonymsText.style.lineHeight = "24px";
     synonymsTextofTwo.style.lineHeight = "24px";
 
-    /*Synonyms Lists*
+    /*Synonyms Lists*/
     synonymOne.style.fontSize = "20px";
     synonymTwo.style.fontSize = "20px";
     synonymThree.style.fontSize = "20px";
@@ -137,8 +148,8 @@ function setMediaQuery600AndAbove() {
 
   }
 }
-setMediaQuery600AndAbove();
-*/
+setMediaQueryTablet();
+
 
 
 

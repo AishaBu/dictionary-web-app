@@ -233,6 +233,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 /*Function*/
 function setMobileMediaQuery(queryWidthMobile) {
   var mediaQuery = window.matchMedia(queryWidthMobile);
@@ -295,76 +297,81 @@ setMobileMediaQuery('(width:412px)');
 setMobileMediaQuery('(width:393px)');
 setMobileMediaQuery('(width:390px)');
 
-/*600 And Above*
-function setMediaQuery600AndAbove() {
-  const mediaQuery = window.matchMedia("(min-width:600px)");
-
+/*Mobile Error Message Width 280 and below*/
+function setMediaQueryErrorMessage() {
+  var mediaQuery = window.matchMedia("(max-width:280px)");
   if (mediaQuery.matches) {
-    /*Vocab Word*
-    vocabWord.style.fontSize = "64px";
-    vocabWordTwo.style.fontSize = "64px";
-    vocabWord.style.lineHeight = "77px";
-    vocabWordTwo.style.lineHeight = "77px";
-
-    /*Sound Phonetic*
-    soundOutPhonetic.style.fontSize = "20px";
-    soundOutPhoneticTwo.style.fontSize = "20px";
-    soundOutPhonetic.style.lineHeight = "24px";
-    soundOutPhoneticTwo.style.lineHeight = "24px";
-
-    /*List Paragraphs*
-    defOne.style.fontSize = "18px";
-    defTwo.style.fontSize = "18px";
-    defThree.style.fontSize = "18px";
-    defOneOfTwo.style.fontSize = "18px";
-    defTwoofTwo.style.fontSize= "18px";
-    defThreeofTwo.style.fontSize= "18px";
-    defOne.style.lineHeight = "24px";
-    defTwo.style.lineHeight = "24px";
-    defThree.style.lineHeight = "24px";
-    defOneOfTwo.style.lineHeight = "24px";
-    defTwoofTwo.style.lineHeight = "24px";
-    defThreeofTwo.style.lineHeight = "24px";
-
-    /*Parts of Speech*
-    partsOfSpeech.style.fontSize = "24px";
-    partsOfSpeech.style.lineHeight = "29px";
-    partsOfSpeechTwo.style.fontSize = "24px";
-    partsOfSpeechTwo.style.lineHeight = "29px";
-    
-    /*Meaning Text*
-    meaningText.style.fontSize = "20px";
-    meaningTextTwo.style.fontSize = "20px";
-    meaningText.style.lineHeight = "24px";
-    meaningTextTwo.style.lineHeight = "24px";
-
-    /*Synonyms Text*
-    synonymsText.style.fontSize = "20px";
-    synonymsTextofTwo.style.fontSize = "20px";
-    synonymsText.style.lineHeight = "24px";
-    synonymsTextofTwo.style.lineHeight = "24px";
-
-    /*Synonyms Lists*
-    synonymOne.style.fontSize = "20px";
-    synonymTwo.style.fontSize = "20px";
-    synonymThree.style.fontSize = "20px";
-    synonymOneofTwo.style.fontSize = "20px";
-    synonymTwoofTwo.style.fontSize = "20px";
-    synonymThreeofTwo.style.fontSize = "20px";
-
-    synonymOne.style.lineHeight = "24px";
-    synonymTwo.style.lineHeight = "24px";
-    synonymThree.style.lineHeight = "24px";
-    synonymOneofTwo.style.lineHeight = "24px";
-    synonymTwoofTwo.style.lineHeight = "24px";
-    synonymThreeofTwo.style.lineHeight= "24px";
-
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage.style.width = "200px";
   }
 }
-setMediaQuery600AndAbove();
-*/
+setMediaQueryErrorMessage();
+
+/*Tablet 500 And Above*/
+function setMediaQueryTablet() {
+  var mediaQuery = window.matchMedia("(min-width:500px)");
+  if (mediaQuery.matches) {
+    /*Vocab Word*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.fontSize = "64px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.fontSize = "64px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.lineHeight = "77px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.lineHeight = "77px";
+
+    /*Sound Phonetic*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.fontSize = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.style.fontSize = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.lineHeight = "29px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.style.lineHeight = "29px";
+
+    /*List Paragraphs*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.style.fontSize = "18px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo.style.fontSize = "18px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.style.fontSize = "18px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo.style.fontSize = "18px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo.style.fontSize = "18px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo.style.fontSize = "18px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo.style.lineHeight = "24px";
+
+    /*Parts of Speech*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeech.style.fontSize = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeech.style.lineHeight = "29px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeechTwo.style.fontSize = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeechTwo.style.lineHeight = "29px";
+
+    /*Meaning Text*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.fontSize = "20px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningTextTwo.style.fontSize = "20px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningTextTwo.style.lineHeight = "24px";
+
+    /*Synonyms Text*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.fontSize = "20px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsTextofTwo.style.fontSize = "20px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsTextofTwo.style.lineHeight = "24px";
+
+    /*Synonyms Lists*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.style.fontSize = "20px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.style.fontSize = "20px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.style.fontSize = "20px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOneofTwo.style.fontSize = "20px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.style.fontSize = "20px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.style.fontSize = "20px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOneofTwo.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.style.lineHeight = "24px";
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.style.lineHeight = "24px";
+  }
+}
+setMediaQueryTablet();
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlemediaqueries014526a7d75c2b2c77b3.js.map
+//# sourceMappingURL=bundlemediaqueriesd6c702918bf75abdbe51.js.map

@@ -535,10 +535,10 @@ function displaySynonyms() {
     return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.textContent = capitalizeFirstLetter(data[0].meta.syns[0][0]);
   });
   promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.textContent = capitalizeFirstLetter(data[0].meta.syns[1][3]);
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.textContent = capitalizeFirstLetter(data[0].meta.syns[0][1]);
   });
   promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.textContent = capitalizeFirstLetter(data[0].meta.syns[3][6]);
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.textContent = capitalizeFirstLetter(data[0].meta.syns[0][2]);
   });
 
   /*Synonyms List Two*/
@@ -551,10 +551,10 @@ function displaySynonyms() {
     return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOneofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[0][0]);
   });
   promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[1][3]);
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[0][1]);
   });
   promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[3][6]);
+    return _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.textContent = capitalizeFirstLetter(data[1].meta.syns[0][2]);
   });
 }
 
@@ -676,8 +676,6 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
   promise.then(function (data) {
     if (data[0] == undefined) {
       console.log('UNDEFINED');
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
       /*Section One*/
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.display = "none";
@@ -726,4 +724,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapi3fe871944c6efb2d2c40.js.map
+//# sourceMappingURL=bundleapidbbd4f1b68e465bbabb3.js.map
