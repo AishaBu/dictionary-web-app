@@ -613,7 +613,92 @@ ul li:before {
 
 /*MEDIA QUERIES*/
 
-/*Set different searchfield width lengths*/
+/*Set Header Media Queries*/
+
+/*300 and below*/
+@media (max-width: 300px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #main-header-content {
+    display: flex;
+    position: relative;
+    right: 80px;
+  }
+
+  #book-logo {
+    margin-left: 30px;
+    margin-bottom: 10px;
+  }
+}
+
+/*At 320px*/
+@media (width: 320px) {
+
+  header{
+    margin-left: 40px;
+  }
+
+  #main-header-content {
+    position: relative;
+    right: 70px;
+  }
+}
+/*Between 470px and 599px*/
+@media (min-width: 470px) and (max-width:599px){
+
+  #main-header-content {
+    margin-left: 110px;
+  }
+}
+
+/*600px and above*/
+@media (min-width: 600px){
+
+  #main-header-content {
+    margin-left: 240px;
+  }
+}
+
+/*800px and above Header*/
+@media (min-width: 800px){
+
+  #main-header-content {
+    margin-left: 400px;
+  }
+}
+
+/*1000px and above Header MQ*/
+@media (min-width: 1000px){
+
+  #main-header-content {
+    margin-left: 450px;
+  }
+}  
+
+/*1100px and above Header MQ*/
+@media (min-width: 1100px){
+
+  #main-header-content {
+    margin-left: 550px;
+  }
+}
+
+/*1300px and above Header MQ*/
+@media (min-width: 1300px){
+
+  #main-header-content {
+    margin-left: 900px;
+  }
+
+}
+/*End Header Media Queries*/
+
+
+/*Set Different Searchfield Width Lengths*/
 
 /*300 and below*/
 @media (max-width: 300px) {
@@ -700,89 +785,20 @@ ul li:before {
 @media (min-width: 1100px){
 
   input[type="search"] {
+    width: 900px;
+  }
+}
+
+/*1300px and above Searchfield*/
+@media (min-width: 1300px){
+
+  input[type="search"] {
     width: 1260px;
   }
 }
 
 /*Set Searchfield Width End*/
 
-
-/*Set Header Media Queries*/
-
-/*300 and below*/
-@media (max-width: 300px) {
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #main-header-content {
-    display: flex;
-    position: relative;
-    right: 80px;
-  }
-
-  #book-logo {
-    margin-left: 30px;
-    margin-bottom: 10px;
-  }
-}
-
-/*At 320px*/
-@media (width: 320px) {
-
-  header{
-    margin-left: 40px;
-  }
-
-  #main-header-content {
-    position: relative;
-    right: 70px;
-  }
-}
-/*Between 470px and 599px*/
-@media (min-width: 470px) and (max-width:599px){
-
-  #main-header-content {
-    margin-left: 110px;
-  }
-}
-
-/*600px and above*/
-@media (min-width: 600px){
-
-  #main-header-content {
-    margin-left: 240px;
-  }
-}
-
-/*800px and above Header*/
-@media (min-width: 800px){
-
-  #main-header-content {
-    margin-left: 400px;
-  }
-}
-
-/*1000px and above Header MQ*/
-@media (min-width: 1000px){
-
-  #main-header-content {
-    margin-left: 450px;
-  }
-}  
-
-/*1100px and above Header MQ*/
-@media (min-width: 1100px){
-
-  #main-header-content {
-    margin-left: 900px;
-  }
-
-}
-
-/*End Header Media Queries*/
 
 
 /*Set Phonetics, and Play Icon Media Queries*/
@@ -1207,8 +1223,5 @@ ul li:before {
       margin-left: 1200px;
   }
 }
-
-
-
 /*End Synonyms and Meaning Sections Media Queries*/
 
