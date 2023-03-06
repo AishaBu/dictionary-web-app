@@ -226,16 +226,24 @@ function changeFontColor(){
     })
   
   }changeFontColor();  
-}
+} setDefaultTheme(); //Set Default Theme for Toggle*/
 
-/*Toggle Theme On and Off */
-checkBoxInput.addEventListener('click', () => {
-    toggleDarkTheme();
-  /*Listen for second click*/
+
+  /*Toggle Theme On and Off*/
+  /*Checks if light-mode theme is active click, if it, is remove class,
+   and toggle dark-mode, if dark-mode is active instead on click,
+   remove light-mode class and set default theme.*/
   checkBoxInput.addEventListener('click', () => {
-    setDefaultTheme();
+     if(body.classList.contains('light-mode')){
+      body.classList.remove("light-mode");
+      toggleDarkTheme();
+     }
+     else{
+      body.classList.remove("dark-mode");
+      moonIcon.classList.remove('moon-dark-theme');
+      setDefaultTheme();
+     }
   })
-})
 
 
 
