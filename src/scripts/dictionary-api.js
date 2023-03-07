@@ -502,3 +502,6 @@ form.addEventListener('submit', (event) => {
 export default createDictionary;
 export { displayE };
 export { hideE };
+export {fetchVocabularyWords};
+export {fetchSynonymsThesaurus};
+export {capitalizeFirstLetter};
