@@ -10,7 +10,8 @@ module.exports = {
     bundlefont: path.resolve(__dirname, "src/scripts/switch-font-style.js"),
     bundlevariables: path.resolve(__dirname, "src/scripts/global-variables.js"),
     bundlemediaqueries: path.resolve(__dirname, "src/scripts/media-queries.js"),
-    bundletoggletheme: path.resolve(__dirname, "src/scripts/toggle-theme.js")
+    bundletoggletheme: path.resolve(__dirname, "src/scripts/toggle-theme.js"),
+    bundledefaultword: path.resolve(__dirname, "src/scripts/default-word.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
