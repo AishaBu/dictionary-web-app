@@ -227,8 +227,11 @@ var __webpack_exports__ = {};
   \***************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "capitalizeFirstLetter": () => (/* binding */ capitalizeFirstLetter),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   "displayE": () => (/* binding */ displayE),
+/* harmony export */   "fetchSynonymsThesaurus": () => (/* binding */ fetchSynonymsThesaurus),
+/* harmony export */   "fetchVocabularyWords": () => (/* binding */ fetchVocabularyWords),
 /* harmony export */   "hideE": () => (/* binding */ hideE)
 /* harmony export */ });
 /* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
@@ -720,8 +723,11 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createDictionary);
 
 
+
+
+
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapidbbd4f1b68e465bbabb3.js.map
+//# sourceMappingURL=bundleapia950e17ef21eb73c6c14.js.map

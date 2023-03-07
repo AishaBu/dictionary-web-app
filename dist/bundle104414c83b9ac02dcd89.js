@@ -2,6 +2,307 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/scripts/default-word.js":
+/*!*************************************!*\
+  !*** ./src/scripts/default-word.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _dictionary_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dictionary-api */ "./src/scripts/dictionary-api.js");
+/* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Default Word*/
+var defaultWord = "Hello";
+
+/*Create audio on click of icon*/
+//Moving audio value outside of function creates sound only once.
+var globalAudio = new Audio();
+function playAudioOneDefault() {
+  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
+  promise.then(function (data) {
+    var audioURL = "https://media.merriam-webster.com/audio/prons/en/us/mp3/".concat(data[0].hwi.prs[0].sound.audio[0], "/").concat(data[0].hwi.prs[0].sound.audio, ".mp3");
+    globalAudio.src = audioURL;
+    globalAudio.preload = "none";
+    globalAudio.play();
+  });
+}
+
+/*Check if no data is available for list*/
+function removeBulletListIfNoDataDefault() {
+  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
+
+  /*WORD SECTION ONE -check if data list empty*/
+  /*If data for defone is empty*/
+  promise.then(function (data) {
+    if (data[0].shortdef[0] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOne.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOne.style.display = "block";
+    }
+  });
+
+  /*If data for deftwo is empty*/
+  promise.then(function (data) {
+    if (data[0].shortdef[1] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwo.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwo.style.display = "block";
+    }
+  });
+
+  /*If data for defthree is empty*/
+  promise.then(function (data) {
+    if (data[0].shortdef[2] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThree.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThree.style.display = "block";
+    }
+  });
+
+  /*WORD SECTION TWO-check if data list empty*/
+  promise.then(function (data) {
+    if (data[1].shortdef[0] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOneOfTwo.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOneOfTwo.style.display = "block";
+    }
+  });
+
+  /*If data for deftwooftwo is empty*/
+  promise.then(function (data) {
+    if (data[1].shortdef[1] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwoofTwo.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwoofTwo.style.display = "block";
+    }
+  });
+
+  /*If data for defthreeoftwo is empty*/
+  promise.then(function (data) {
+    if (data[1].shortdef[2] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThreeofTwo.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThreeofTwo.style.display = "block";
+    }
+  });
+}
+function hideEntireSecondWordSectionIfNoDataDefault() {
+  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
+  /*If all of data are missing/undefined for word sections*/
+  promise.then(function (data) {
+    /*WORD SECTION ONE-If all data missing*/
+    if (data[0].shortdef[0] == undefined && data[0].shortdef[1] == undefined && data[0].shortdef[2] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWord.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.soundOutPhonetic.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIcon.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningText.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.partsOfSpeech.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsText.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOne.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThree.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWord.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.soundOutPhonetic.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIcon.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningText.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.partsOfSpeech.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsText.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOne.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThree.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.display = "block";
+    }
+
+    /*WORD SECTION TWO -if all data is empty*/
+    if (data[1].shortdef[0] == undefined && data[1].shortdef[1] == undefined && data[1].shortdef[2] == undefined) {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.soundOutPhoneticTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIconTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningTextTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.partsOfSpeechTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsTextofTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOneofTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwoofTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThreeofTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLineTwo.style.display = "none";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLineThree.style.display = "none";
+    } else {
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.soundOutPhoneticTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIconTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningTextTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.partsOfSpeechTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsTextofTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOneofTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwoofTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThreeofTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLineTwo.style.display = "block";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLineThree.style.display = "block";
+
+      /*Decrease margin top for definition*/
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLineTwo.style.opacity = "0.3%";
+      _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.style.marginTop = "-50px";
+    }
+  });
+}
+
+/*Create Definitions Lists*/
+function createListDefault() {
+  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningText.textContent = "Meaning";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.defList.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningTextTwo.textContent = "Meaning";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.defListofTwo.style.display = "block";
+
+  /*Definitions List One*/
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOne.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].shortdef[0]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].shortdef[1]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThree.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].shortdef[2]);
+  });
+
+  /*Definitions List Two*/
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOneOfTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].shortdef[0]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwoofTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].shortdef[1]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThreeofTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].shortdef[2]);
+  });
+  removeBulletListIfNoDataDefault(); /*Fine*/
+  hideEntireSecondWordSectionIfNoDataDefault();
+}
+
+/*Display Synonyms for Words One and Two*/
+function displaySynonymsDefault() {
+  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchSynonymsThesaurus)(defaultWord);
+
+  /*Synonyms List One*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsText.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsText.textContent = "Synonyms";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOne.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwo.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThree.style.display = "block";
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOne.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].meta.syns[0][0]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].meta.syns[0][1]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThree.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].meta.syns[0][2]);
+  });
+
+  /*Synonyms List Two*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsTextofTwo.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsTextofTwo.textContent = "Synonyms";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOneofTwo.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwoofTwo.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThreeofTwo.style.display = "block";
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOneofTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].meta.syns[0][0]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwoofTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].meta.syns[0][1]);
+  });
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThreeofTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].meta.syns[0][2]);
+  });
+}
+
+/*Check Headword for Extra Strings*/
+function checkHeadwordForExtraStringsBeforeDisplayingDefault() {
+  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
+  /*Remove Extra Words After Headword*/
+  var targetString = defaultWord;
+  var extraString = defaultWord;
+  var index = extraString.indexOf(targetString);
+  if (index !== -1) {
+    var result = extraString.substring(0, index + targetString.length);
+    _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWord.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWord.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(result);
+    _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(result);
+  } else {
+    /*Display Headword One and Two*/
+    /*Vocab Word One*/
+    promise.then(function (data) {
+      return _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWord.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].meta.stems[0]);
+    });
+
+    /*Vocab Word Two*/
+    promise.then(function (data) {
+      return _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].meta.stems[0]);
+    });
+  }
+}
+;
+
+/*Create Definitions*/
+/*Display words searched in the search field*/
+function displayDefaultDictionary() {
+  (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.hideE)();
+  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.display = "block";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIcon.style.display = "block";
+
+  /*Check Strings And Remove Extra Strings
+   If Available Before Displaying - Headword One*/
+  checkHeadwordForExtraStringsBeforeDisplayingDefault();
+
+  /*Display Phonetic Sound*/
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.soundOutPhonetic.textContent = "/" + (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].hwi.prs[0].mw + "/");
+  });
+
+  /*Display noun and noun-line*/
+  promise.then(function (data) {
+    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.partsOfSpeech.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].fl);
+  });
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.width = "70%";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.height = "0.5px";
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.backgroundColor = "var(--gray-num-two)";
+
+  /*Play audio on icon click*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIcon.addEventListener("click", function () {
+    playAudioOneDefault();
+  });
+  /*Create Definitions List*/
+  createListDefault();
+
+  /*Display Synonyms Section*/
+  displaySynonymsDefault();
+}
+
+/*Display Default Dictinary On Page Load*/
+window.addEventListener("load", function () {
+  displayDefaultDictionary();
+});
+
+/***/ }),
+
 /***/ "./src/scripts/dictionary-api.js":
 /*!***************************************!*\
   !*** ./src/scripts/dictionary-api.js ***!
@@ -10,8 +311,11 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "capitalizeFirstLetter": () => (/* binding */ capitalizeFirstLetter),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   "displayE": () => (/* binding */ displayE),
+/* harmony export */   "fetchSynonymsThesaurus": () => (/* binding */ fetchSynonymsThesaurus),
+/* harmony export */   "fetchVocabularyWords": () => (/* binding */ fetchVocabularyWords),
 /* harmony export */   "hideE": () => (/* binding */ hideE)
 /* harmony export */ });
 /* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
@@ -501,6 +805,9 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
   });
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (createDictionary);
+
+
+
 
 
 
@@ -2466,7 +2773,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dictionary_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dictionary-api */ "./src/scripts/dictionary-api.js");
 /* harmony import */ var _media_queries__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./media-queries */ "./src/scripts/media-queries.js");
 /* harmony import */ var _toggle_theme__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./toggle-theme */ "./src/scripts/toggle-theme.js");
-/* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
+/* harmony import */ var _default_word__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./default-word */ "./src/scripts/default-word.js");
+/* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
+
 
 
 
@@ -2480,31 +2789,31 @@ __webpack_require__.r(__webpack_exports__);
 
 /*FORM VALIDATION*/
 /*If searchfield value is not missing, it reverts to valid status*/
-_global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.addEventListener("input", function () {
-  if (!_global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.validity.valueMissing) {
-    _global_variables__WEBPACK_IMPORTED_MODULE_5__.errorSearchMessage.textContent = " ";
-    _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.setAttribute("id", "valid-value");
+_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("input", function () {
+  if (!_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.validity.valueMissing) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "valid-value");
   }
 });
 
 /*Check for regex match and prevent submit on input*/
-_global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.addEventListener("input", function () {
+_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("input", function () {
   var regex = /^[a-zA-Z]+/g;
   var numRegex = /\d/;
   var specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (!_global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.value.match(specChar)) {
-    _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.setAttribute("id", "invalid-search-field");
-    _global_variables__WEBPACK_IMPORTED_MODULE_5__.errorSearchMessage.textContent = "Please type only letters!";
-    _global_variables__WEBPACK_IMPORTED_MODULE_5__.errorSearchMessage.setAttribute("id", "invalid-error-message");
+  if (!_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "invalid-search-field");
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = "Please type only letters!";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.setAttribute("id", "invalid-error-message");
 
     /*If there is an attempt to submit form while invalid, prevent sending*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_5__.form.addEventListener("submit", function (event) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", function (event) {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
     });
   } else {
     /*Display words on formsubmit if field value is valid*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_5__.form.addEventListener("submit", function (event) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", function (event) {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
       (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_2__["default"])();
@@ -2513,13 +2822,13 @@ _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.addEventListener("inp
 });
 
 /*Check if field empty onsubmit*/
-_global_variables__WEBPACK_IMPORTED_MODULE_5__.form.addEventListener("submit", function (event) {
-  if (_global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.validity.valueMissing) {
+_global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", function (event) {
+  if (_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.validity.valueMissing) {
     event.preventDefault(); //stops default action
     event.stopPropagation(); //stops further propogation in event/bubbling phases
-    _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.setAttribute("id", "invalid-search-field");
-    _global_variables__WEBPACK_IMPORTED_MODULE_5__.errorSearchMessage.textContent = "Whoops, can't be empty!";
-    _global_variables__WEBPACK_IMPORTED_MODULE_5__.errorSearchMessage.setAttribute("id", "invalid-error-message");
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "invalid-search-field");
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = "Whoops, can't be empty!";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.setAttribute("id", "invalid-error-message");
     (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_2__.displayE)();
   }
 });
@@ -2527,4 +2836,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_5__.form.addEventListener("submit", f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle83a86e18930ccf1df63a.js.map
+//# sourceMappingURL=bundle104414c83b9ac02dcd89.js.map
