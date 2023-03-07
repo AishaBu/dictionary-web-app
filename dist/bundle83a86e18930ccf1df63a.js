@@ -1179,6 +1179,196 @@ changeFontDisplayedAndStyleOnClick();
 
 /***/ }),
 
+/***/ "./src/scripts/toggle-theme.js":
+/*!*************************************!*\
+  !*** ./src/scripts/toggle-theme.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
+
+
+
+
+
+/*TOGGLE COLOR THEME CHANGE*/
+var checkBoxInput = document.getElementById("checkbox-input");
+var body = document.querySelector("body");
+function toggleDarkTheme() {
+  body.classList.toggle("dark-mode");
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.moonIcon.classList.toggle('moon-dark-theme');
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.setAttribute("id", "valid-value");
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.fontDropdownList.style.backgroundColor = "var(--black-num-two)";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.fontDropdownList.style.boxShadow = "var(--dark-theme-box-shadow)";
+
+  /*Functions*/
+  function setListTextColorWhite(listPar) {
+    listPar.style.color = "var(--white)";
+  }
+  function setFontHoverColor(param) {
+    param.addEventListener('mouseover', function () {
+      param.style.color = "var(--purple)";
+    });
+    param.addEventListener('mouseleave', function () {
+      param.style.color = "var(--white)";
+    });
+  }
+
+  /*Bullet Lists Paragraphs*/
+  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne);
+  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo);
+  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree);
+  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo);
+  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo);
+  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo);
+
+  /*SansSerif, Serif, and Mono Fonts*/
+  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.fontPlaceholder);
+  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif);
+  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.serif);
+  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.mono);
+
+  /*Set Hover on Fonts*/
+  setFontHoverColor(_global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif);
+  setFontHoverColor(_global_variables__WEBPACK_IMPORTED_MODULE_0__.serif);
+  setFontHoverColor(_global_variables__WEBPACK_IMPORTED_MODULE_0__.mono);
+
+  /*Set moon icon color for dark theme*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.moonIcon.style.marginLeft = "10px";
+
+  /*Switch font color to white for
+  dark theme when font style changes*/
+  function changeFontColorWithFontStyleDarkTheme() {
+    /*Sans Serif*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif.addEventListener('click', function () {
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo);
+    });
+
+    /*Serif*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.serif.addEventListener('click', function () {
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo);
+    });
+
+    /*Mono*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.mono.addEventListener('click', function () {
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo);
+    });
+  }
+  changeFontColorWithFontStyleDarkTheme();
+}
+
+/*DEFAULT HERE*/
+function setDefaultTheme() {
+  body.classList.toggle("light-mode");
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.setAttribute("id", "valid-value");
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.fontDropdownList.style.backgroundColor = "var(--white)";
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.fontDropdownList.style.boxShadow = "var(--box-shadow)";
+
+  /*Functions*/
+  function setListTextColorBlack(par) {
+    par.style.color = "var(--black-num-one)";
+  }
+  function setFontHover(hoverParam) {
+    hoverParam.addEventListener('mouseover', function () {
+      hoverParam.style.color = "var(--purple)";
+    });
+    hoverParam.addEventListener('mouseleave', function () {
+      hoverParam.style.color = "var(--black-num-one)";
+    });
+  }
+
+  /*Bullet Lists Paragraphs*/
+  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne);
+  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo);
+  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree);
+  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo);
+  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo);
+  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo);
+
+  /*SansSerif, Serif, and Mono Fonts*/
+  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.fontPlaceholder);
+  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif);
+  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.serif);
+  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.mono);
+
+  /*Set Hover on Fonts*/
+  setFontHover(_global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif);
+  setFontHover(_global_variables__WEBPACK_IMPORTED_MODULE_0__.serif);
+  setFontHover(_global_variables__WEBPACK_IMPORTED_MODULE_0__.mono);
+
+  /*Set moon icon color for dark theme*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_0__.moonIcon.style.marginLeft = "10px";
+
+  /*Switch font color to white for
+  dark theme when font style changes*/
+  function changeFontColor() {
+    /*Sans Serif*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif.addEventListener('click', function () {
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo);
+    });
+
+    /*Serif*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.serif.addEventListener('click', function () {
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo);
+    });
+
+    /*Mono*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.mono.addEventListener('click', function () {
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo);
+    });
+  }
+  changeFontColor();
+}
+setDefaultTheme(); //Set Default Theme for Toggle*/
+
+/*Toggle Theme On and Off*/
+/*Checks if light-mode theme is active click, if it, is remove class,
+ and toggle dark-mode, if dark-mode is active instead on click,
+ remove light-mode class and set default theme.*/
+checkBoxInput.addEventListener('click', function () {
+  if (body.classList.contains('light-mode')) {
+    body.classList.remove("light-mode");
+    toggleDarkTheme();
+  } else {
+    body.classList.remove("dark-mode");
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.moonIcon.classList.remove('moon-dark-theme');
+    setDefaultTheme();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/styles.css":
 /*!*********************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/styles.css ***!
@@ -2275,9 +2465,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _switch_font_style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./switch-font-style */ "./src/scripts/switch-font-style.js");
 /* harmony import */ var _dictionary_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dictionary-api */ "./src/scripts/dictionary-api.js");
 /* harmony import */ var _media_queries__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./media-queries */ "./src/scripts/media-queries.js");
-/* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
-
-
+/* harmony import */ var _toggle_theme__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./toggle-theme */ "./src/scripts/toggle-theme.js");
+/* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
 
 
 
@@ -2291,31 +2480,31 @@ __webpack_require__.r(__webpack_exports__);
 
 /*FORM VALIDATION*/
 /*If searchfield value is not missing, it reverts to valid status*/
-_global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.addEventListener("input", function () {
-  if (!_global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.validity.valueMissing) {
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.errorSearchMessage.textContent = " ";
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.setAttribute("id", "valid-value");
+_global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.addEventListener("input", function () {
+  if (!_global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.validity.valueMissing) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_5__.errorSearchMessage.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.setAttribute("id", "valid-value");
   }
 });
 
 /*Check for regex match and prevent submit on input*/
-_global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.addEventListener("input", function () {
+_global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.addEventListener("input", function () {
   var regex = /^[a-zA-Z]+/g;
   var numRegex = /\d/;
   var specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (!_global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.value.match(specChar)) {
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.setAttribute("id", "invalid-search-field");
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.errorSearchMessage.textContent = "Please type only letters!";
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.errorSearchMessage.setAttribute("id", "invalid-error-message");
+  if (!_global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.value.match(specChar)) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.setAttribute("id", "invalid-search-field");
+    _global_variables__WEBPACK_IMPORTED_MODULE_5__.errorSearchMessage.textContent = "Please type only letters!";
+    _global_variables__WEBPACK_IMPORTED_MODULE_5__.errorSearchMessage.setAttribute("id", "invalid-error-message");
 
     /*If there is an attempt to submit form while invalid, prevent sending*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.form.addEventListener("submit", function (event) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_5__.form.addEventListener("submit", function (event) {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
     });
   } else {
     /*Display words on formsubmit if field value is valid*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.form.addEventListener("submit", function (event) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_5__.form.addEventListener("submit", function (event) {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
       (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_2__["default"])();
@@ -2324,193 +2513,18 @@ _global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.addEventListener("inp
 });
 
 /*Check if field empty onsubmit*/
-_global_variables__WEBPACK_IMPORTED_MODULE_4__.form.addEventListener("submit", function (event) {
-  if (_global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.validity.valueMissing) {
+_global_variables__WEBPACK_IMPORTED_MODULE_5__.form.addEventListener("submit", function (event) {
+  if (_global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.validity.valueMissing) {
     event.preventDefault(); //stops default action
     event.stopPropagation(); //stops further propogation in event/bubbling phases
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.setAttribute("id", "invalid-search-field");
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.errorSearchMessage.textContent = "Whoops, can't be empty!";
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.errorSearchMessage.setAttribute("id", "invalid-error-message");
+    _global_variables__WEBPACK_IMPORTED_MODULE_5__.searchField.setAttribute("id", "invalid-search-field");
+    _global_variables__WEBPACK_IMPORTED_MODULE_5__.errorSearchMessage.textContent = "Whoops, can't be empty!";
+    _global_variables__WEBPACK_IMPORTED_MODULE_5__.errorSearchMessage.setAttribute("id", "invalid-error-message");
     (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_2__.displayE)();
-  }
-});
-
-/*TOGGLE COLOR THEME CHANGE*/
-var checkBoxInput = document.getElementById("checkbox-input");
-var body = document.querySelector("body");
-function toggleDarkTheme() {
-  body.classList.toggle("dark-mode");
-  _global_variables__WEBPACK_IMPORTED_MODULE_4__.moonIcon.classList.toggle('moon-dark-theme');
-  _global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.setAttribute("id", "valid-value");
-  _global_variables__WEBPACK_IMPORTED_MODULE_4__.fontDropdownList.style.backgroundColor = "var(--black-num-two)";
-  _global_variables__WEBPACK_IMPORTED_MODULE_4__.fontDropdownList.style.boxShadow = "var(--dark-theme-box-shadow)";
-
-  /*Functions*/
-  function setListTextColorWhite(listPar) {
-    listPar.style.color = "var(--white)";
-  }
-  function setFontHoverColor(param) {
-    param.addEventListener('mouseover', function () {
-      param.style.color = "var(--purple)";
-    });
-    param.addEventListener('mouseleave', function () {
-      param.style.color = "var(--white)";
-    });
-  }
-
-  /*Bullet Lists Paragraphs*/
-  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOne);
-  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwo);
-  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThree);
-  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOneOfTwo);
-  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwoofTwo);
-  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThreeofTwo);
-
-  /*SansSerif, Serif, and Mono Fonts*/
-  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.fontPlaceholder);
-  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.sansSerif);
-  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.serif);
-  setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.mono);
-
-  /*Set Hover on Fonts*/
-  setFontHoverColor(_global_variables__WEBPACK_IMPORTED_MODULE_4__.sansSerif);
-  setFontHoverColor(_global_variables__WEBPACK_IMPORTED_MODULE_4__.serif);
-  setFontHoverColor(_global_variables__WEBPACK_IMPORTED_MODULE_4__.mono);
-
-  /*Set moon icon color for dark theme*/
-  _global_variables__WEBPACK_IMPORTED_MODULE_4__.moonIcon.style.marginLeft = "10px";
-
-  /*Switch font color to white for
-  dark theme when font style changes*/
-  function changeFontColorWithFontStyleDarkTheme() {
-    /*Sans Serif*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.sansSerif.addEventListener('click', function () {
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOne);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwo);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThree);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOneOfTwo);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwoofTwo);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThreeofTwo);
-    });
-
-    /*Serif*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.serif.addEventListener('click', function () {
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOne);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwo);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThree);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOneOfTwo);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwoofTwo);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThreeofTwo);
-    });
-
-    /*Mono*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.mono.addEventListener('click', function () {
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOne);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwo);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThree);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOneOfTwo);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwoofTwo);
-      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThreeofTwo);
-    });
-  }
-  changeFontColorWithFontStyleDarkTheme();
-}
-
-/*DEFAULT HERE*/
-function setDefaultTheme() {
-  body.classList.toggle("light-mode");
-  _global_variables__WEBPACK_IMPORTED_MODULE_4__.searchField.setAttribute("id", "valid-value");
-  _global_variables__WEBPACK_IMPORTED_MODULE_4__.fontDropdownList.style.backgroundColor = "var(--white)";
-  _global_variables__WEBPACK_IMPORTED_MODULE_4__.fontDropdownList.style.boxShadow = "var(--box-shadow)";
-
-  /*Functions*/
-  function setListTextColorBlack(par) {
-    par.style.color = "var(--black-num-one)";
-  }
-  function setFontHover(hoverParam) {
-    hoverParam.addEventListener('mouseover', function () {
-      hoverParam.style.color = "var(--purple)";
-    });
-    hoverParam.addEventListener('mouseleave', function () {
-      hoverParam.style.color = "var(--black-num-one)";
-    });
-  }
-
-  /*Bullet Lists Paragraphs*/
-  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOne);
-  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwo);
-  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThree);
-  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOneOfTwo);
-  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwoofTwo);
-  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThreeofTwo);
-
-  /*SansSerif, Serif, and Mono Fonts*/
-  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.fontPlaceholder);
-  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.sansSerif);
-  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.serif);
-  setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.mono);
-
-  /*Set Hover on Fonts*/
-  setFontHover(_global_variables__WEBPACK_IMPORTED_MODULE_4__.sansSerif);
-  setFontHover(_global_variables__WEBPACK_IMPORTED_MODULE_4__.serif);
-  setFontHover(_global_variables__WEBPACK_IMPORTED_MODULE_4__.mono);
-
-  /*Set moon icon color for dark theme*/
-  _global_variables__WEBPACK_IMPORTED_MODULE_4__.moonIcon.style.marginLeft = "10px";
-
-  /*Switch font color to white for
-  dark theme when font style changes*/
-  function changeFontColor() {
-    /*Sans Serif*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.sansSerif.addEventListener('click', function () {
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOne);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwo);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThree);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOneOfTwo);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwoofTwo);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThreeofTwo);
-    });
-
-    /*Serif*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.serif.addEventListener('click', function () {
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOne);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwo);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThree);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOneOfTwo);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwoofTwo);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThreeofTwo);
-    });
-
-    /*Mono*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.mono.addEventListener('click', function () {
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOne);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwo);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThree);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defOneOfTwo);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defTwoofTwo);
-      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_4__.defThreeofTwo);
-    });
-  }
-  changeFontColor();
-}
-setDefaultTheme(); //Set Default Theme for Toggle*/
-
-/*Toggle Theme On and Off*/
-/*Checks if light-mode theme is active click, if it, is remove class,
- and toggle dark-mode, if dark-mode is active instead on click,
- remove light-mode class and set default theme.*/
-checkBoxInput.addEventListener('click', function () {
-  if (body.classList.contains('light-mode')) {
-    body.classList.remove("light-mode");
-    toggleDarkTheme();
-  } else {
-    body.classList.remove("dark-mode");
-    _global_variables__WEBPACK_IMPORTED_MODULE_4__.moonIcon.classList.remove('moon-dark-theme');
-    setDefaultTheme();
   }
 });
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle6ea48f2f921401db2fba.js.map
+//# sourceMappingURL=bundle83a86e18930ccf1df63a.js.map
