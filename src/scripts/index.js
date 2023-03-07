@@ -3,6 +3,7 @@ import "./switch-font-style";
 import "./dictionary-api";
 import "./media-queries";
 import "./toggle-theme";
+import "./default-word";
 import {searchField } from "./global-variables";
 import { errorSearchMessage } from "./global-variables";
 import { form } from "./global-variables";
