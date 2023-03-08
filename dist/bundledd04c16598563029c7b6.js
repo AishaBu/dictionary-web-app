@@ -2821,42 +2821,12 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("inp
   }
 });
 
-/*Check for regex match and prevent submit on input*
-searchField.addEventListener("input", () => {
-  const regex = /^[a-zA-Z]+/g;
-  const numRegex = /\d/;
-  const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (
-    !searchField.value.match(regex) ||
-    searchField.value.match(numRegex) ||
-    searchField.value.match(specChar)
-  ) {
-    searchField.setAttribute("id", "invalid-search-field");
-    errorSearchMessage.textContent = "Please type only letters!";
-    errorSearchMessage.setAttribute("id", "invalid-error-message");
-
-    /*If there is an attempt to submit form while invalid, prevent sending*
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-    });
-  } else {
-    /*Display words on formsubmit if field value is valid*
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-      createDictionary();
-    });
-  }
-});
-*/
-
 /*Check for regex match and prevent submit on input*/
 _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", function (event) {
-  //const regex = /^[a-zA-Z]+/g;
+  var regex = /^[a-zA-Z]+/g;
   var numRegex = /\d/;
   var specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
+  if (!_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
     event.preventDefault(); //stops default action
     event.stopPropagation(); //stops further propogation in event/bubbling phases
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "invalid-search-field");
@@ -2865,21 +2835,21 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", f
 
     /*If there is an attempt to submit form while invalid, prevent sending*
     form.addEventListener("submit", (event) => {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
+     event.preventDefault(); //stops default action
+     event.stopPropagation(); //stops further propogation in event/bubbling phases
     });
     */
   } else {
-    /*Display words on formsubmit if field value is valid*
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-      createDictionary();
-    });
-    */
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = " ";
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.removeAttribute("id", "invalid-error-message");
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "valid-value");
+    /*Clear Synonyms Each Time*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymOne.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymTwo.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymThree.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymOneofTwo.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymTwoofTwo.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymThreeofTwo.textContent = " ";
     (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_2__["default"])();
   }
 });
@@ -2926,4 +2896,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleecddd253ef0db695fd21.js.map
+//# sourceMappingURL=bundledd04c16598563029c7b6.js.map

@@ -4,7 +4,7 @@ import "./dictionary-api";
 import "./media-queries";
 import "./toggle-theme";
 import "./default-word";
-import {searchField } from "./global-variables";
+import {errorMessage, searchField } from "./global-variables";
 import { errorSearchMessage } from "./global-variables";
 import { form } from "./global-variables";
 import createDictionary from "./dictionary-api";
@@ -30,66 +30,37 @@ searchField.addEventListener("input", () => {
   }
 });
 
-/*Check for regex match and prevent submit on input*
-searchField.addEventListener("input", () => {
+/*Check for regex match and prevent submit on input*/
+form.addEventListener("submit", (event) => {
   const regex = /^[a-zA-Z]+/g;
   const numRegex = /\d/;
   const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (
-    !searchField.value.match(regex) ||
-    searchField.value.match(numRegex) ||
-    searchField.value.match(specChar)
-  ) {
-    searchField.setAttribute("id", "invalid-search-field");
-    errorSearchMessage.textContent = "Please type only letters!";
-    errorSearchMessage.setAttribute("id", "invalid-error-message");
 
-    /*If there is an attempt to submit form while invalid, prevent sending*
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-    });
-  } else {
-    /*Display words on formsubmit if field value is valid*
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-      createDictionary();
-    });
-  }
-});
-*/
-
-/*Check for regex match and prevent submit on input*/
-form.addEventListener("submit", (event) => {
-  //const regex = /^[a-zA-Z]+/g;
-  const numRegex = /\d/;
-  const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  
-  if(searchField.value.match(numRegex) || searchField.value.match(specChar)) {
+  if((!searchField.value.match(regex)) || searchField.value.match(numRegex) || searchField.value.match(specChar)) {
     event.preventDefault(); //stops default action
     event.stopPropagation(); //stops further propogation in event/bubbling phases
     searchField.setAttribute("id", "invalid-search-field");
     errorSearchMessage.textContent = "Please type only letters!";
     errorSearchMessage.setAttribute("id", "invalid-error-message");
 
-    /*If there is an attempt to submit form while invalid, prevent sending*
+     /*If there is an attempt to submit form while invalid, prevent sending*
     form.addEventListener("submit", (event) => {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
     });
     */
-  } else {
-    /*Display words on formsubmit if field value is valid*
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-      createDictionary();
-    });
-    */
+  } 
+  else {
     errorSearchMessage.textContent = " ";
     errorSearchMessage.removeAttribute("id", "invalid-error-message");
     searchField.setAttribute("id", "valid-value");
+    /*Clear Synonyms Each Time*/
+    synonymOne.textContent = " ";
+    synonymTwo.textContent = " ";
+    synonymThree.textContent = " ";
+    synonymOneofTwo.textContent = " ";
+    synonymTwoofTwo.textContent = " ";
+    synonymThreeofTwo.textContent = " ";
     createDictionary();
   }
 });
