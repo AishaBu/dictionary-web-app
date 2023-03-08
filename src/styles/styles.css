@@ -295,7 +295,6 @@ input[type="search"] {
   background-repeat: no-repeat;
   background-position: 95% center;
   cursor: pointer;
-  text-transform: lowercase;
 }
 
 /*Remove default x symbol*/
