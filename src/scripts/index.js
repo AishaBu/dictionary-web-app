@@ -4,7 +4,7 @@ import "./dictionary-api";
 import "./media-queries";
 import "./toggle-theme";
 import "./default-word";
-import {errorMessage, searchField } from "./global-variables";
+import {searchField } from "./global-variables";
 import { errorSearchMessage } from "./global-variables";
 import { form } from "./global-variables";
 import createDictionary from "./dictionary-api";
@@ -22,6 +22,24 @@ import { defOne, defTwo, defThree} from "./global-variables"
 import {defOneOfTwo,defTwoofTwo,defThreeofTwo} from "./global-variables";
 
 /*FORM VALIDATION*/
+/*Display message if capslock is on*/
+searchField.addEventListener("keyup", (event) => {
+
+  if (event.getModifierState("CapsLock")) {
+    event.preventDefault(); //stops default action
+    event.stopPropagation(); //stops further propogation in event/bubbling phases
+    searchField.setAttribute("id", "invalid-search-field");
+    errorSearchMessage.textContent = "Turn off Caps Lock before typing";
+    errorSearchMessage.setAttribute("id", "invalid-error-message");
+  }
+  else{
+    errorSearchMessage.textContent = " ";
+    searchField.setAttribute("id", "valid-value");
+    searchField.removeAttribute("id", "invalid-search-field");
+    errorSearchMessage.removeAttribute("id", "invalid-error-message");
+  }
+});
+
 /*If searchfield value is not missing, it reverts to valid status*/
 searchField.addEventListener("input", () => {
   if (!searchField.validity.valueMissing) {
@@ -31,9 +49,9 @@ searchField.addEventListener("input", () => {
 });
 
 /*Check for regex match and prevent submit on input*/
-form.addEventListener("submit", () => {
-  //event.preventDefault(); //stops default action
-  //event.stopPropagation(); //stops further propogation in event/bubbling phases
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); //stops default action
+  event.stopPropagation(); //stops further propogation in event/bubbling phases
   const regex = /^[a-zA-Z]+/g;
   const numRegex = /\d/;
   const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
