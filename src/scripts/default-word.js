@@ -10,7 +10,9 @@ import {synonymsText,synonymOne,synonymTwo,synonymThree} from "./global-variable
 import {defOneOfTwo,defTwoofTwo,defThreeofTwo,defListofTwo} from "./global-variables";
 import {synonymOneofTwo,synonymsTextofTwo,synonymThreeofTwo,synonymTwoofTwo} from "./global-variables";
 import { hideE } from "./dictionary-api";
+import { searchField } from "./global-variables";
 /*Default Word*/ const defaultWord = "Hello";
+
 
 /*API CALL*/
 /*Dictionary Api Call*/
@@ -78,6 +80,35 @@ async function fetchSynonymsThesaurusDefault(searchFieldValue) {
   }
 }
 
+
+/*DEFAULT REGEX CHECK*/
+searchField.addEventListener("input", () => {
+  const regex = /^[a-zA-Z]+/g;
+  const numRegex = /\d/;
+  const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
+  if (
+    !searchField.value.match(regex) ||
+    searchField.value.match(numRegex) ||
+    searchField.value.match(specChar)
+  ) {
+    searchField.setAttribute("id", "invalid-search-field");
+    errorSearchMessage.textContent = "Please type only letters!";
+    errorSearchMessage.setAttribute("id", "invalid-error-message");
+
+    /*If there is an attempt to submit form while invalid, prevent sending*/
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); //stops default action
+      event.stopPropagation(); //stops further propogation in event/bubbling phases
+    });
+  } else {
+    /*Display words on formsubmit if field value is valid*/
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); //stops default action
+      event.stopPropagation(); //stops further propogation in event/bubbling phases
+      createDictionary();
+    });
+  }
+});
 
 
   /*Create audio on click of icon*/
