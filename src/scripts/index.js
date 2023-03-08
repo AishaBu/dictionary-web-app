@@ -32,23 +32,16 @@ searchField.addEventListener("input", () => {
 
 /*Check for regex match and prevent submit on input*/
 form.addEventListener("submit", (event) => {
+  event.preventDefault(); //stops default action
+  event.stopPropagation(); //stops further propogation in event/bubbling phases
   const regex = /^[a-zA-Z]+/g;
   const numRegex = /\d/;
   const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
 
   if((!searchField.value.match(regex)) || searchField.value.match(numRegex) || searchField.value.match(specChar)) {
-    event.preventDefault(); //stops default action
-    event.stopPropagation(); //stops further propogation in event/bubbling phases
     searchField.setAttribute("id", "invalid-search-field");
     errorSearchMessage.textContent = "Please type only letters!";
     errorSearchMessage.setAttribute("id", "invalid-error-message");
-
-     /*If there is an attempt to submit form while invalid, prevent sending*
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-    });
-    */
   } 
   else {
     errorSearchMessage.textContent = " ";
