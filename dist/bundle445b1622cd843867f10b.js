@@ -369,7 +369,38 @@ function _fetchVocabularyWords() {
           _context.prev = 13;
           _context.t0 = _context["catch"](1);
           console.error("Could not get word: ".concat(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value));
-        case 16:
+          /*Hide Vocab Section One*/
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeech.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.style.display = "none";
+
+          /*Hide Vocab Section Two*/
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningTextTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeechTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsTextofTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOneofTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo.style.display = "none";
+          displayE();
+        case 44:
         case "end":
           return _context.stop();
       }
@@ -763,7 +794,7 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
   promise.then(function (data) {
     if (data[0] == undefined) {
       console.log('UNDEFINED');
-      /*Section One*/
+      /*Hide Vocab Section One*/
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "none";
@@ -778,7 +809,7 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.style.display = "none";
 
-      /*Section Two*/
+      /*Hide Vocab Section Two*/
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.style.display = "none";
@@ -2787,6 +2818,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
 /*FORM VALIDATION*/
 /*If searchfield value is not missing, it reverts to valid status*/
 _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("input", function () {
@@ -2829,6 +2870,33 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", f
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "invalid-search-field");
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = "Whoops, can't be empty!";
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.setAttribute("id", "invalid-error-message");
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.vocabWord.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.soundOutPhonetic.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.playIcon.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.meaningText.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.partsOfSpeech.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymsText.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymOne.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymThree.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.styleLine.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.defOne.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.defTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.defThree.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.vocabWordTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.soundOutPhoneticTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.playIconTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.meaningTextTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.partsOfSpeechTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymsTextofTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymOneofTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymTwoofTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.synonymThreeofTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.styleLineTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.styleLineThree.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.defOneOfTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.defTwoofTwo.style.display = "none";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.defThreeofTwo.style.display = "none";
     (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_2__.displayE)();
   }
 });
@@ -2836,4 +2904,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle104414c83b9ac02dcd89.js.map
+//# sourceMappingURL=bundle445b1622cd843867f10b.js.map

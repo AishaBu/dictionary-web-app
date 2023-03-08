@@ -285,7 +285,38 @@ function _fetchVocabularyWords() {
           _context.prev = 13;
           _context.t0 = _context["catch"](1);
           console.error("Could not get word: ".concat(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value));
-        case 16:
+          /*Hide Vocab Section One*/
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningText.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeech.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsText.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOne.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThree.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLine.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOne.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.style.display = "none";
+
+          /*Hide Vocab Section Two*/
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.meaningTextTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.partsOfSpeechTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymsTextofTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymOneofTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymTwoofTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.synonymThreeofTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.styleLineThree.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defOneOfTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo.style.display = "none";
+          _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo.style.display = "none";
+          displayE();
+        case 44:
         case "end":
           return _context.stop();
       }
@@ -679,7 +710,7 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
   promise.then(function (data) {
     if (data[0] == undefined) {
       console.log('UNDEFINED');
-      /*Section One*/
+      /*Hide Vocab Section One*/
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWord.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhonetic.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIcon.style.display = "none";
@@ -694,7 +725,7 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwo.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.defThree.style.display = "none";
 
-      /*Section Two*/
+      /*Hide Vocab Section Two*/
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.vocabWordTwo.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.soundOutPhoneticTwo.style.display = "none";
       _global_variables__WEBPACK_IMPORTED_MODULE_0__.playIconTwo.style.display = "none";
@@ -730,4 +761,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleapia950e17ef21eb73c6c14.js.map
+//# sourceMappingURL=bundleapi653b90bca67f6cd103f7.js.map

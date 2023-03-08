@@ -26,6 +26,37 @@ async function fetchVocabularyWords(searchFieldValue) {
     return data;
   } catch (error) {
     console.error(`Could not get word: ${searchField.value}`);
+    /*Hide Vocab Section One*/
+    vocabWord.style.display = "none";
+    soundOutPhonetic.style.display = "none";
+    playIcon.style.display = "none";
+    meaningText.style.display = "none";
+    partsOfSpeech.style.display = "none";
+    synonymsText.style.display = "none";
+    synonymOne.style.display = "none";
+    synonymTwo.style.display = "none";
+    synonymThree.style.display = "none";
+    styleLine.style.display = "none";
+    defOne.style.display = "none";
+    defTwo.style.display = "none";
+    defThree.style.display = "none";
+  
+    /*Hide Vocab Section Two*/
+    vocabWordTwo.style.display = "none";
+    soundOutPhoneticTwo.style.display = "none";
+    playIconTwo.style.display = "none";
+    meaningTextTwo.style.display = "none";
+    partsOfSpeechTwo.style.display = "none";
+    synonymsTextofTwo.style.display = "none";
+    synonymOneofTwo.style.display = "none";
+    synonymTwoofTwo.style.display = "none";
+    synonymThreeofTwo.style.display = "none";
+    styleLineTwo.style.display = "none";
+    styleLineThree.style.display = "none";
+    defOneOfTwo.style.display = "none";
+    defTwoofTwo.style.display = "none";
+    defThreeofTwo.style.display = "none";
+    displayE();
   }
 }
 
@@ -395,6 +426,7 @@ function createDictionaryOne() {
 
     /*Display Synonyms Section*/
     displaySynonyms();
+
   } 
 
 
@@ -454,38 +486,37 @@ form.addEventListener('submit', (event) => {
   promise.then((data) => {
     if(data[0] == undefined){
       console.log('UNDEFINED');
-      /*Section One*/
-      vocabWord.style.display = "none";
-      soundOutPhonetic.style.display = "none";
-      playIcon.style.display = "none";
-      meaningText.style.display = "none";
-      partsOfSpeech.style.display = "none";
-      synonymsText.style.display = "none";
-      synonymOne.style.display = "none";
-      synonymTwo.style.display = "none";
-      synonymThree.style.display = "none";
-      styleLine.style.display = "none";
-      defOne.style.display ="none";
-      defTwo.style.display = "none";
-      defThree.style.display = "none";
-
-      /*Section Two*/
-      vocabWordTwo.style.display = "none";
-      soundOutPhoneticTwo.style.display = "none";
-      playIconTwo.style.display = "none";
-      meaningTextTwo.style.display = "none";
-      partsOfSpeechTwo.style.display = "none";
-      synonymsTextofTwo.style.display = "none";
-      synonymOneofTwo.style.display = "none";
-      synonymTwoofTwo.style.display = "none";
-      synonymThreeofTwo.style.display = "none";
-      styleLineTwo.style.display = "none";
-      styleLineThree.style.display = "none";
-      defOneOfTwo.style.display = "none";
-      defTwoofTwo.style.display = "none";
-      defThreeofTwo.style.display = "none";
-      
-      displayE();
+     /*Hide Vocab Section One*/
+    vocabWord.style.display = "none";
+    soundOutPhonetic.style.display = "none";
+    playIcon.style.display = "none";
+    meaningText.style.display = "none";
+    partsOfSpeech.style.display = "none";
+    synonymsText.style.display = "none";
+    synonymOne.style.display = "none";
+    synonymTwo.style.display = "none";
+    synonymThree.style.display = "none";
+    styleLine.style.display = "none";
+    defOne.style.display = "none";
+    defTwo.style.display = "none";
+    defThree.style.display = "none";
+  
+    /*Hide Vocab Section Two*/
+    vocabWordTwo.style.display = "none";
+    soundOutPhoneticTwo.style.display = "none";
+    playIconTwo.style.display = "none";
+    meaningTextTwo.style.display = "none";
+    partsOfSpeechTwo.style.display = "none";
+    synonymsTextofTwo.style.display = "none";
+    synonymOneofTwo.style.display = "none";
+    synonymTwoofTwo.style.display = "none";
+    synonymThreeofTwo.style.display = "none";
+    styleLineTwo.style.display = "none";
+    styleLineThree.style.display = "none";
+    defOneOfTwo.style.display = "none";
+    defTwoofTwo.style.display = "none";
+    defThreeofTwo.style.display = "none";
+    displayE();
     }
     /*If phonetics Are Not Equal*/
     if(data[1].hwi.prs[0].mw !== data[0].hwi.prs[0].mw){

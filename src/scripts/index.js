@@ -10,6 +10,17 @@ import { form } from "./global-variables";
 import createDictionary from "./dictionary-api";
 import { displayE } from "./dictionary-api";
 
+import { vocabWord, vocabWordTwo } from "./global-variables";
+import { soundOutPhonetic, soundOutPhoneticTwo } from "./global-variables";
+import { partsOfSpeech, partsOfSpeechTwo } from "./global-variables";
+import { styleLine, styleLineTwo, styleLineThree } from "./global-variables";
+import { playIcon, playIconTwo } from "./global-variables";
+import { meaningText, meaningTextTwo } from "./global-variables";
+import {synonymsText,synonymOne,synonymTwo,synonymThree} from "./global-variables";
+import {synonymOneofTwo,synonymsTextofTwo,synonymThreeofTwo,synonymTwoofTwo} from "./global-variables";
+import { defOne, defTwo, defThree} from "./global-variables"
+import {defOneOfTwo,defTwoofTwo,defThreeofTwo} from "./global-variables";
+
 /*FORM VALIDATION*/
 /*If searchfield value is not missing, it reverts to valid status*/
 searchField.addEventListener("input", () => {
@@ -56,6 +67,36 @@ form.addEventListener("submit", (event) => {
     searchField.setAttribute("id", "invalid-search-field");
     errorSearchMessage.textContent = "Whoops, can't be empty!";
     errorSearchMessage.setAttribute("id", "invalid-error-message");
+
+    vocabWord.style.display = "none";
+    soundOutPhonetic.style.display = "none";
+    playIcon.style.display = "none";
+    meaningText.style.display = "none";
+    partsOfSpeech.style.display = "none";
+    synonymsText.style.display = "none";
+    synonymOne.style.display = "none";
+    synonymTwo.style.display = "none";
+    synonymThree.style.display = "none";
+    styleLine.style.display = "none";
+    defOne.style.display = "none";
+    defTwo.style.display = "none";
+    defThree.style.display = "none";
+  
+
+    vocabWordTwo.style.display = "none";
+    soundOutPhoneticTwo.style.display = "none";
+    playIconTwo.style.display = "none";
+    meaningTextTwo.style.display = "none";
+    partsOfSpeechTwo.style.display = "none";
+    synonymsTextofTwo.style.display = "none";
+    synonymOneofTwo.style.display = "none";
+    synonymTwoofTwo.style.display = "none";
+    synonymThreeofTwo.style.display = "none";
+    styleLineTwo.style.display = "none";
+    styleLineThree.style.display = "none";
+    defOneOfTwo.style.display = "none";
+    defTwoofTwo.style.display = "none";
+    defThreeofTwo.style.display = "none";
     displayE();
   }
 });
