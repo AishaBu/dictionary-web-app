@@ -2821,28 +2821,66 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("inp
   }
 });
 
-/*Check for regex match and prevent submit on input*/
-_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("input", function () {
-  var regex = /^[a-zA-Z]+/g;
-  var numRegex = /\d/;
-  var specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (!_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
-    _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "invalid-search-field");
-    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = "Please type only letters!";
-    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.setAttribute("id", "invalid-error-message");
+/*Check for regex match and prevent submit on input*
+searchField.addEventListener("input", () => {
+  const regex = /^[a-zA-Z]+/g;
+  const numRegex = /\d/;
+  const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
+  if (
+    !searchField.value.match(regex) ||
+    searchField.value.match(numRegex) ||
+    searchField.value.match(specChar)
+  ) {
+    searchField.setAttribute("id", "invalid-search-field");
+    errorSearchMessage.textContent = "Please type only letters!";
+    errorSearchMessage.setAttribute("id", "invalid-error-message");
 
-    /*If there is an attempt to submit form while invalid, prevent sending*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", function (event) {
+    /*If there is an attempt to submit form while invalid, prevent sending*
+    form.addEventListener("submit", (event) => {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
     });
   } else {
-    /*Display words on formsubmit if field value is valid*/
-    _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", function (event) {
+    /*Display words on formsubmit if field value is valid*
+    form.addEventListener("submit", (event) => {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
-      (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_2__["default"])();
+      createDictionary();
     });
+  }
+});
+*/
+
+/*Check for regex match and prevent submit on input*/
+_global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", function (event) {
+  var regex = /^[a-zA-Z]+/g;
+  var numRegex = /\d/;
+  var specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
+  if (!_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
+    event.preventDefault(); //stops default action
+    event.stopPropagation(); //stops further propogation in event/bubbling phases
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "invalid-search-field");
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = "Please type only letters!";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.setAttribute("id", "invalid-error-message");
+
+    /*If there is an attempt to submit form while invalid, prevent sending*
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); //stops default action
+      event.stopPropagation(); //stops further propogation in event/bubbling phases
+    });
+    */
+  } else {
+    /*Display words on formsubmit if field value is valid*
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); //stops default action
+      event.stopPropagation(); //stops further propogation in event/bubbling phases
+      createDictionary();
+    });
+    */
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = " ";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.removeAttribute("id", "invalid-error-message");
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "valid-value");
+    (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_2__["default"])();
   }
 });
 
@@ -2888,4 +2926,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle8efb9358d0b473beb06b.js.map
+//# sourceMappingURL=bundle2a4beb287a9767713040.js.map
