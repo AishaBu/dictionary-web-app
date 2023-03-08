@@ -2853,10 +2853,10 @@ searchField.addEventListener("input", () => {
 
 /*Check for regex match and prevent submit on input*/
 _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", function (event) {
-  var regex = /^[a-zA-Z]+/g;
+  //const regex = /^[a-zA-Z]+/g;
   var numRegex = /\d/;
   var specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (!_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
+  if (_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
     event.preventDefault(); //stops default action
     event.stopPropagation(); //stops further propogation in event/bubbling phases
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "invalid-search-field");
@@ -2926,4 +2926,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle2a4beb287a9767713040.js.map
+//# sourceMappingURL=bundleecddd253ef0db695fd21.js.map

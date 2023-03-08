@@ -62,14 +62,11 @@ searchField.addEventListener("input", () => {
 
 /*Check for regex match and prevent submit on input*/
 form.addEventListener("submit", (event) => {
-  const regex = /^[a-zA-Z]+/g;
+  //const regex = /^[a-zA-Z]+/g;
   const numRegex = /\d/;
   const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (
-    !searchField.value.match(regex) ||
-    searchField.value.match(numRegex) ||
-    searchField.value.match(specChar)
-  ) {
+  
+  if(searchField.value.match(numRegex) || searchField.value.match(specChar)) {
     event.preventDefault(); //stops default action
     event.stopPropagation(); //stops further propogation in event/bubbling phases
     searchField.setAttribute("id", "invalid-search-field");
