@@ -2939,8 +2939,7 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("inp
   var regex = /^[a-zA-Z]+/g;
   var numRegex = /\d/;
   var specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if ( /*!searchField.value.match(regex) ||*/
-  _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
+  if (!_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "invalid-search-field");
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = "Please type only letters!";
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.setAttribute("id", "invalid-error-message");
@@ -2950,11 +2949,14 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("inp
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
     });
-  } else {
+  } else if (_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(regex) && !_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) && !_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
     /*Display words on formsubmit if field value is valid*/
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", function (event) {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
+      _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = " ";
+      _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.removeAttribute("id", "invalid-error-message");
+      _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "valid-value");
       (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_2__["default"])();
     });
   }
@@ -3002,4 +3004,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle93e632ea4d6b3cd5a441.js.map
+//# sourceMappingURL=bundle5290e10fa80a2a30b4e6.js.map
