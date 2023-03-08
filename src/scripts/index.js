@@ -31,7 +31,7 @@ searchField.addEventListener("input", () => {
 });
 
 /*Check for regex match and prevent submit on input*/
-form.addEventListener("submit", () => {
+searchField.addEventListener("input", () => {
   const regex = /^[a-zA-Z]+/g;
   const numRegex = /\d/;
   const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;

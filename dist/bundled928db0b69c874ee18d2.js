@@ -2935,7 +2935,7 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("inp
 });
 
 /*Check for regex match and prevent submit on input*/
-_global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", function () {
+_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("input", function () {
   var regex = /^[a-zA-Z]+/g;
   var numRegex = /\d/;
   var specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
@@ -3001,4 +3001,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle34921c47b12777535aeb.js.map
+//# sourceMappingURL=bundled928db0b69c874ee18d2.js.map
