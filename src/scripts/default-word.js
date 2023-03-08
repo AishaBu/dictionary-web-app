@@ -1,5 +1,3 @@
-import { fetchVocabularyWords } from "./dictionary-api";
-import { fetchSynonymsThesaurus } from "./dictionary-api";
 import { capitalizeFirstLetter } from "./dictionary-api";
 import { vocabWord, vocabWordTwo } from "./global-variables";
 import { soundOutPhonetic, soundOutPhoneticTwo } from "./global-variables";
@@ -14,12 +12,79 @@ import {synonymOneofTwo,synonymsTextofTwo,synonymThreeofTwo,synonymTwoofTwo} fro
 import { hideE } from "./dictionary-api";
 /*Default Word*/ const defaultWord = "Hello";
 
+/*API CALL*/
+/*Dictionary Api Call*/
+async function fetchVocabularyWordsDefault(searchFieldValue) {
+  const apiKeyDictionary = process.env.DICTIONARY_API_KEY;
+  try {
+    const response = await fetch(
+      `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${searchFieldValue}?key=${apiKeyDictionary}`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Could not get word: ${searchField.value}`);
+    /*Hide Vocab Section One*/
+    vocabWord.style.display = "none";
+    soundOutPhonetic.style.display = "none";
+    playIcon.style.display = "none";
+    meaningText.style.display = "none";
+    partsOfSpeech.style.display = "none";
+    synonymsText.style.display = "none";
+    synonymOne.style.display = "none";
+    synonymTwo.style.display = "none";
+    synonymThree.style.display = "none";
+    styleLine.style.display = "none";
+    defOne.style.display = "none";
+    defTwo.style.display = "none";
+    defThree.style.display = "none";
+  
+    /*Hide Vocab Section Two*/
+    vocabWordTwo.style.display = "none";
+    soundOutPhoneticTwo.style.display = "none";
+    playIconTwo.style.display = "none";
+    meaningTextTwo.style.display = "none";
+    partsOfSpeechTwo.style.display = "none";
+    synonymsTextofTwo.style.display = "none";
+    synonymOneofTwo.style.display = "none";
+    synonymTwoofTwo.style.display = "none";
+    synonymThreeofTwo.style.display = "none";
+    styleLineTwo.style.display = "none";
+    styleLineThree.style.display = "none";
+    defOneOfTwo.style.display = "none";
+    defTwoofTwo.style.display = "none";
+    defThreeofTwo.style.display = "none";
+    displayE();
+  }
+}
+
+/*Thesaurus Api Call*/
+async function fetchSynonymsThesaurusDefault(searchFieldValue) {
+  const apiKeyThesaurus = process.env.THESAURUS_API_KEY;
+  try {
+    const response = await fetch(
+      `https://www.dictionaryapi.com/api/v3/references/thesaurus/json//${searchFieldValue}?key=${apiKeyThesaurus}`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Could not get word: ${searchField.value}`);
+  }
+}
+
+
 
   /*Create audio on click of icon*/
   //Moving audio value outside of function creates sound only once.
   const globalAudio = new Audio();
   function playAudioOneDefault() {
-    const promise = fetchVocabularyWords(defaultWord);
+    const promise = fetchVocabularyWordsDefault(defaultWord);
     promise.then((data) => {
       let audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[0].hwi.prs[0].sound.audio[0]}/${data[0].hwi.prs[0].sound.audio}.mp3`;
       globalAudio.src = audioURL;
@@ -30,7 +95,7 @@ import { hideE } from "./dictionary-api";
   
   /*Check if no data is available for list*/
   function removeBulletListIfNoDataDefault() {
-    const promise = fetchVocabularyWords(defaultWord);
+    const promise = fetchVocabularyWordsDefault(defaultWord);
   
       /*WORD SECTION ONE -check if data list empty*/
       /*If data for defone is empty*/
@@ -89,7 +154,7 @@ import { hideE } from "./dictionary-api";
     } 
   
   function hideEntireSecondWordSectionIfNoDataDefault() {
-    const promise = fetchVocabularyWords(defaultWord);
+    const promise = fetchVocabularyWordsDefault(defaultWord);
     /*If all of data are missing/undefined for word sections*/
       promise.then((data) => {
         /*WORD SECTION ONE-If all data missing*/
@@ -160,7 +225,7 @@ import { hideE } from "./dictionary-api";
   
   /*Create Definitions Lists*/
   function createListDefault() {
-    const promise = fetchVocabularyWords(defaultWord);
+    const promise = fetchVocabularyWordsDefault(defaultWord);
     meaningText.textContent = "Meaning";
     defList.style.display = "block";
     meaningTextTwo.textContent = "Meaning";
@@ -199,7 +264,7 @@ import { hideE } from "./dictionary-api";
   
   /*Display Synonyms for Words One and Two*/
   function displaySynonymsDefault() {
-    const promise = fetchSynonymsThesaurus(defaultWord);
+    const promise = fetchSynonymsThesaurusDefault(defaultWord);
     
       /*Synonyms List One*/
       synonymsText.style.display = "block";
@@ -225,36 +290,11 @@ import { hideE } from "./dictionary-api";
             data[0].meta.syns[0][2]
           ))
       );
-  
-      /*Synonyms List Two*/
-      synonymsTextofTwo.style.display = "block";
-      synonymsTextofTwo.textContent = "Synonyms";
-      synonymOneofTwo.style.display = "block";
-      synonymTwoofTwo.style.display = "block";
-      synonymThreeofTwo.style.display = "block";
-      promise.then(
-        (data) =>
-          (synonymOneofTwo.textContent = capitalizeFirstLetter(
-            data[1].meta.syns[0][0]
-          ))
-      );
-      promise.then(
-        (data) =>
-          (synonymTwoofTwo.textContent = capitalizeFirstLetter(
-            data[1].meta.syns[0][1]
-          ))
-      );
-      promise.then(
-        (data) =>
-          (synonymThreeofTwo.textContent = capitalizeFirstLetter(
-            data[1].meta.syns[0][2]
-          ))
-      );
     } 
   
     /*Check Headword for Extra Strings*/
     function checkHeadwordForExtraStringsBeforeDisplayingDefault(){
-        const promise = fetchVocabularyWords(defaultWord);
+        const promise = fetchVocabularyWordsDefault(defaultWord);
         /*Remove Extra Words After Headword*/
         let targetString = defaultWord;
         let extraString = defaultWord;
@@ -291,7 +331,7 @@ import { hideE } from "./dictionary-api";
   /*Display words searched in the search field*/
   function displayDefaultDictionary() {
     hideE();
-    const promise = fetchVocabularyWords(defaultWord);
+    const promise = fetchVocabularyWordsDefault(defaultWord);
     styleLine.style.display = "block";
     playIcon.style.display = "block";
    
