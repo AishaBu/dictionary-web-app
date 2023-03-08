@@ -23,6 +23,8 @@ import {defOneOfTwo,defTwoofTwo,defThreeofTwo} from "./global-variables";
 
 /*FORM VALIDATION*/
 searchField.addEventListener("keydown", (event) => {
+  const upperCaseLetter = /[A-Z]+/g;
+
   /*Display message if capslock is on*/
   if(event.getModifierState("CapsLock")) {
     event.preventDefault(); //stops default action
@@ -32,11 +34,11 @@ searchField.addEventListener("keydown", (event) => {
     errorSearchMessage.setAttribute("id", "invalid-error-message");
   }
   /*Display message if shift plus key is pressed*/
-  else if(event.shiftKey) {
+  else if(event.shiftKey || searchField.value.match(upperCaseLetter)) {
     event.preventDefault(); //stops default action
     event.stopPropagation(); //stops further propogation in event/bubbling phases
     searchField.setAttribute("id", "invalid-search-field");
-    errorSearchMessage.textContent = "No shift, lowercase letters only";
+    errorSearchMessage.textContent = "No shift, and lowercase letters only";
     errorSearchMessage.setAttribute("id", "invalid-error-message");
   }
   else{
@@ -59,7 +61,7 @@ searchField.addEventListener("input", () => {
 form.addEventListener("submit", (event) => {
   event.preventDefault(); //stops default action
   event.stopPropagation(); //stops further propogation in event/bubbling phases
-  const regex = /^[a-zA-Z]+/g;
+  const regex = /[a-z]+/g;
   const numRegex = /\d/;
   const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
 
