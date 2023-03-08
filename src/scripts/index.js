@@ -49,19 +49,11 @@ searchField.addEventListener("input", () => {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
     });
-  }
-  else if (
-    searchField.value.match(regex) &&
-    !searchField.value.match(numRegex) &&
-    !searchField.value.match(specChar)
-  ) {
+  } else {
     /*Display words on formsubmit if field value is valid*/
     form.addEventListener("submit", (event) => {
       event.preventDefault(); //stops default action
       event.stopPropagation(); //stops further propogation in event/bubbling phases
-      errorSearchMessage.textContent = " ";
-      errorSearchMessage.removeAttribute("id", "invalid-error-message");
-      searchField.setAttribute("id", "valid-value");
       createDictionary();
     });
   }
