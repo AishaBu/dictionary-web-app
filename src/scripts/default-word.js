@@ -80,37 +80,6 @@ async function fetchSynonymsThesaurusDefault(searchFieldValue) {
   }
 }
 
-
-/*DEFAULT REGEX CHECK*/
-searchField.addEventListener("input", () => {
-  const regex = /^[a-zA-Z]+/g;
-  const numRegex = /\d/;
-  const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (
-    !searchField.value.match(regex) ||
-    searchField.value.match(numRegex) ||
-    searchField.value.match(specChar)
-  ) {
-    searchField.setAttribute("id", "invalid-search-field");
-    errorSearchMessage.textContent = "Please type only letters!";
-    errorSearchMessage.setAttribute("id", "invalid-error-message");
-
-    /*If there is an attempt to submit form while invalid, prevent sending*/
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-    });
-  } else {
-    /*Display words on formsubmit if field value is valid*/
-    form.addEventListener("submit", (event) => {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-      createDictionary();
-    });
-  }
-});
-
-
   /*Create audio on click of icon*/
   //Moving audio value outside of function creates sound only once.
   const globalAudio = new Audio();

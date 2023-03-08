@@ -864,7 +864,8 @@ function _fetchVocabularyWordsDefault() {
 function fetchSynonymsThesaurusDefault(_x2) {
   return _fetchSynonymsThesaurusDefault.apply(this, arguments);
 }
-/*DEFAULT REGEX CHECK*/
+/*Create audio on click of icon*/
+//Moving audio value outside of function creates sound only once.
 function _fetchSynonymsThesaurusDefault() {
   _fetchSynonymsThesaurusDefault = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(searchFieldValue) {
     var apiKeyThesaurus, response, data;
@@ -900,32 +901,6 @@ function _fetchSynonymsThesaurusDefault() {
   }));
   return _fetchSynonymsThesaurusDefault.apply(this, arguments);
 }
-_global_variables__WEBPACK_IMPORTED_MODULE_1__.searchField.addEventListener("input", function () {
-  var regex = /^[a-zA-Z]+/g;
-  var numRegex = /\d/;
-  var specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (!_global_variables__WEBPACK_IMPORTED_MODULE_1__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_1__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_1__.searchField.value.match(specChar)) {
-    _global_variables__WEBPACK_IMPORTED_MODULE_1__.searchField.setAttribute("id", "invalid-search-field");
-    errorSearchMessage.textContent = "Please type only letters!";
-    errorSearchMessage.setAttribute("id", "invalid-error-message");
-
-    /*If there is an attempt to submit form while invalid, prevent sending*/
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-    });
-  } else {
-    /*Display words on formsubmit if field value is valid*/
-    form.addEventListener("submit", function (event) {
-      event.preventDefault(); //stops default action
-      event.stopPropagation(); //stops further propogation in event/bubbling phases
-      createDictionary();
-    });
-  }
-});
-
-/*Create audio on click of icon*/
-//Moving audio value outside of function creates sound only once.
 var globalAudio = new Audio();
 function playAudioOneDefault() {
   var promise = fetchVocabularyWordsDefault(defaultWord);
@@ -1184,4 +1159,4 @@ window.addEventListener("load", function () {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundledefaultword1bde5da233b8b298bce2.js.map
+//# sourceMappingURL=bundledefaultwordb437d0d9e0aaffe45d2f.js.map
