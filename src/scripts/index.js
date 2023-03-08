@@ -22,14 +22,21 @@ import { defOne, defTwo, defThree} from "./global-variables"
 import {defOneOfTwo,defTwoofTwo,defThreeofTwo} from "./global-variables";
 
 /*FORM VALIDATION*/
-/*Display message if capslock is on*/
-searchField.addEventListener("keyup", (event) => {
-
-  if (event.getModifierState("CapsLock")) {
+searchField.addEventListener("keydown", (event) => {
+  /*Display message if capslock is on*/
+  if(event.getModifierState("CapsLock")) {
     event.preventDefault(); //stops default action
     event.stopPropagation(); //stops further propogation in event/bubbling phases
     searchField.setAttribute("id", "invalid-search-field");
     errorSearchMessage.textContent = "Turn off Caps Lock before typing";
+    errorSearchMessage.setAttribute("id", "invalid-error-message");
+  }
+  /*Display message if shift plus key is pressed*/
+  else if(event.shiftKey) {
+    event.preventDefault(); //stops default action
+    event.stopPropagation(); //stops further propogation in event/bubbling phases
+    searchField.setAttribute("id", "invalid-search-field");
+    errorSearchMessage.textContent = "No shift, lowercase letters only";
     errorSearchMessage.setAttribute("id", "invalid-error-message");
   }
   else{
