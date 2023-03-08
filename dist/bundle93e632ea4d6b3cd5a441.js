@@ -2939,7 +2939,8 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("inp
   var regex = /^[a-zA-Z]+/g;
   var numRegex = /\d/;
   var specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
-  if (!_global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(regex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
+  if ( /*!searchField.value.match(regex) ||*/
+  _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(numRegex) || _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.value.match(specChar)) {
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "invalid-search-field");
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = "Please type only letters!";
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.setAttribute("id", "invalid-error-message");
@@ -3001,4 +3002,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundled928db0b69c874ee18d2.js.map
+//# sourceMappingURL=bundle93e632ea4d6b3cd5a441.js.map

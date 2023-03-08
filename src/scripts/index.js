@@ -36,7 +36,7 @@ searchField.addEventListener("input", () => {
   const numRegex = /\d/;
   const specChar = /[$&+,:;=?@#|'<>.-^*()%!{}]/;
   if (
-    !searchField.value.match(regex) ||
+    /*!searchField.value.match(regex) ||*/
     searchField.value.match(numRegex) ||
     searchField.value.match(specChar)
   ) {
