@@ -18,6 +18,9 @@ const errorSearchMessage = document.querySelector("#search-field + span#error");
 /*Moon Icon*/
 const moonIcon = document.getElementById('moon-icon');
 
+/*Default Word*/
+const defaultWord = "Hello";
+
 /*API*/
 /*Word Version 1*/
 const vocabWord = document.getElementById('vocabulary-word');
@@ -106,3 +109,6 @@ export {noDefinitionsFoundText};
 
 /*Moon Icon*/
 export {moonIcon};
+
+/*Default Word*/
+export {defaultWord};
