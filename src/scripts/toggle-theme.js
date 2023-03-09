@@ -89,7 +89,26 @@ function changeFontColorWithFontStyleDarkTheme(){
     setListTextColorWhite(noDefinitionsFoundText);
     setListTextColorWhite(errorMessage);
 
-  }changeFontColorWithFontStyleDarkTheme();  
+  }changeFontColorWithFontStyleDarkTheme(); 
+  
+  function changeErrorMessageColorOnClickDarkTheme(){
+        /*Sans Serif*/
+        sansSerif.addEventListener('click', ()=>{
+          setListTextColorWhite(noDefinitionsFoundText);
+          setListTextColorWhite(errorMessage);
+        })
+          /*Serif*/
+      serif.addEventListener('click', ()=>{
+        setListTextColorWhite(noDefinitionsFoundText);
+        setListTextColorWhite(errorMessage);
+      })
+
+      /*Mono*/
+      mono.addEventListener('click', ()=>{
+        setListTextColorWhite(noDefinitionsFoundText);
+        setListTextColorWhite(errorMessage);
+      })
+  }changeErrorMessageColorOnClickDarkTheme();
 }
 
 
@@ -174,8 +193,33 @@ function changeFontColor(){
       setListTextColorBlack(noDefinitionsFoundText);
       setListTextColorBlack(errorMessage);
   
-  }changeFontColor();  
-} setDefaultTheme(); //Set Default Theme for Toggle*/
+  }
+  changeFontColor();  
+
+  /*Change Error Message Color To Black On Click*/
+  function changeErrorMessageColorOnClickDefaultTheme(){
+    /*Sans Serif*/
+    sansSerif.addEventListener('click', ()=>{
+      setListTextColorBlack(noDefinitionsFoundText);
+      setListTextColorBlack(errorMessage);
+    })
+      /*Serif*/
+  serif.addEventListener('click', ()=>{
+    setListTextColorBlack(noDefinitionsFoundText);
+    setListTextColorBlack(errorMessage);
+  })
+
+  /*Mono*/
+  mono.addEventListener('click', ()=>{
+    setListTextColorBlack(noDefinitionsFoundText);
+    setListTextColorBlack(errorMessage);
+  })
+}
+changeErrorMessageColorOnClickDefaultTheme();
+
+
+} 
+setDefaultTheme(); //Set Default Theme for Toggle*/
 
 
   /*Toggle Theme On and Off*/
