@@ -327,6 +327,7 @@ input[type="search"]:focus,
   font-family: var(--inter-font), var(--static-inter-regular-font);
   font-size: 14px;
   line-height: 17px;
+  z-index: -1;
 }
 
 /*Add dividing Line on header*/
