@@ -591,7 +591,6 @@ ul li:before {
   justify-content: center;
   align-items: center;
   margin-top: -80px;
-  margin-left: -15px;
 }
 
 #error-message,
@@ -618,6 +617,15 @@ ul li:before {
 
 
 /*MEDIA QUERIES*/
+/*Decrease Error Message Width 
+for Mobile Devices*/
+/*414px and below*/
+@media(max-width: 414px){
+  #error-message {
+    width: 230px;
+  }
+}
+
 /*Mobile Devices Header MQ*/
 /*Set Header Media Queries*/
 /*300 and below Header MQ*/
