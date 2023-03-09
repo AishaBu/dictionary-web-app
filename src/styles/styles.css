@@ -590,6 +590,7 @@ ul li:before {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: -80px;
 }
 
 #error-message,
@@ -601,6 +602,7 @@ ul li:before {
 #error-message {
   text-align: left;
   width: 300px;
+  margin-top: -3px;
 }
 
 #frown-face-emoji {
