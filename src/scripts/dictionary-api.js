@@ -10,6 +10,7 @@ import {synonymsText,synonymOne,synonymTwo,synonymThree} from "./global-variable
 import {defOneOfTwo,defTwoofTwo,defThreeofTwo,defListofTwo} from "./global-variables";
 import {synonymOneofTwo,synonymsTextofTwo,synonymThreeofTwo,synonymTwoofTwo} from "./global-variables";
 import {errorMessage,frownFaceEmoji,noDefinitionsFoundText} from "./global-variables";
+import { defaultWord } from "./global-variables"; /*Default Word*/ 
 
 /*API CALL*/
 /*Dictionary Api Call*/
@@ -118,6 +119,17 @@ function playAudioOne() {
 /*Audio Two*/
 function playAudioTwo() {
   const promise = fetchVocabularyWords(searchField.value);
+  promise.then((data) => {
+    let audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[1].hwi.prs[0].sound.audio[0]}/${data[1].hwi.prs[0].sound.audio}.mp3`;
+    globalAudio.src = audioURL;
+    globalAudio.preload = "none";
+    globalAudio.play();
+  });
+}
+
+/*Audio Three*/
+function playAudioThreeDefault() {
+  const promise = fetchVocabularyWords(defaultWord);
   promise.then((data) => {
     let audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[1].hwi.prs[0].sound.audio[0]}/${data[1].hwi.prs[0].sound.audio}.mp3`;
     globalAudio.src = audioURL;
@@ -536,3 +548,4 @@ export { hideE };
 export {fetchVocabularyWords};
 export {fetchSynonymsThesaurus};
 export {capitalizeFirstLetter};
+export {playAudioThreeDefault};
