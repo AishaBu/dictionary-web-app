@@ -619,7 +619,7 @@ ul li:before {
 /*MEDIA QUERIES*/
 /*Decrease Error Message Width 
 for Mobile Devices*/
-/*414px and below*/
+/*Mobile Devices 414px and below error message MQ*/
 @media(max-width: 414px){
   #error-message {
     width: 230px;
