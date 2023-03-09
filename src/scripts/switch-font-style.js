@@ -117,7 +117,7 @@ function changeFontToSansSerif() {
     /*Error Message Font for Sans Serif*/
     /*No Definitions Found Text*/
     noDefinitionsFoundText.style.fontFamily = "var(--inter-font), var( --static-inter-bold)";
-    noDefinitionsFoundText.style.fontSize = "15px";
+    noDefinitionsFoundText.style.fontSize = "16px";
     noDefinitionsFoundText.style.fontWeight = "bold";
     noDefinitionsFoundText.style.color = "var( --off-black-one)";
     /*Error Message*/
@@ -211,7 +211,7 @@ function changeFontToSerif() {
     /*Error Message Font for Serif*/
     /*No Definitions Found Text*/
     noDefinitionsFoundText.style.fontFamily = "var(--lora-font), var(--lora-static-bold-font)";
-    noDefinitionsFoundText.style.fontSize = "15px";
+    noDefinitionsFoundText.style.fontSize = "16px";
     noDefinitionsFoundText.style.fontWeight = "bold";
     noDefinitionsFoundText.style.color = "var( --off-black-one)";
     /*Error Message*/
@@ -304,7 +304,7 @@ function changeFontToMono() {
     /*Error Message Font for Mono*/
     /*No Definitions Found Text*/
     noDefinitionsFoundText.style.fontFamily = "var(--inconsolata-font), var(--static-inconsolata-bold-font)";
-    noDefinitionsFoundText.style.fontSize = "15px";
+    noDefinitionsFoundText.style.fontSize = "16px";
     noDefinitionsFoundText.style.fontWeight = "bold";
     noDefinitionsFoundText.style.color = "var( --off-black-one)";
     /*Error Message*/
