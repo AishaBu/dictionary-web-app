@@ -610,12 +610,14 @@ ul li:before {
   font-size: 50px; /*Increases emoji width*/
 }
 
-
+/*Add width to error message title*/
+#no-definitions-found-text {
+  width: 200px;
+}
 
 
 
 /*MEDIA QUERIES*/
-
 /*Set Header Media Queries*/
 
 /*300 and below*/
