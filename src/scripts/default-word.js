@@ -12,22 +12,10 @@ import {synonymOneofTwo,synonymsTextofTwo,synonymThreeofTwo,synonymTwoofTwo} fro
 import { hideE } from "./dictionary-api";
 import { fetchVocabularyWords } from "./dictionary-api";
 import { fetchSynonymsThesaurus } from "./dictionary-api";
-/*Default Word*/ const defaultWord = "Hello";
+import { playAudioThreeDefault} from "./dictionary-api";
+import { defaultWord } from "./global-variables"; /*Default Word*/
 
 
-  /*Create audio on click of icon*/
-  //Moving audio value outside of function creates sound only once.
-  const globalAudio = new Audio();
-  function playAudioOneDefault() {
-    const promise = fetchVocabularyWords(defaultWord);
-    promise.then((data) => {
-      let audioURL = `https://media.merriam-webster.com/audio/prons/en/us/mp3/${data[0].hwi.prs[0].sound.audio[0]}/${data[0].hwi.prs[0].sound.audio}.mp3`;
-      globalAudio.src = audioURL;
-      globalAudio.preload = "none";
-      globalAudio.play();
-    });
-  }
-  
   /*Check if no data is available for list*/
   function removeBulletListIfNoDataDefault() {
     const promise = fetchVocabularyWords(defaultWord);
@@ -291,8 +279,9 @@ import { fetchSynonymsThesaurus } from "./dictionary-api";
   
       /*Play audio on icon click*/
       playIcon.addEventListener("click", () => {
-        playAudioOneDefault();
+        playAudioThreeDefault();
       });
+      
       /*Create Definitions List*/
       createListDefault();
   
