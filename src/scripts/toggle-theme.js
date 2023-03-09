@@ -2,6 +2,7 @@ import {searchField } from "./global-variables";
 import {defOne, defOneOfTwo, defThree, defThreeofTwo, defTwo, defTwoofTwo} from "./global-variables";
 import {fontPlaceholder, fontDropdownList , sansSerif, serif, mono} from "./global-variables";
 import { moonIcon } from "./global-variables";
+import { noDefinitionsFoundText, errorMessage} from "./global-variables";
 
 /*TOGGLE COLOR THEME CHANGE*/
 const checkBoxInput = document.getElementById("checkbox-input");
@@ -83,7 +84,11 @@ function changeFontColorWithFontStyleDarkTheme(){
       setListTextColorWhite(defTwoofTwo);
       setListTextColorWhite(defThreeofTwo);
     })
-  
+
+    /*Change Error Message Color To White*/
+    setListTextColorWhite(noDefinitionsFoundText);
+    setListTextColorWhite(errorMessage);
+
   }changeFontColorWithFontStyleDarkTheme();  
 }
 
@@ -164,6 +169,10 @@ function changeFontColor(){
       setListTextColorBlack(defTwoofTwo);
       setListTextColorBlack(defThreeofTwo);
     })
+
+      /*Change Error Message Color To White*/
+      setListTextColorBlack(noDefinitionsFoundText);
+      setListTextColorBlack(errorMessage);
   
   }changeFontColor();  
 } setDefaultTheme(); //Set Default Theme for Toggle*/
