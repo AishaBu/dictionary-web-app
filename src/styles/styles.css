@@ -602,7 +602,7 @@ ul li:before {
 
 #error-message {
   text-align: left;
-  width: 230px;
+  width: 300px;
   margin-top: -3px;
 }
 
@@ -618,9 +618,9 @@ ul li:before {
 
 
 /*MEDIA QUERIES*/
+/*Mobile Devices Header MQ*/
 /*Set Header Media Queries*/
-
-/*300 and below*/
+/*300 and below Header MQ*/
 @media (max-width: 300px) {
   header {
     display: flex;
@@ -640,7 +640,7 @@ ul li:before {
   }
 }
 
-/*At 320px*/
+/*At 320px Header MQ*/
 @media (width: 320px) {
 
   header{
@@ -652,6 +652,8 @@ ul li:before {
     right: 70px;
   }
 }
+
+/*Tablet Devices Header MQ*/
 /*Between 470px and 599px*/
 @media (min-width: 470px) and (max-width:599px){
 
@@ -660,7 +662,7 @@ ul li:before {
   }
 }
 
-/*600px and above*/
+/*600px and above Header MQ*/
 @media (min-width: 600px){
 
   #main-header-content {
@@ -668,7 +670,7 @@ ul li:before {
   }
 }
 
-/*800px and above Header*/
+/*800px and above Header MQ*/
 @media (min-width: 800px){
 
   #main-header-content {
@@ -703,8 +705,8 @@ ul li:before {
 /*End Header Media Queries*/
 
 
+/*Mobile Devices Searchfied MQ*/
 /*Set Different Searchfield Width Lengths*/
-
 /*300 and below*/
 @media (max-width: 300px) {
 
@@ -713,7 +715,7 @@ ul li:before {
   }
 }
 
-/*At 320px*/
+/*At 320px Searchfield MQ*/
 @media (width: 320px) {
 
   input[type="search"] {
@@ -721,7 +723,7 @@ ul li:before {
   }
 }
 
-/*Between 400px and 438px*/
+/*Between 400px and 438px Searchfield MQ*/
 @media(min-width: 400px) and (max-width: 438px) {
 
   input[type="search"] {
@@ -729,7 +731,7 @@ ul li:before {
   }
 }
 
-/*Between 439px and 499px*/
+/*Between 439px and 499px Searchfield MQ*/
 @media(min-width: 439px) and (max-width: 499px) {
 
   input[type="search"] {
@@ -737,8 +739,7 @@ ul li:before {
   }
 }
 
-/*Tablet Searchfield Widths/
-
+/*Tablet Searchfield Widths MQ/
 /*Between 500px and 530*/
 @media(min-width: 500px) and (max-width: 530px) {
 
@@ -747,7 +748,7 @@ ul li:before {
   }
 }
 
-/*Between 531px and 545*/
+/*Between 531px and 545 Searchfield MQ*/
 @media(min-width: 531px) and (max-width: 600px) {
 
   input[type="search"] {
@@ -755,7 +756,7 @@ ul li:before {
   }
 }
 
-/*Between 601 and 635*/
+/*Between 601 and 635 Searchfield MQ*/
 @media(min-width: 601px) and (max-width: 635px) {
 
   input[type="search"] {
@@ -763,14 +764,14 @@ ul li:before {
   }
 }
 
-/*Between 635 and 700 Searchfield*/
+/*Between 635 and 700 Searchfield MQ*/
 @media(min-width: 635px) and (max-width: 700px) {
 
   input[type="search"] {
     width: 600px;
   }
 }
-/*700px and above Searchfield*/
+/*700px and above Searchfield MQ*/
 @media (min-width: 700px){
 
   input[type="search"] {
@@ -778,7 +779,7 @@ ul li:before {
   }
 }
 
-/*800px and above Searchfield*/
+/*800px and above Searchfield MQ*/
 @media (min-width: 800px){
 
   input[type="search"] {
@@ -786,7 +787,8 @@ ul li:before {
   }
 }
 
-/*1100px and above Searchfield*/
+/*Desktop Devices Searchfield MQ*/
+/*1100px and above Searchfield MQ*/
 @media (min-width: 1100px){
 
   input[type="search"] {
@@ -794,20 +796,18 @@ ul li:before {
   }
 }
 
-/*1300px and above Searchfield*/
+/*1300px and above Searchfield MQ*/
 @media (min-width: 1300px){
 
   input[type="search"] {
     width: 1260px;
   }
 }
-
 /*Set Searchfield Width End*/
 
 
-
+/*Mobile Devices Set Phonetcs, PlayIcon MQ*/
 /*Set Phonetics, and Play Icon Media Queries*/
-
 /*300 and below*/
 @media (max-width: 300px) {
   
@@ -837,7 +837,7 @@ ul li:before {
   } 
 }
 
-/*Tablet Devices*/
+/*Tablet Devices Set Phonetcs, PlayIcon MQ*/
 /*Between 500px and 600px*/
 @media(min-width: 500px){
 
@@ -862,7 +862,7 @@ ul li:before {
   }
 }
 
-/*Between 668px*/
+/*Between 668px Set Phonetcs, PlayIcon MQ*/
 @media(min-width: 668px){
 
   #synonym-one,
@@ -880,7 +880,7 @@ ul li:before {
 
 }
 
-/*Between 668 and 700px*/
+/*Between 668 and 700px Set Phonetcs, PlayIcon MQ*/
 @media(min-width: 766px){
 
   .word-and-sound, .word-and-sound-two {
@@ -894,6 +894,7 @@ ul li:before {
     gap: 400px;
 }
 }
+/*Desktop Devices Set Phonetcs, PlayIcon MQ*/
 /*Between 1000px*/
 @media(min-width: 1000px){
 
@@ -922,16 +923,12 @@ ul li:before {
 
   }
 }
-
 /*End Phonetics, and Play Icon Media Queries*/
 
 
 /*Set Definitions List Media Queries*/
-
-/*Set Word Definitions Group*//*Between 641 and 700px*/
-
-/*Mobile*/
-/*300 and below*/
+/*Mobile Devices Set Definitions List Media Queries*/
+/*300 and below*//*Set Word Definitions Group MQ*/
 @media (max-width: 300px) {
   
   /*Center paragraphs*/
@@ -945,7 +942,7 @@ ul li:before {
   }
 }
 
-/*Tablet*/
+/*Tablet Devices Set Word Definitions Group MQ*/
 @media(min-width: 641px) and (max-width: 782px){
 
   #word-def-group, #word-def-group-two {
@@ -960,6 +957,7 @@ ul li:before {
   }
 }
 
+/*Desktop Devices Set Word Definitions Group MQ*/
 @media(min-width: 1000px){
 
   #word-def-group, #word-def-group-two {
@@ -972,13 +970,11 @@ ul li:before {
     margin-left: 280px;
   }
 }
-
-
 /*End Set Definitions List Media Queries*/
 
 /*Set Vocabulary Section and Error Message Media Quries*/
-
-/*300 and below*/
+/*Mobile Devices Vocabulary Section and Error Message MQ*/
+/*300 and below Vocabulary Section and Error Message MQ**/
 @media (max-width: 300px) {
   
   .vocabulary-section-two {
@@ -992,7 +988,7 @@ ul li:before {
   }
 }
 
-/*Between 412px and 414px*/
+/*Between 412px and 414px Vocabulary Section and Error Message MQ**/
 @media (min-width: 412px) and (max-width: 414px){
   
   /*Shift Input Error Message*/
@@ -1002,7 +998,8 @@ ul li:before {
   }
 }
 
-/*501 and above*/
+/*Tablet Devices Vocabulary Section and Error Message MQ*/
+/*501 and above Vocabulary Section and Error Message MQ*/
 @media (min-width: 501px) {
   
   /*Shift Input Error Message*/
@@ -1011,7 +1008,7 @@ ul li:before {
     }
   }
 
-/*639 and above*/
+/*639 and above Vocabulary Section and Error Message MQ*/
 @media (min-width: 639px){
   
   /*Shift Input Error Message*/
@@ -1020,7 +1017,7 @@ ul li:before {
     }
   }
 
-/*715 and above*/
+/*715 and above Vocabulary Section and Error Message MQ*/
 @media (min-width: 715px){
   
   /*Shift Input Error Message*/
@@ -1029,7 +1026,7 @@ ul li:before {
     }
   }
   
-/*715 and above*/
+/*715 and above Vocabulary Section and Error Message MQ*/
 @media (min-width: 806px){
   
   /*Shift Input Error Message*/
@@ -1038,6 +1035,7 @@ ul li:before {
     }
   }
  
+  /*Desktop Devices Vocabulary Section and Error Message MQ*/
   /*1100 and above*/
   @media (min-width: 1100px){
   
@@ -1046,13 +1044,12 @@ ul li:before {
       margin-left: -560px;
       }
     }
-   
-
 /*End Vocabulary Section and Error Message Media Queries*/
 
-/*Set Synonyms and Meaning Sections Media Queries*/
 
-/*300 and below*/
+/*Set Synonyms and Meaning Sections Media Queries*/
+/*Mobile Devices Synonyms and Meaning Sections Media Queries*/
+/*300 and below Synonyms and Meaning Sections MQ*/
 @media (max-width: 300px) {
   
   .meaning-text,
@@ -1071,7 +1068,7 @@ ul li:before {
 
 }
 
-/*At 320px*/
+/*At 320px Synonyms and Meaning Sections MQ*/
 @media (width: 320px) {
 
   #synonym-one,
@@ -1084,7 +1081,7 @@ ul li:before {
   }
 }
 
-/*At 390px*/
+/*At 390px Synonyms and Meaning Sections MQ*/
 @media (width: 390px){
 
   #synonym-one,
@@ -1098,7 +1095,7 @@ ul li:before {
 
 }
 
-/*At 412px*/
+/*At 412px Synonyms and Meaning Sections MQ*/
 @media(width: 412px) {
 
   #synonym-one,
@@ -1112,7 +1109,7 @@ ul li:before {
 
 }
 
-/*At 414px*/
+/*At 414px Synonyms and Meaning Sections MQ*/
 @media(width: 414px) {
 
   #synonym-one,
@@ -1125,7 +1122,7 @@ ul li:before {
   }
 }
 
-/*Between 490px and 499px*/
+/*Between 490px and 499px Synonyms and Meaning Sections MQ*/
 @media(min-width: 450px) and (max-width: 499px) {
 
   #synonym-one,
@@ -1138,8 +1135,8 @@ ul li:before {
   }
 }
 
-/*Tablet Devices*/
-/*Between 500px and 600px*/
+/*Tablet Devices Synonyms and Meaning Sections Media Queries*/
+/*Between 500px and 600px Synonyms and Meaning Sections MQ*/
 @media(min-width: 500px){
 
   #synonym-one,
@@ -1152,7 +1149,7 @@ ul li:before {
   }
 }
 
-/*586px to 600*/
+/*586px to 600 Synonyms and Meaning Sections MQ*/
 @media(min-width: 586px) and (max-width: 640px){
 
   #synonym-one,
@@ -1165,7 +1162,7 @@ ul li:before {
   }
 }
 
-/*Between 641 and 668px*/
+/*Between 641 and 668px Synonyms and Meaning Sections MQ*/
 @media(min-width: 640px) and (max-width: 668px) {
 
   #synonym-one,
@@ -1178,7 +1175,7 @@ ul li:before {
   }
 }
 
-/*668px and above*/
+/*668px and above Synonyms and Meaning Sections MQ*/
 @media(min-width: 668px) {
 
   #synonym-one,
@@ -1191,7 +1188,7 @@ ul li:before {
   }
 }
 
-/*890px and above*/
+/*890px and above Synonyms and Meaning Sections MQ*/
 @media(min-width: 890px) {
 
   #synonym-one,
@@ -1204,7 +1201,7 @@ ul li:before {
   }
 }
 
-/*1000px and above*/
+/*1000px and above Synonyms and Meaning Sections MQ*/
 @media(min-width: 1000px) {
 
   #synonym-one,
@@ -1216,7 +1213,7 @@ ul li:before {
       margin-left: 800px;
   }
 }
-/*1200px and above*/
+/*1200px and above Synonyms and Meaning Sections MQ*/
 @media(min-width: 1200px) {
 
   #synonym-one,
