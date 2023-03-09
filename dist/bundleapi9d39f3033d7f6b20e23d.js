@@ -2,12 +2,236 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/scripts/dictionary-api.js":
+/***/ "./src/scripts/global-variables.js":
+/*!*****************************************!*\
+  !*** ./src/scripts/global-variables.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "arrowSvgBtn": () => (/* binding */ arrowSvgBtn),
+/* harmony export */   "defList": () => (/* binding */ defList),
+/* harmony export */   "defListofTwo": () => (/* binding */ defListofTwo),
+/* harmony export */   "defOne": () => (/* binding */ defOne),
+/* harmony export */   "defOneOfTwo": () => (/* binding */ defOneOfTwo),
+/* harmony export */   "defThree": () => (/* binding */ defThree),
+/* harmony export */   "defThreeofTwo": () => (/* binding */ defThreeofTwo),
+/* harmony export */   "defTwo": () => (/* binding */ defTwo),
+/* harmony export */   "defTwoofTwo": () => (/* binding */ defTwoofTwo),
+/* harmony export */   "defaultWord": () => (/* binding */ defaultWord),
+/* harmony export */   "errorMessage": () => (/* binding */ errorMessage),
+/* harmony export */   "errorSearchMessage": () => (/* binding */ errorSearchMessage),
+/* harmony export */   "fontDropdownList": () => (/* binding */ fontDropdownList),
+/* harmony export */   "fontDropdownMenu": () => (/* binding */ fontDropdownMenu),
+/* harmony export */   "fontPlaceholder": () => (/* binding */ fontPlaceholder),
+/* harmony export */   "form": () => (/* binding */ form),
+/* harmony export */   "frownFaceEmoji": () => (/* binding */ frownFaceEmoji),
+/* harmony export */   "meaningText": () => (/* binding */ meaningText),
+/* harmony export */   "meaningTextTwo": () => (/* binding */ meaningTextTwo),
+/* harmony export */   "mono": () => (/* binding */ mono),
+/* harmony export */   "moonIcon": () => (/* binding */ moonIcon),
+/* harmony export */   "noDefinitionsFoundText": () => (/* binding */ noDefinitionsFoundText),
+/* harmony export */   "partsOfSpeech": () => (/* binding */ partsOfSpeech),
+/* harmony export */   "partsOfSpeechTwo": () => (/* binding */ partsOfSpeechTwo),
+/* harmony export */   "playIcon": () => (/* binding */ playIcon),
+/* harmony export */   "playIconTwo": () => (/* binding */ playIconTwo),
+/* harmony export */   "sansSerif": () => (/* binding */ sansSerif),
+/* harmony export */   "searchField": () => (/* binding */ searchField),
+/* harmony export */   "serif": () => (/* binding */ serif),
+/* harmony export */   "soundOutPhonetic": () => (/* binding */ soundOutPhonetic),
+/* harmony export */   "soundOutPhoneticTwo": () => (/* binding */ soundOutPhoneticTwo),
+/* harmony export */   "styleLine": () => (/* binding */ styleLine),
+/* harmony export */   "styleLineThree": () => (/* binding */ styleLineThree),
+/* harmony export */   "styleLineTwo": () => (/* binding */ styleLineTwo),
+/* harmony export */   "synonymOne": () => (/* binding */ synonymOne),
+/* harmony export */   "synonymOneofTwo": () => (/* binding */ synonymOneofTwo),
+/* harmony export */   "synonymThree": () => (/* binding */ synonymThree),
+/* harmony export */   "synonymThreeofTwo": () => (/* binding */ synonymThreeofTwo),
+/* harmony export */   "synonymTwo": () => (/* binding */ synonymTwo),
+/* harmony export */   "synonymTwoofTwo": () => (/* binding */ synonymTwoofTwo),
+/* harmony export */   "synonymsText": () => (/* binding */ synonymsText),
+/* harmony export */   "synonymsTextofTwo": () => (/* binding */ synonymsTextofTwo),
+/* harmony export */   "vocabWord": () => (/* binding */ vocabWord),
+/* harmony export */   "vocabWordTwo": () => (/* binding */ vocabWordTwo)
+/* harmony export */ });
+/*Dropdown List*/
+var arrowSvgBtn = document.getElementById("arrow-svg");
+var fontDropdownList = document.getElementById("font-dropdown-list");
+var fontDropdownMenu = document.getElementById("font-dropdown-menu");
+
+/*Change font name for placeholder*/
+var fontPlaceholder = document.getElementById("font-choice-placeholder");
+var sansSerif = document.getElementById("sans-serif");
+var serif = document.getElementById("serif");
+var mono = document.getElementById("mono");
+
+/*Form Input*/
+var form = document.getElementById("form");
+var searchField = document.getElementById("search-field");
+var errorSearchMessage = document.querySelector("#search-field + span#error");
+
+/*Moon Icon*/
+var moonIcon = document.getElementById('moon-icon');
+
+/*Default Word*/
+var defaultWord = "Hello";
+
+/*API*/
+/*Word Version 1*/
+var vocabWord = document.getElementById('vocabulary-word');
+var soundOutPhonetic = document.getElementById('phonetic');
+var partsOfSpeech = document.getElementById('parts-of-speech');
+var styleLine = document.getElementById('style-line');
+var playIcon = document.getElementById('play-icon');
+var meaningText = document.querySelector('.meaning-text');
+var meaningTextTwo = document.querySelector('.meaning-text-two');
+var defOne = document.getElementById('def-one');
+var defTwo = document.getElementById('def-two');
+var defThree = document.getElementById('def-three');
+var defList = document.getElementById('def-list');
+var synonymsText = document.getElementById('synonyms-text');
+var synonymOne = document.getElementById('synonym-one');
+var synonymTwo = document.getElementById('synonym-two');
+var synonymThree = document.getElementById('synonym-three');
+
+/*Word Version 2*/
+var styleLineTwo = document.getElementById('style-line-two');
+var vocabWordTwo = document.getElementById('vocabulary-word-two');
+var soundOutPhoneticTwo = document.getElementById('phonetic-two');
+var partsOfSpeechTwo = document.getElementById('parts-of-speech-two');
+var styleLineThree = document.getElementById('style-line-three');
+var playIconTwo = document.getElementById('play-icon-two');
+var defOneOfTwo = document.getElementById('def-one-of-two');
+var defTwoofTwo = document.getElementById('def-two-of-two');
+var defThreeofTwo = document.getElementById('def-three-of-two');
+var defListofTwo = document.getElementById('def-list-two');
+var synonymsTextofTwo = document.getElementById('synonyms-text-two');
+var synonymOneofTwo = document.getElementById('synonym-one-of-two');
+var synonymTwoofTwo = document.getElementById('synonym-two-of-two');
+var synonymThreeofTwo = document.getElementById('synonym-three');
+
+/*Error Message*/
+var frownFaceEmoji = document.getElementById('frown-face-emoji');
+var errorMessage = document.getElementById('error-message');
+var noDefinitionsFoundText = document.getElementById('no-definitions-found-text');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Word 2*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Error Message*/
+
+
+
+
+/*Moon Icon*/
+
+
+/*Default Word*/
+
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
 /*!***************************************!*\
   !*** ./src/scripts/dictionary-api.js ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "capitalizeFirstLetter": () => (/* binding */ capitalizeFirstLetter),
@@ -15,7 +239,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "displayE": () => (/* binding */ displayE),
 /* harmony export */   "fetchSynonymsThesaurus": () => (/* binding */ fetchSynonymsThesaurus),
 /* harmony export */   "fetchVocabularyWords": () => (/* binding */ fetchVocabularyWords),
-/* harmony export */   "hideE": () => (/* binding */ hideE)
+/* harmony export */   "hideE": () => (/* binding */ hideE),
+/* harmony export */   "playAudioThreeDefault": () => (/* binding */ playAudioThreeDefault)
 /* harmony export */ });
 /* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
@@ -34,6 +259,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
+ /*Default Word*/
 
 /*API CALL*/
 /*Dictionary Api Call*/
@@ -171,6 +397,17 @@ function playAudioOne() {
 /*Audio Two*/
 function playAudioTwo() {
   var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.searchField.value);
+  promise.then(function (data) {
+    var audioURL = "https://media.merriam-webster.com/audio/prons/en/us/mp3/".concat(data[1].hwi.prs[0].sound.audio[0], "/").concat(data[1].hwi.prs[0].sound.audio, ".mp3");
+    globalAudio.src = audioURL;
+    globalAudio.preload = "none";
+    globalAudio.play();
+  });
+}
+
+/*Audio Three*/
+function playAudioThreeDefault() {
+  var promise = fetchVocabularyWords(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defaultWord);
   promise.then(function (data) {
     var audioURL = "https://media.merriam-webster.com/audio/prons/en/us/mp3/".concat(data[1].hwi.prs[0].sound.audio[0], "/").concat(data[1].hwi.prs[0].sound.audio, ".mp3");
     globalAudio.src = audioURL;
@@ -541,509 +778,8 @@ _global_variables__WEBPACK_IMPORTED_MODULE_0__.form.addEventListener('submit', f
 
 
 
-/***/ }),
-
-/***/ "./src/scripts/global-variables.js":
-/*!*****************************************!*\
-  !*** ./src/scripts/global-variables.js ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "arrowSvgBtn": () => (/* binding */ arrowSvgBtn),
-/* harmony export */   "defList": () => (/* binding */ defList),
-/* harmony export */   "defListofTwo": () => (/* binding */ defListofTwo),
-/* harmony export */   "defOne": () => (/* binding */ defOne),
-/* harmony export */   "defOneOfTwo": () => (/* binding */ defOneOfTwo),
-/* harmony export */   "defThree": () => (/* binding */ defThree),
-/* harmony export */   "defThreeofTwo": () => (/* binding */ defThreeofTwo),
-/* harmony export */   "defTwo": () => (/* binding */ defTwo),
-/* harmony export */   "defTwoofTwo": () => (/* binding */ defTwoofTwo),
-/* harmony export */   "errorMessage": () => (/* binding */ errorMessage),
-/* harmony export */   "errorSearchMessage": () => (/* binding */ errorSearchMessage),
-/* harmony export */   "fontDropdownList": () => (/* binding */ fontDropdownList),
-/* harmony export */   "fontDropdownMenu": () => (/* binding */ fontDropdownMenu),
-/* harmony export */   "fontPlaceholder": () => (/* binding */ fontPlaceholder),
-/* harmony export */   "form": () => (/* binding */ form),
-/* harmony export */   "frownFaceEmoji": () => (/* binding */ frownFaceEmoji),
-/* harmony export */   "meaningText": () => (/* binding */ meaningText),
-/* harmony export */   "meaningTextTwo": () => (/* binding */ meaningTextTwo),
-/* harmony export */   "mono": () => (/* binding */ mono),
-/* harmony export */   "moonIcon": () => (/* binding */ moonIcon),
-/* harmony export */   "noDefinitionsFoundText": () => (/* binding */ noDefinitionsFoundText),
-/* harmony export */   "partsOfSpeech": () => (/* binding */ partsOfSpeech),
-/* harmony export */   "partsOfSpeechTwo": () => (/* binding */ partsOfSpeechTwo),
-/* harmony export */   "playIcon": () => (/* binding */ playIcon),
-/* harmony export */   "playIconTwo": () => (/* binding */ playIconTwo),
-/* harmony export */   "sansSerif": () => (/* binding */ sansSerif),
-/* harmony export */   "searchField": () => (/* binding */ searchField),
-/* harmony export */   "serif": () => (/* binding */ serif),
-/* harmony export */   "soundOutPhonetic": () => (/* binding */ soundOutPhonetic),
-/* harmony export */   "soundOutPhoneticTwo": () => (/* binding */ soundOutPhoneticTwo),
-/* harmony export */   "styleLine": () => (/* binding */ styleLine),
-/* harmony export */   "styleLineThree": () => (/* binding */ styleLineThree),
-/* harmony export */   "styleLineTwo": () => (/* binding */ styleLineTwo),
-/* harmony export */   "synonymOne": () => (/* binding */ synonymOne),
-/* harmony export */   "synonymOneofTwo": () => (/* binding */ synonymOneofTwo),
-/* harmony export */   "synonymThree": () => (/* binding */ synonymThree),
-/* harmony export */   "synonymThreeofTwo": () => (/* binding */ synonymThreeofTwo),
-/* harmony export */   "synonymTwo": () => (/* binding */ synonymTwo),
-/* harmony export */   "synonymTwoofTwo": () => (/* binding */ synonymTwoofTwo),
-/* harmony export */   "synonymsText": () => (/* binding */ synonymsText),
-/* harmony export */   "synonymsTextofTwo": () => (/* binding */ synonymsTextofTwo),
-/* harmony export */   "vocabWord": () => (/* binding */ vocabWord),
-/* harmony export */   "vocabWordTwo": () => (/* binding */ vocabWordTwo)
-/* harmony export */ });
-/*Dropdown List*/
-var arrowSvgBtn = document.getElementById("arrow-svg");
-var fontDropdownList = document.getElementById("font-dropdown-list");
-var fontDropdownMenu = document.getElementById("font-dropdown-menu");
-
-/*Change font name for placeholder*/
-var fontPlaceholder = document.getElementById("font-choice-placeholder");
-var sansSerif = document.getElementById("sans-serif");
-var serif = document.getElementById("serif");
-var mono = document.getElementById("mono");
-
-/*Form Input*/
-var form = document.getElementById("form");
-var searchField = document.getElementById("search-field");
-var errorSearchMessage = document.querySelector("#search-field + span#error");
-
-/*Moon Icon*/
-var moonIcon = document.getElementById('moon-icon');
-
-/*API*/
-/*Word Version 1*/
-var vocabWord = document.getElementById('vocabulary-word');
-var soundOutPhonetic = document.getElementById('phonetic');
-var partsOfSpeech = document.getElementById('parts-of-speech');
-var styleLine = document.getElementById('style-line');
-var playIcon = document.getElementById('play-icon');
-var meaningText = document.querySelector('.meaning-text');
-var meaningTextTwo = document.querySelector('.meaning-text-two');
-var defOne = document.getElementById('def-one');
-var defTwo = document.getElementById('def-two');
-var defThree = document.getElementById('def-three');
-var defList = document.getElementById('def-list');
-var synonymsText = document.getElementById('synonyms-text');
-var synonymOne = document.getElementById('synonym-one');
-var synonymTwo = document.getElementById('synonym-two');
-var synonymThree = document.getElementById('synonym-three');
-
-/*Word Version 2*/
-var styleLineTwo = document.getElementById('style-line-two');
-var vocabWordTwo = document.getElementById('vocabulary-word-two');
-var soundOutPhoneticTwo = document.getElementById('phonetic-two');
-var partsOfSpeechTwo = document.getElementById('parts-of-speech-two');
-var styleLineThree = document.getElementById('style-line-three');
-var playIconTwo = document.getElementById('play-icon-two');
-var defOneOfTwo = document.getElementById('def-one-of-two');
-var defTwoofTwo = document.getElementById('def-two-of-two');
-var defThreeofTwo = document.getElementById('def-three-of-two');
-var defListofTwo = document.getElementById('def-list-two');
-var synonymsTextofTwo = document.getElementById('synonyms-text-two');
-var synonymOneofTwo = document.getElementById('synonym-one-of-two');
-var synonymTwoofTwo = document.getElementById('synonym-two-of-two');
-var synonymThreeofTwo = document.getElementById('synonym-three');
-
-/*Error Message*/
-var frownFaceEmoji = document.getElementById('frown-face-emoji');
-var errorMessage = document.getElementById('error-message');
-var noDefinitionsFoundText = document.getElementById('no-definitions-found-text');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Word 2*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Error Message*/
-
-
-
-
-/*Moon Icon*/
-
-
-/***/ })
-
-/******/ 	});
-/************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__webpack_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/make namespace object */
-/******/ 	(() => {
-/******/ 		// define __esModule on exports
-/******/ 		__webpack_require__.r = (exports) => {
-/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 			}
-/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-/*!*************************************!*\
-  !*** ./src/scripts/default-word.js ***!
-  \*************************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _dictionary_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dictionary-api */ "./src/scripts/dictionary-api.js");
-/* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Default Word*/
-var defaultWord = "Hello";
-
-/*Create audio on click of icon*/
-//Moving audio value outside of function creates sound only once.
-var globalAudio = new Audio();
-function playAudioOneDefault() {
-  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
-  promise.then(function (data) {
-    var audioURL = "https://media.merriam-webster.com/audio/prons/en/us/mp3/".concat(data[0].hwi.prs[0].sound.audio[0], "/").concat(data[0].hwi.prs[0].sound.audio, ".mp3");
-    globalAudio.src = audioURL;
-    globalAudio.preload = "none";
-    globalAudio.play();
-  });
-}
-
-/*Check if no data is available for list*/
-function removeBulletListIfNoDataDefault() {
-  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
-
-  /*WORD SECTION ONE -check if data list empty*/
-  /*If data for defone is empty*/
-  promise.then(function (data) {
-    if (data[0].shortdef[0] == undefined) {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOne.style.display = "none";
-    } else {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOne.style.display = "block";
-    }
-  });
-
-  /*If data for deftwo is empty*/
-  promise.then(function (data) {
-    if (data[0].shortdef[1] == undefined) {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwo.style.display = "none";
-    } else {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwo.style.display = "block";
-    }
-  });
-
-  /*If data for defthree is empty*/
-  promise.then(function (data) {
-    if (data[0].shortdef[2] == undefined) {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThree.style.display = "none";
-    } else {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThree.style.display = "block";
-    }
-  });
-
-  /*WORD SECTION TWO-check if data list empty*/
-  promise.then(function (data) {
-    if (data[1].shortdef[0] == undefined) {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOneOfTwo.style.display = "none";
-    } else {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOneOfTwo.style.display = "block";
-    }
-  });
-
-  /*If data for deftwooftwo is empty*/
-  promise.then(function (data) {
-    if (data[1].shortdef[1] == undefined) {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwoofTwo.style.display = "none";
-    } else {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwoofTwo.style.display = "block";
-    }
-  });
-
-  /*If data for defthreeoftwo is empty*/
-  promise.then(function (data) {
-    if (data[1].shortdef[2] == undefined) {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThreeofTwo.style.display = "none";
-    } else {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThreeofTwo.style.display = "block";
-    }
-  });
-}
-function hideEntireSecondWordSectionIfNoDataDefault() {
-  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
-  /*If all of data are missing/undefined for word sections*/
-  promise.then(function (data) {
-    /*WORD SECTION ONE-If all data missing*/
-    if (data[0].shortdef[0] == undefined && data[0].shortdef[1] == undefined && data[0].shortdef[2] == undefined) {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWord.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.soundOutPhonetic.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIcon.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningText.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.partsOfSpeech.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsText.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOne.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThree.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.display = "none";
-    } else {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWord.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.soundOutPhonetic.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIcon.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningText.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.partsOfSpeech.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsText.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOne.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThree.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.display = "block";
-    }
-
-    /*WORD SECTION TWO -if all data is empty*/
-    if (data[1].shortdef[0] == undefined && data[1].shortdef[1] == undefined && data[1].shortdef[2] == undefined) {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.soundOutPhoneticTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIconTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningTextTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.partsOfSpeechTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsTextofTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOneofTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwoofTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThreeofTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLineTwo.style.display = "none";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLineThree.style.display = "none";
-    } else {
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.soundOutPhoneticTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIconTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningTextTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.partsOfSpeechTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsTextofTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOneofTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwoofTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThreeofTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLineTwo.style.display = "block";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLineThree.style.display = "block";
-
-      /*Decrease margin top for definition*/
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLineTwo.style.opacity = "0.3%";
-      _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.style.marginTop = "-50px";
-    }
-  });
-}
-
-/*Create Definitions Lists*/
-function createListDefault() {
-  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningText.textContent = "Meaning";
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.defList.style.display = "block";
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.meaningTextTwo.textContent = "Meaning";
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.defListofTwo.style.display = "block";
-
-  /*Definitions List One*/
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOne.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].shortdef[0]);
-  });
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].shortdef[1]);
-  });
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThree.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].shortdef[2]);
-  });
-
-  /*Definitions List Two*/
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defOneOfTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].shortdef[0]);
-  });
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defTwoofTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].shortdef[1]);
-  });
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.defThreeofTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].shortdef[2]);
-  });
-  removeBulletListIfNoDataDefault(); /*Fine*/
-  hideEntireSecondWordSectionIfNoDataDefault();
-}
-
-/*Display Synonyms for Words One and Two*/
-function displaySynonymsDefault() {
-  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchSynonymsThesaurus)(defaultWord);
-
-  /*Synonyms List One*/
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsText.style.display = "block";
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymsText.textContent = "Synonyms";
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOne.style.display = "block";
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwo.style.display = "block";
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThree.style.display = "block";
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymOne.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].meta.syns[0][0]);
-  });
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].meta.syns[0][1]);
-  });
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.synonymThree.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].meta.syns[0][2]);
-  });
-}
-
-/*Check Headword for Extra Strings*/
-function checkHeadwordForExtraStringsBeforeDisplayingDefault() {
-  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
-  /*Remove Extra Words After Headword*/
-  var targetString = defaultWord;
-  var extraString = defaultWord;
-  var index = extraString.indexOf(targetString);
-  if (index !== -1) {
-    var result = extraString.substring(0, index + targetString.length);
-    _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWord.textContent = " ";
-    _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.textContent = " ";
-    _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWord.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(result);
-    _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(result);
-  } else {
-    /*Display Headword One and Two*/
-    /*Vocab Word One*/
-    promise.then(function (data) {
-      return _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWord.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].meta.stems[0]);
-    });
-
-    /*Vocab Word Two*/
-    promise.then(function (data) {
-      return _global_variables__WEBPACK_IMPORTED_MODULE_1__.vocabWordTwo.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[1].meta.stems[0]);
-    });
-  }
-}
-;
-
-/*Create Definitions*/
-/*Display words searched in the search field*/
-function displayDefaultDictionary() {
-  (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.hideE)();
-  var promise = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.fetchVocabularyWords)(defaultWord);
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.display = "block";
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIcon.style.display = "block";
-
-  /*Check Strings And Remove Extra Strings
-   If Available Before Displaying - Headword One*/
-  checkHeadwordForExtraStringsBeforeDisplayingDefault();
-
-  /*Display Phonetic Sound*/
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.soundOutPhonetic.textContent = "/" + (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].hwi.prs[0].mw + "/");
-  });
-
-  /*Display noun and noun-line*/
-  promise.then(function (data) {
-    return _global_variables__WEBPACK_IMPORTED_MODULE_1__.partsOfSpeech.textContent = (0,_dictionary_api__WEBPACK_IMPORTED_MODULE_0__.capitalizeFirstLetter)(data[0].fl);
-  });
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.width = "70%";
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.height = "0.5px";
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.styleLine.style.backgroundColor = "var(--gray-num-two)";
-
-  /*Play audio on icon click*/
-  _global_variables__WEBPACK_IMPORTED_MODULE_1__.playIcon.addEventListener("click", function () {
-    playAudioOneDefault();
-  });
-  /*Create Definitions List*/
-  createListDefault();
-
-  /*Display Synonyms Section*/
-  displaySynonymsDefault();
-}
-
-/*Display Default Dictinary On Page Load*/
-window.addEventListener("load", function () {
-  displayDefaultDictionary();
-});
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundledefaultword5f6200a74f84a50f0a2e.js.map
+//# sourceMappingURL=bundleapi9d39f3033d7f6b20e23d.js.map

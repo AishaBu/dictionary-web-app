@@ -19,6 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "defThreeofTwo": () => (/* binding */ defThreeofTwo),
 /* harmony export */   "defTwo": () => (/* binding */ defTwo),
 /* harmony export */   "defTwoofTwo": () => (/* binding */ defTwoofTwo),
+/* harmony export */   "defaultWord": () => (/* binding */ defaultWord),
 /* harmony export */   "errorMessage": () => (/* binding */ errorMessage),
 /* harmony export */   "errorSearchMessage": () => (/* binding */ errorSearchMessage),
 /* harmony export */   "fontDropdownList": () => (/* binding */ fontDropdownList),
@@ -72,6 +73,9 @@ var errorSearchMessage = document.querySelector("#search-field + span#error");
 
 /*Moon Icon*/
 var moonIcon = document.getElementById('moon-icon');
+
+/*Default Word*/
+var defaultWord = "Hello";
 
 /*API*/
 /*Word Version 1*/
@@ -161,6 +165,9 @@ var noDefinitionsFoundText = document.getElementById('no-definitions-found-text'
 /*Moon Icon*/
 
 
+/*Default Word*/
+
+
 /***/ })
 
 /******/ 	});
@@ -227,6 +234,7 @@ var __webpack_exports__ = {};
   \*************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _global_variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global-variables */ "./src/scripts/global-variables.js");
+
 
 
 
@@ -309,8 +317,31 @@ function toggleDarkTheme() {
       setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo);
       setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo);
     });
+
+    /*Change Error Message Color To White*/
+    setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText);
+    setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage);
   }
   changeFontColorWithFontStyleDarkTheme();
+  function changeErrorMessageColorOnClickDarkTheme() {
+    /*Sans Serif*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif.addEventListener('click', function () {
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage);
+    });
+    /*Serif*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.serif.addEventListener('click', function () {
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage);
+    });
+
+    /*Mono*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.mono.addEventListener('click', function () {
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText);
+      setListTextColorWhite(_global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage);
+    });
+  }
+  changeErrorMessageColorOnClickDarkTheme();
 }
 
 /*DEFAULT HERE*/
@@ -387,8 +418,33 @@ function setDefaultTheme() {
       setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defTwoofTwo);
       setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.defThreeofTwo);
     });
+
+    /*Change Error Message Color To White*/
+    setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText);
+    setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage);
   }
   changeFontColor();
+
+  /*Change Error Message Color To Black On Click*/
+  function changeErrorMessageColorOnClickDefaultTheme() {
+    /*Sans Serif*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.sansSerif.addEventListener('click', function () {
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage);
+    });
+    /*Serif*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.serif.addEventListener('click', function () {
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage);
+    });
+
+    /*Mono*/
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.mono.addEventListener('click', function () {
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.noDefinitionsFoundText);
+      setListTextColorBlack(_global_variables__WEBPACK_IMPORTED_MODULE_0__.errorMessage);
+    });
+  }
+  changeErrorMessageColorOnClickDefaultTheme();
 }
 setDefaultTheme(); //Set Default Theme for Toggle*/
 
@@ -410,4 +466,4 @@ checkBoxInput.addEventListener('click', function () {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundletoggletheme55ce0c6c2aa4dec3d3db.js.map
+//# sourceMappingURL=bundletogglethemed44bee7e3ea7e4d44301.js.map

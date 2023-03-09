@@ -19,6 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "defThreeofTwo": () => (/* binding */ defThreeofTwo),
 /* harmony export */   "defTwo": () => (/* binding */ defTwo),
 /* harmony export */   "defTwoofTwo": () => (/* binding */ defTwoofTwo),
+/* harmony export */   "defaultWord": () => (/* binding */ defaultWord),
 /* harmony export */   "errorMessage": () => (/* binding */ errorMessage),
 /* harmony export */   "errorSearchMessage": () => (/* binding */ errorSearchMessage),
 /* harmony export */   "fontDropdownList": () => (/* binding */ fontDropdownList),
@@ -72,6 +73,9 @@ var errorSearchMessage = document.querySelector("#search-field + span#error");
 
 /*Moon Icon*/
 var moonIcon = document.getElementById('moon-icon');
+
+/*Default Word*/
+var defaultWord = "Hello";
 
 /*API*/
 /*Word Version 1*/
@@ -159,6 +163,9 @@ var noDefinitionsFoundText = document.getElementById('no-definitions-found-text'
 
 
 /*Moon Icon*/
+
+
+/*Default Word*/
 
 
 /***/ })
@@ -374,4 +381,4 @@ setMediaQueryTablet();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlemediaqueriesd6c702918bf75abdbe51.js.map
+//# sourceMappingURL=bundlemediaqueries6d4bde071c86b5d2ab06.js.map
