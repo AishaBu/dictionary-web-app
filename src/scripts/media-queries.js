@@ -6,6 +6,7 @@ import { partsOfSpeech, partsOfSpeechTwo, meaningText, meaningTextTwo} from "./g
 import { synonymsText, synonymsTextofTwo} from "./global-variables";
 import { synonymOne, synonymTwo, synonymThree, synonymOneofTwo, synonymTwoofTwo, synonymThreeofTwo} from "./global-variables";
 import { errorMessage } from "./global-variables";
+import { errorSearchMessage } from "./global-variables";
 
 /*Function*/
 function setMobileMediaQuery(queryWidthMobile){
@@ -151,5 +152,40 @@ function setMediaQueryTablet() {
 setMediaQueryTablet();
 
 
+/*Input Errror Message Shift*/
+/*Mobile Between 400px And 499px*/
+function setMediaQueryErrorInputMessage400() {
+  const mediaQuery = window.matchMedia("(width:400px) and (max-width:499px)");
+  if (mediaQuery.matches) {
+    errorSearchMessage.style.marginLeft= "-60px";
+  }
+}
+setMediaQueryErrorInputMessage400();
+
+/*Mobile At 500px*/
+function setMediaQueryErrorInputMessage500() {
+  const mediaQuery = window.matchMedia("(width:500px)");
+  if (mediaQuery.matches) {
+    errorSearchMessage.style.marginLeft= "-130px";
+  }
+}
+setMediaQueryErrorInputMessage500();
+
+/*Mobile Between 1300px and 1399px*/
+function setMediaQueryErrorInputMessage1300() {
+  const mediaQuery = window.matchMedia("(min-width:1300px) and (max-width: 1399px)");
+  if (mediaQuery.matches) {
+    errorSearchMessage.style.marginRight= "360px";
+  }
+}
+setMediaQueryErrorInputMessage1300();
 
 
+/*Mobile 1500px And Below*/
+function setMediaQueryErrorInputMessage1500() {
+  const mediaQuery = window.matchMedia("(min-width:1500px)");
+  if (mediaQuery.matches) {
+    errorSearchMessage.style.marginLeft= "-900px";
+  }
+}
+setMediaQueryErrorInputMessage1500();

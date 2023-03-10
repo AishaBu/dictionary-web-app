@@ -242,6 +242,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 /*Function*/
 function setMobileMediaQuery(queryWidthMobile) {
   var mediaQuery = window.matchMedia(queryWidthMobile);
@@ -377,8 +378,45 @@ function setMediaQueryTablet() {
   }
 }
 setMediaQueryTablet();
+
+/*Input Errror Message Shift*/
+/*Mobile Between 400px And 499px*/
+function setMediaQueryErrorInputMessage400() {
+  var mediaQuery = window.matchMedia("(width:400px) and (max-width:499px)");
+  if (mediaQuery.matches) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorSearchMessage.style.marginLeft = "-60px";
+  }
+}
+setMediaQueryErrorInputMessage400();
+
+/*Mobile At 500px*/
+function setMediaQueryErrorInputMessage500() {
+  var mediaQuery = window.matchMedia("(width:500px)");
+  if (mediaQuery.matches) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorSearchMessage.style.marginLeft = "-130px";
+  }
+}
+setMediaQueryErrorInputMessage500();
+
+/*Mobile Between 1300px and 1399px*/
+function setMediaQueryErrorInputMessage1300() {
+  var mediaQuery = window.matchMedia("(min-width:1300px) and (max-width: 1399px)");
+  if (mediaQuery.matches) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorSearchMessage.style.marginRight = "360px";
+  }
+}
+setMediaQueryErrorInputMessage1300();
+
+/*Mobile 1500px And Below*/
+function setMediaQueryErrorInputMessage1500() {
+  var mediaQuery = window.matchMedia("(min-width:1500px)");
+  if (mediaQuery.matches) {
+    _global_variables__WEBPACK_IMPORTED_MODULE_0__.errorSearchMessage.style.marginLeft = "-900px";
+  }
+}
+setMediaQueryErrorInputMessage1500();
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundlemediaqueries6d4bde071c86b5d2ab06.js.map
+//# sourceMappingURL=bundlemediaqueries23fdeceeb2f394f5a3c7.js.map
