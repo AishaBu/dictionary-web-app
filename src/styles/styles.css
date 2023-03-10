@@ -429,7 +429,8 @@ input:checked + .slider.round {
 
 /*Dictionary Words*/
 /*Phonetics, noun and noun-line*/
-#phonetic {
+#phonetic, 
+#phonetic-two{
   margin-top: -20px;
 }
 
@@ -626,6 +627,27 @@ for Mobile Devices*/
     width: 230px;
   }
 }
+
+/*Style Line and Parts of Speech Line Group*/
+@media(min-width: 1200px){
+  #style-line,
+  #style-line-three{
+    width: 300px;
+    position: relative;
+    left: -40px;
+  }
+}
+/*Style Line and Parts of Speech Line Group*/
+@media(min-width: 1500px){
+  #style-line,
+  #style-line-three{
+    width: 300px;
+    position: relative;
+    left: -120px;
+  }
+
+}
+
 
 /*Mobile Devices Header MQ*/
 /*Set Header Media Queries*/
@@ -864,11 +886,6 @@ for Mobile Devices*/
     width: 75px;
     height: 75px;
   }
-
-  #phonetic,
-  #phonetic-two{
-    margin-top: -40px;
-  }
 }
 
 /*Between 668px Set Phonetcs, PlayIcon MQ*/
@@ -914,22 +931,29 @@ for Mobile Devices*/
 
 /*1200px and above*/
 @media (min-width: 1200px) {
-
-  #style-line,
-  #style-line-three{
-    width: 300px;
-    position: relative;
-    left: -100px;
+ 
+  #parts-of-speech-and-line-group,
+  #parts-of-speech-and-line-group-two {
+    margin-left: 20px;
   }
-
-  .word-and-sound, .word-and-sound-two {
-    gap: 400px; 
 }
-  
+
+
+/*1400px and above*/
+@media (min-width: 1400px) {
+ 
+  #parts-of-speech-and-line-group,
+  #parts-of-speech-and-line-group-two {
+    margin-left: 50px;
+  }
+}
+
+/*1500px and above*/
+@media (min-width: 1500px) {
+ 
   #parts-of-speech-and-line-group,
   #parts-of-speech-and-line-group-two {
     margin-left: 140px;
-
   }
 }
 /*End Phonetics, and Play Icon Media Queries*/
@@ -973,12 +997,35 @@ for Mobile Devices*/
     margin-left: 80px;
   }
 }
+
 @media(min-width: 1200px){
+
+  #word-def-group, #word-def-group-two {
+    margin-left: 100px;
+  }
+}
+
+@media(min-width: 1300px){
+
+  #word-def-group, #word-def-group-two {
+    margin-left: 120px;
+  }
+}
+
+@media(min-width: 1300px){
+
+  #word-def-group, #word-def-group-two {
+    margin-left: 150px;
+  }
+}
+@media(min-width: 1500px){
 
   #word-def-group, #word-def-group-two {
     margin-left: 280px;
   }
 }
+
+
 /*End Set Definitions List Media Queries*/
 
 /*Set Vocabulary Section and Error Message Media Quries*/
@@ -1198,7 +1245,7 @@ for Mobile Devices*/
 }
 
 /*890px and above Synonyms and Meaning Sections MQ*/
-@media(min-width: 890px) {
+@media(min-width: 800px) {
 
   #synonym-one,
   #synonym-two,
@@ -1231,8 +1278,36 @@ for Mobile Devices*/
   #synonym-one-of-two,
   #synonym-two-of-two,
   #synonym-three-of-two {  
+      margin-left: 900px;
+  }
+}
+
+/*1300px and above*/
+@media(min-width: 1300px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {  
+      margin-left: 1000px;
+  }
+}
+
+
+/*1500px and above*/
+@media(min-width: 1500px) {
+
+  #synonym-one,
+  #synonym-two,
+  #synonym-three,
+  #synonym-one-of-two,
+  #synonym-two-of-two,
+  #synonym-three-of-two {  
       margin-left: 1200px;
   }
 }
+
 /*End Synonyms and Meaning Sections Media Queries*/
 
