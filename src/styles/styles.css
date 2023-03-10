@@ -934,10 +934,9 @@ for Mobile Devices*/
  
   #parts-of-speech-and-line-group,
   #parts-of-speech-and-line-group-two {
-    margin-left: 20px;
+    margin-left: 30px;
   }
 }
-
 
 /*1400px and above*/
 @media (min-width: 1400px) {
@@ -1012,12 +1011,7 @@ for Mobile Devices*/
   }
 }
 
-@media(min-width: 1300px){
 
-  #word-def-group, #word-def-group-two {
-    margin-left: 150px;
-  }
-}
 @media(min-width: 1500px){
 
   #word-def-group, #word-def-group-two {
