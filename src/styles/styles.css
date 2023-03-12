@@ -463,18 +463,13 @@ input:checked + .slider.round {
 }
 
 /*Play Icons with arrows on hover*/
-#play-icon path:hover,
-#play-icon-two path:hover{
-  fill: var(--white);
-  stroke: var(--white);
-}
-
-#play-icon circle:hover,
-#play-icon-two circle:hover{
+#play-icon g:hover,
+#play-icon-two g:hover{
   fill: var(--purple);
   stroke: var(--purple);
+  filter: invert(0.30); /*inverts and dulls color*/
+  opacity: 100;
 }
-
 
 /*Align play icon
  with vocab word*/
