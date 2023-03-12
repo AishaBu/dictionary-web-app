@@ -454,17 +454,27 @@ input:checked + .slider.round {
   cursor: pointer;
 }
 
+/*Play Icons Colors*/
+#play-icon g,
+#play-icon-two g{
+  fill: var(--purple);
+  stroke: var(--purple);
+  opacity: 100;
+}
+
 /*Play Icons with arrows on hover*/
-#play-icon g:hover,
-#play-icon-two g:hover {
+#play-icon path:hover,
+#play-icon-two path:hover{
   fill: var(--white);
+  stroke: var(--white);
 }
 
 #play-icon circle:hover,
-#play-icon-two circle:hover {
+#play-icon-two circle:hover{
   fill: var(--purple);
-  opacity: 100;
+  stroke: var(--purple);
 }
+
 
 /*Align play icon
  with vocab word*/
