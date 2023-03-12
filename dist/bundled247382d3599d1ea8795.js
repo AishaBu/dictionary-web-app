@@ -2924,7 +2924,7 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.addEventListener("key
     event.preventDefault(); //stops default action
     event.stopPropagation(); //stops further propogation in event/bubbling phases
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.searchField.setAttribute("id", "invalid-search-field");
-    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = "No shift, and lowercase letters only";
+    _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = "Lowercase letters only";
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.setAttribute("id", "invalid-error-message");
   } else {
     _global_variables__WEBPACK_IMPORTED_MODULE_6__.errorSearchMessage.textContent = " ";
@@ -3010,4 +3010,4 @@ _global_variables__WEBPACK_IMPORTED_MODULE_6__.form.addEventListener("submit", f
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle5e07909d4562cf647467.js.map
+//# sourceMappingURL=bundled247382d3599d1ea8795.js.map
