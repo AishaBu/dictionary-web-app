@@ -38,7 +38,7 @@ searchField.addEventListener("keydown", (event) => {
     event.preventDefault(); //stops default action
     event.stopPropagation(); //stops further propogation in event/bubbling phases
     searchField.setAttribute("id", "invalid-search-field");
-    errorSearchMessage.textContent = "No shift, and lowercase letters only";
+    errorSearchMessage.textContent = "Lowercase letters only";
     errorSearchMessage.setAttribute("id", "invalid-error-message");
   }
   else{
