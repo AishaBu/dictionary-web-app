@@ -286,7 +286,7 @@ form {
 /*Add custom icon search bar*/
 input[type="search"] {
   appearance: none;
-  width: 327px;
+  width: 320px;
   height: 48px;
   border-radius: 16px;
   background-color: var(--off-white-one);
@@ -676,8 +676,17 @@ for Mobile Devices*/
   }
 }
 
-/*At 320px Header MQ*/
-@media (width: 320px) {
+/*At 330px Header MQ And Below*/
+@media (max-width: 370px) {
+
+  #main-header-content {
+    position: relative;
+    right: 30px;
+  }
+}
+
+/*At 325px Header MQ And Below*/
+@media (max-width: 325px) {
 
   header{
     margin-left: 40px;
@@ -688,6 +697,8 @@ for Mobile Devices*/
     right: 70px;
   }
 }
+
+
 
 /*Tablet Devices Header MQ*/
 /*Between 470px and 599px*/
@@ -751,13 +762,15 @@ for Mobile Devices*/
   }
 }
 
-/*At 320px Searchfield MQ*/
-@media (width: 320px) {
+/*At 370px Searchfield And Below MQ*/
+@media (max-width: 370px) {
 
   input[type="search"] {
     width: 300px;
   }
 }
+
+
 
 /*Between 400px and 438px Searchfield MQ*/
 @media(min-width: 400px) and (max-width: 438px) {

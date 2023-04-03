@@ -8,12 +8,19 @@ import { synonymsText, synonymsTextofTwo} from "./global-variables";
 import { synonymOne, synonymTwo, synonymThree, synonymOneofTwo, synonymTwoofTwo, synonymThreeofTwo} from "./global-variables";
 import { errorMessage } from "./global-variables";
 import { errorSearchMessage } from "./global-variables";
-
-/*MEDIA QUERY 414PX AND BELOW*/
-const mediaQueryOne = window.matchMedia(('(max-width:414px)'));
+` `
+/*MEDIA QUERY 499PX AND BELOW*/
+const mediaQuery499pxAndBelow = window.matchMedia(('(max-width:499px)'));
 
 function setMobileMediaQuery(){
-    if (mediaQueryOne.matches) {
+    if (mediaQuery499pxAndBelow.matches) {
+
+      /*Vocab Word*/
+      vocabWord.style.fontSize = "32px";
+      vocabWordTwo.style.fontSize = "32px";
+      vocabWord.style.lineHeight = "50px";
+      vocabWordTwo.style.lineHeight = "50px";
+
       /*List Paragraphs*/
       defOne.style.fontSize = "18px";
       defTwo.style.fontSize = "18px";
@@ -66,11 +73,17 @@ function setMobileMediaQuery(){
       synonymOneofTwo.style.lineHeight = "24px";
       synonymTwoofTwo.style.lineHeight = "24px";
       synonymThreeofTwo.style.lineHeight= "24px";
+
+    /*Play Icons*/
+    playIcon.style.width = "55px";
+    playIcon.style.height = "55px";
+    playIconTwo.style.width = "55px"
+    playIconTwo.style.height = "55px";
   
     }
    }
 /*Media Query Event Listener*/
-mediaQueryOne.addEventListener("change", setMobileMediaQuery);
+mediaQuery499pxAndBelow.addEventListener("change", setMobileMediaQuery);
 
    
   
