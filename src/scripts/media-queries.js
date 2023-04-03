@@ -1,5 +1,6 @@
 
 import { vocabWord, vocabWordTwo } from "./global-variables";
+import { playIcon, playIconTwo } from "./global-variables";
 import {soundOutPhonetic, soundOutPhoneticTwo } from "./global-variables";
 import {defOne, defTwo, defThree, defOneOfTwo, defTwoofTwo, defThreeofTwo} from "./global-variables";
 import { partsOfSpeech, partsOfSpeechTwo, meaningText, meaningTextTwo} from "./global-variables";
@@ -8,10 +9,11 @@ import { synonymOne, synonymTwo, synonymThree, synonymOneofTwo, synonymTwoofTwo,
 import { errorMessage } from "./global-variables";
 import { errorSearchMessage } from "./global-variables";
 
-/*Function*/
-function setMobileMediaQuery(queryWidthMobile){
-  const mediaQuery = window.matchMedia(queryWidthMobile);
-    if (mediaQuery.matches) {
+/*MEDIA QUERY 414PX AND BELOW*/
+const mediaQueryOne = window.matchMedia(('(max-width:414px)'));
+
+function setMobileMediaQuery(){
+    if (mediaQueryOne.matches) {
       /*List Paragraphs*/
       defOne.style.fontSize = "18px";
       defTwo.style.fontSize = "18px";
@@ -67,27 +69,33 @@ function setMobileMediaQuery(queryWidthMobile){
   
     }
    }
+/*Media Query Event Listener*/
+mediaQueryOne.addEventListener("change", setMobileMediaQuery);
 
-   setMobileMediaQuery(('(width:414px)'));
-   setMobileMediaQuery(('(width:412px)'));
-   setMobileMediaQuery(('(width:393px)'));
-   setMobileMediaQuery(('(width:390px)'));
+   
   
+  
+/*ERROR MESSAGE WIDTH MEDIA QUERY 280PX AND BELOW*/
+/*Mobile Error Message Width 280 and below*/ 
+const mediaQueryErrorMessageWidth = window.matchMedia("(max-width:280px)");
 
-/*Mobile Error Message Width 280 and below*/
 function setMediaQueryErrorMessage() {
-  const mediaQuery = window.matchMedia("(max-width:280px)");
-  if(mediaQuery.matches){
+ 
+  if(mediaQueryErrorMessageWidth.matches){
     errorMessage.style.width = "200px";
   }
+}
+/*Media Query Error Message Event Listener*/
+mediaQueryErrorMessageWidth.addEventListener("change", setMediaQueryErrorMessage);
 
-}setMediaQueryErrorMessage();
 
+/*TABLET DEVICE MEDIA QUERY 500PX AND ABOVE*/
 /*Tablet 500 And Above*/
-function setMediaQueryTablet() {
-  const mediaQuery = window.matchMedia("(min-width:500px)");
+const mediaQuery500AndAbove = window.matchMedia("(min-width:500px)");
 
-  if (mediaQuery.matches) {
+function setMediaQueryTablet() {
+
+  if (mediaQuery500AndAbove.matches) {
     /*Vocab Word*/
     vocabWord.style.fontSize = "64px";
     vocabWordTwo.style.fontSize = "64px";
@@ -147,45 +155,73 @@ function setMediaQueryTablet() {
     synonymTwoofTwo.style.lineHeight = "24px";
     synonymThreeofTwo.style.lineHeight= "24px";
 
+    /*Play Icons*/
+    playIcon.style.width = "65px";
+    playIcon.style.height = "65px";
+    playIconTwo.style.width = "65px"
+    playIconTwo.style.height = "65px";
+
   }
 }
-setMediaQueryTablet();
+/*Media Query Tablet Event Listener*/
+mediaQuery500AndAbove.addEventListener("change", setMediaQueryTablet);
+ 
 
-
+/*INPUT ERROR MESSAGE MEDIA QUERY*/
 /*Input Errror Message Shift*/
-/*Mobile Between 400px And 499px*/
+/*Mobile Between 400px And 499px*/  
+const mediaQueryBetween400And499 = window.matchMedia("(width:400px) and (max-width:499px)");
+
 function setMediaQueryErrorInputMessage400() {
-  const mediaQuery = window.matchMedia("(width:400px) and (max-width:499px)");
-  if (mediaQuery.matches) {
+  if (mediaQueryBetween400And499.matches) {
     errorSearchMessage.style.marginLeft= "-60px";
   }
 }
-setMediaQueryErrorInputMessage400();
+/*Media Query Between 400px and 499px Event Listener*/
+mediaQueryBetween400And499.addEventListener("change", setMediaQueryErrorInputMessage400);
 
-/*Mobile At 500px*/
+
+
+/*AT 500PX ONLY MEDIA QUERIES*/
+/*Mobile At 500px*/ 
+const mediaQueryErrorInputMessage500 = window.matchMedia("(width:500px)");
+
 function setMediaQueryErrorInputMessage500() {
-  const mediaQuery = window.matchMedia("(width:500px)");
-  if (mediaQuery.matches) {
+
+  if (mediaQueryErrorInputMessage500.matches) {
     errorSearchMessage.style.marginLeft= "-130px";
   }
 }
-setMediaQueryErrorInputMessage500();
+/*Media Query Mobile At 500px Event Listener*/
+mediaQueryErrorInputMessage500.addEventListener("change", setMediaQueryErrorInputMessage500);
 
+
+/*MEDIA QUERY BETWEEN 1300PX AND 1399PX*/
 /*Mobile Between 1300px and 1399px*/
+const mediaQueryBetween1300And1399 = window.matchMedia("(min-width:1300px) and (max-width: 1399px)");
+
 function setMediaQueryErrorInputMessage1300() {
-  const mediaQuery = window.matchMedia("(min-width:1300px) and (max-width: 1399px)");
-  if (mediaQuery.matches) {
+  
+  if (mediaQueryBetween1300And1399.matches) {
     errorSearchMessage.style.marginRight= "360px";
   }
 }
-setMediaQueryErrorInputMessage1300();
+
+/*Media Query Mobile Between 1300px and 1399px Event Listener*/
+mediaQueryBetween1300And1399.addEventListener("change", setMediaQueryErrorInputMessage1300);
 
 
+
+/*MEDIQ QUERY 1500PX AND BELOW*/
 /*Mobile 1500px And Below*/
+const mediaQueryErrorInputMessage1500 = window.matchMedia("(min-width:1500px)");
+
 function setMediaQueryErrorInputMessage1500() {
-  const mediaQuery = window.matchMedia("(min-width:1500px)");
-  if (mediaQuery.matches) {
+  
+  if (mediaQueryErrorInputMessage1500.matches) {
     errorSearchMessage.style.marginLeft= "-900px";
   }
 }
-setMediaQueryErrorInputMessage1500();
+
+/*Mobile 1500px And Below Event Listener*/
+mediaQueryErrorInputMessage1500.addEventListener("change", setMediaQueryErrorInputMessage1500);
