@@ -526,6 +526,13 @@ Synonyms Text*/
   margin-left: 230px;
 }
 
+/*Add space to bottom of last synonym in 
+definitions section two*/
+#synonym-two-of-two{
+ padding-bottom: 30px;
+}
+
+
 ul {
   list-style: none;
 }
