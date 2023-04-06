@@ -1,11 +1,16 @@
 # Dictionary Web App
 
+<table>
+    <tr>
+    <td><img src="/src/assets/images/dictionary-web-app-image-desktop.png"></td>
+    </tr>
+</table>
+
 ## Table of contents
 
 - [Description](#description)
-  - [Features](#features)
-  <!-- [Screenshot](#screenshot)
-  - [Links](#links)-->
+- [Features](#features)
+- [Live Site](#live-site)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -27,14 +32,9 @@ Users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-<!--### Screenshot
+### Live Site
 
-![](./screenshot.jpg)
-
-### Links
-
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
--->
+[Live Site](https://dictionary-web-app-aishabu.netlify.app/)
 
 ## My process
 
@@ -54,9 +54,6 @@ Users should be able to:
 
 I learned how to use the font-face CSS property to work with variable and static fonts and how to use woff/woff2 files for fonts, and static font files as fallbacks. I also learned to connect to an API using the Fetch API, an API key and JSON code, and how to display that information using JSON, and the JavaScript DOM API.
 
-<!--
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-  -->
+- Website - [AishaBu Portfolio](https://aishabu-portfolio.netlify.app/)
