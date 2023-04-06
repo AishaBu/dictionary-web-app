@@ -9,19 +9,19 @@ import { synonymOne, synonymTwo, synonymThree, synonymOneofTwo, synonymTwoofTwo,
 import { errorMessage } from "./global-variables";
 import { errorSearchMessage } from "./global-variables";
 ` `
-/*MEDIA QUERY 499PX AND BELOW*/
+/*MEDIA QUERY 499PX AND BELOW*
 const mediaQuery499pxAndBelow = window.matchMedia(('(max-width:499px)'));
 
 function setMobileMediaQuery(){
     if (mediaQuery499pxAndBelow.matches) {
 
-      /*Vocab Word*/
+      /*Vocab Word*
       vocabWord.style.fontSize = "32px";
       vocabWordTwo.style.fontSize = "32px";
       vocabWord.style.lineHeight = "50px";
       vocabWordTwo.style.lineHeight = "50px";
 
-      /*List Paragraphs*/
+      /*List Paragraphs*
       defOne.style.fontSize = "18px";
       defTwo.style.fontSize = "18px";
       defThree.style.fontSize = "18px";
@@ -35,31 +35,31 @@ function setMobileMediaQuery(){
       defTwoofTwo.style.lineHeight = "24px";
       defThreeofTwo.style.lineHeight = "24px";
 
-      /*Sound Phonetic*/
+      /*Sound Phonetic*
       soundOutPhonetic.style.fontSize = "20px";
       soundOutPhoneticTwo.style.fontSize = "20px";
       soundOutPhonetic.style.lineHeight = "24px";
       soundOutPhoneticTwo.style.lineHeight = "24px";
 
-      /*Parts of Speech*/
+      /*Parts of Speech*
       partsOfSpeech.style.fontSize = "20px";
       partsOfSpeech.style.lineHeight = "29px";
       partsOfSpeechTwo.style.fontSize = "20px";
       partsOfSpeechTwo.style.lineHeight = "29px";
       
-      /*Meaning Text*/
+      /*Meaning Text*
       meaningText.style.fontSize = "20px";
       meaningTextTwo.style.fontSize = "20px";
       meaningText.style.lineHeight = "24px";
       meaningTextTwo.style.lineHeight = "24px";
 
-      /*Synonyms Text*/
+      /*Synonyms Text*
       synonymsText.style.fontSize = "20px";
       synonymsTextofTwo.style.fontSize = "20px";
       synonymsText.style.lineHeight = "24px";
       synonymsTextofTwo.style.lineHeight = "24px";
 
-      /*Synonyms Lists*/
+      /*Synonyms Lists*
       synonymOne.style.fontSize = "20px";
       synonymTwo.style.fontSize = "20px";
       synonymThree.style.fontSize = "20px";
@@ -74,7 +74,7 @@ function setMobileMediaQuery(){
       synonymTwoofTwo.style.lineHeight = "24px";
       synonymThreeofTwo.style.lineHeight= "24px";
 
-    /*Play Icons*/
+    /*Play Icons*
     playIcon.style.width = "55px";
     playIcon.style.height = "55px";
     playIconTwo.style.width = "55px"
@@ -82,9 +82,9 @@ function setMobileMediaQuery(){
   
     }
    }
-/*Media Query Event Listener*/
+/*Media Query Event Listener*
 mediaQuery499pxAndBelow.addEventListener("change", setMobileMediaQuery);
-
+*/
    
   
   
@@ -103,10 +103,9 @@ mediaQueryErrorMessageWidth.addEventListener("change", setMediaQueryErrorMessage
 
 
 /*TABLET DEVICE MEDIA QUERY 500PX AND ABOVE*/
-/*Tablet 500 And Above*/
-const mediaQuery500AndAbove = window.matchMedia("(min-width:500px)");
+function setMediaQueryTablet(mediaQueryWidth) {
 
-function setMediaQueryTablet() {
+const mediaQuery500AndAbove = window.matchMedia(mediaQueryWidth);
 
   if (mediaQuery500AndAbove.matches) {
     /*Vocab Word*/
@@ -177,64 +176,61 @@ function setMediaQueryTablet() {
   }
 }
 /*Media Query Tablet Event Listener*/
-mediaQuery500AndAbove.addEventListener("change", setMediaQueryTablet);
- 
+setMediaQueryTablet("(min-width:500px)");
+
+
 
 /*INPUT ERROR MESSAGE MEDIA QUERY*/
 /*Input Errror Message Shift*/
 /*Mobile Between 400px And 499px*/  
-const mediaQueryBetween400And499 = window.matchMedia("(width:400px) and (max-width:499px)");
+function setMediaQueryErrorInputMessage400(mediaQueryWidthInputMessage) {
 
-function setMediaQueryErrorInputMessage400() {
+  const mediaQueryBetween400And499 = window.matchMedia(mediaQueryWidthInputMessage);
+
   if (mediaQueryBetween400And499.matches) {
     errorSearchMessage.style.marginLeft= "-60px";
   }
 }
 /*Media Query Between 400px and 499px Event Listener*/
-mediaQueryBetween400And499.addEventListener("change", setMediaQueryErrorInputMessage400);
+setMediaQueryErrorInputMessage400("(width:400px) and (max-width:499px)");
 
 
 
 /*AT 500PX ONLY MEDIA QUERIES*/
 /*Mobile At 500px*/ 
-const mediaQueryErrorInputMessage500 = window.matchMedia("(width:500px)");
+function setMediaQueryErrorInputMessage500(mediaQueryWidthErrorInputMessage) {
 
-function setMediaQueryErrorInputMessage500() {
+const mediaQueryErrorInputMessage500 = window.matchMedia(mediaQueryWidthErrorInputMessage);
 
   if (mediaQueryErrorInputMessage500.matches) {
     errorSearchMessage.style.marginLeft= "-130px";
   }
 }
 /*Media Query Mobile At 500px Event Listener*/
-mediaQueryErrorInputMessage500.addEventListener("change", setMediaQueryErrorInputMessage500);
+setMediaQueryErrorInputMessage500("(width:500px)");
 
 
 /*MEDIA QUERY BETWEEN 1300PX AND 1399PX*/
 /*Mobile Between 1300px and 1399px*/
-const mediaQueryBetween1300And1399 = window.matchMedia("(min-width:1300px) and (max-width: 1399px)");
-
-function setMediaQueryErrorInputMessage1300() {
-  
+function setMediaQueryErrorInputMessage1300(setMediaQueryWidthBetween1300and1399) {
+  const mediaQueryBetween1300And1399 = window.matchMedia(setMediaQueryWidthBetween1300and1399);
   if (mediaQueryBetween1300And1399.matches) {
     errorSearchMessage.style.marginRight= "360px";
   }
 }
 
 /*Media Query Mobile Between 1300px and 1399px Event Listener*/
-mediaQueryBetween1300And1399.addEventListener("change", setMediaQueryErrorInputMessage1300);
-
+setMediaQueryErrorInputMessage1300("(min-width:1300px) and (max-width: 1399px)");
 
 
 /*MEDIQ QUERY 1500PX AND BELOW*/
 /*Mobile 1500px And Below*/
-const mediaQueryErrorInputMessage1500 = window.matchMedia("(min-width:1500px)");
-
-function setMediaQueryErrorInputMessage1500() {
-  
+function setMediaQueryErrorInputMessage1500(mediaQueryWidthInputErrorMessage1500) {
+  const mediaQueryErrorInputMessage1500 = window.matchMedia(mediaQueryWidthInputErrorMessage1500);
   if (mediaQueryErrorInputMessage1500.matches) {
     errorSearchMessage.style.marginLeft= "-900px";
   }
 }
 
 /*Mobile 1500px And Below Event Listener*/
-mediaQueryErrorInputMessage1500.addEventListener("change", setMediaQueryErrorInputMessage1500);
+setMediaQueryErrorInputMessage1500("(min-width:1500px)");
