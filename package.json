@@ -33,6 +33,7 @@
     "webpack-dev-server": "^4.13.3"
   },
   "dependencies": {
+    "body-parser": "^1.20.3",
     "ip": "^2.0.1",
     "npm": "^10.5.2",
     "semver": "^7.5.4"
